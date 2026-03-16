@@ -21,7 +21,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
-        PREVIEW UPDATED (v1.0.10): Final Mobile Responsiveness Fixes.
+        PREVIEW UPDATED (v1.0.12): Expanded Content for All Internal Pages.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -408,12 +408,61 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
             { title: 'Small Business Security', desc: 'We offer the best security cameras for retail stores and offices, helping you prevent loss and improve safety.' },
             { title: 'Residential Surveillance', desc: 'Peace of mind for your family with outdoor security camera miami setups and smart doorbell integration.' }
           ].map((item) => (
-            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{item.title}</h3>
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
               <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <img 
+              src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000" 
+              alt="Security Monitoring" 
+              className="rounded-3xl shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-8">Advanced Monitoring Features</h2>
+            <div className="space-y-6">
+              {[
+                { title: 'Remote Access', desc: 'View your cameras from anywhere in the world using our secure mobile app.' },
+                { title: 'Night Vision', desc: 'Crystal clear imagery even in total darkness with advanced IR technology.' },
+                { title: 'Cloud Storage', desc: 'Securely back up your footage to the cloud for extra protection.' },
+                { title: 'AI Analytics', desc: 'Smart detection for people, vehicles, and specific events to reduce false alarms.' }
+              ].map((feature) => (
+                <div key={feature.title} className="flex space-x-4 p-4 rounded-2xl hover:bg-blue-50 transition-colors group">
+                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <Shield size={24} />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0B2447]">{feature.title}</h4>
+                    <p className="text-sm text-gray-600">{feature.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-[#0B2447] text-white">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to Secure Your Property?</h2>
+        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join hundreds of satisfied Miami business owners and residents who trust Security on the Spot.</p>
+        <button 
+          onClick={() => setActivePage('contact-us')}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl"
+        >
+          Schedule a Free Site Survey
+        </button>
       </div>
     </section>
   </div>
@@ -495,10 +544,55 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
             { title: 'Voice Control Integration', desc: 'Control your smart home miami with your voice. Seamless integration with Alexa, Google Home, and Siri.' },
             { title: 'Energy Automation', desc: 'Optimize your home\'s energy usage with smart thermostats and automated shade control.' }
           ].map((item) => (
-            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{item.title}</h3>
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
               <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="bg-[#0B2447] rounded-[3rem] p-8 md:p-16 text-white relative overflow-hidden">
+          <div className="relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">The Benefits of a Smart Home</h2>
+              <p className="text-gray-300 mb-8">Investing in home automation isn't just about luxury—it's about creating a more efficient, secure, and comfortable environment for your family.</p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                {[
+                  { title: 'Convenience', desc: 'Control everything from your phone or voice.' },
+                  { title: 'Security', desc: 'Integrated alarms and smart locks.' },
+                  { title: 'Efficiency', desc: 'Reduce energy bills with smart climate.' },
+                  { title: 'Value', desc: 'Increase your property\'s market value.' }
+                ].map((benefit) => (
+                  <div key={benefit.title} className="bg-white/10 p-6 rounded-2xl backdrop-blur-sm">
+                    <h4 className="font-bold mb-2">{benefit.title}</h4>
+                    <p className="text-xs text-gray-400">{benefit.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="hidden lg:block">
+              <img 
+                src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" 
+                alt="Smart Home Interface" 
+                className="rounded-3xl shadow-2xl rotate-3"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Our Integration Partners</h2>
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+          {['Control4', 'Lutron', 'Savant', 'Crestron', 'Sonos'].map((brand) => (
+            <span key={brand} className="text-2xl md:text-4xl font-black text-[#0B2447]">{brand}</span>
           ))}
         </div>
       </div>
@@ -642,17 +736,74 @@ const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) =>
     <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
-            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Keyless Entry</h3>
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">Keyless Entry</h3>
             <p className="text-gray-600 text-sm">Fob and mobile-based access for employees and residents. No more lost keys.</p>
           </div>
-          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
-            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Intercom Systems</h3>
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">Intercom Systems</h3>
             <p className="text-gray-600 text-sm">Video intercom installation in Miami for multi-family buildings and gated communities.</p>
           </div>
-          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
-            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Cloud Management</h3>
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">Cloud Management</h3>
             <p className="text-gray-600 text-sm">Manage permissions and view access logs from anywhere via a secure cloud dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-8">Managed Access for Any Scale</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">From single-door retail shops to multi-site corporate campuses, our access control solutions scale with your needs. We provide the hardware and software to keep your premises secure.</p>
+            <div className="space-y-4">
+              {[
+                'Biometric Fingerprint Readers',
+                'Mobile Smartphone Credentials',
+                'License Plate Recognition',
+                'Time and Attendance Tracking'
+              ].map((feature) => (
+                <div key={feature} className="flex items-center space-x-3 text-[#0B2447] font-semibold">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                  <span>{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" 
+              alt="Access Control Hardware" 
+              className="rounded-3xl shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-600/20 rounded-full blur-2xl animate-pulse"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="bg-white p-8 md:p-12 rounded-[2rem] shadow-sm border border-gray-100">
+          <div className="text-center max-w-2xl mx-auto mb-12">
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-4">Why Access Control Matters</h2>
+            <p className="text-gray-600">Traditional keys are a liability. Modern access control provides security, auditability, and convenience.</p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              { title: 'Audit Trails', desc: 'Know exactly who entered and when.' },
+              { title: 'Instant Revoke', desc: 'Disable access immediately if a fob is lost.' },
+              { title: 'Schedule Based', desc: 'Set specific hours for employee access.' },
+              { title: 'Remote Unlock', desc: 'Open doors for deliveries from your phone.' }
+            ].map((item) => (
+              <div key={item.title} className="text-center">
+                <h4 className="font-bold text-[#0B2447] mb-2">{item.title}</h4>
+                <p className="text-xs text-gray-500">{item.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -695,15 +846,60 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
             We provide end-to-end fire safety solutions, from initial plans and permitting to final inspection and ongoing 24/7 monitoring.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 text-left">
-            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl">
-              <Check className="text-green-500" />
-              <span className="font-semibold">NFPA 72 Compliant</span>
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl border border-transparent hover:border-red-500/30 hover:shadow-lg transition-all duration-300 group">
+              <Check className="text-green-500 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold text-[#0B2447]">NFPA 72 Compliant</span>
             </div>
-            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl">
-              <Check className="text-green-500" />
-              <span className="font-semibold">UL Listed Monitoring</span>
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl border border-transparent hover:border-red-500/30 hover:shadow-lg transition-all duration-300 group">
+              <Check className="text-green-500 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold text-[#0B2447]">UL Listed Monitoring</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Professional Fire Alarm Monitoring</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">Our UL-listed central station monitoring ensures that emergency services are dispatched immediately when an alarm is triggered, 24 hours a day, 365 days a year.</p>
+            <div className="space-y-4">
+              {[
+                'Cellular & IP Monitoring Paths',
+                'Daily Auto-Test Signals',
+                'Instant Notification via Mobile App',
+                'Professional Dispatch Services'
+              ].map((item) => (
+                <div key={item} className="flex items-center space-x-3">
+                  <Shield className="text-red-600" size={20} />
+                  <span className="text-gray-700 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-red-50 p-8 rounded-[3rem] border border-red-100">
+            <h3 className="text-2xl font-bold text-red-600 mb-6">Annual Inspections</h3>
+            <p className="text-gray-700 mb-6">Stay compliant with local Miami-Dade fire codes. We provide comprehensive annual testing and certification for all fire alarm systems.</p>
+            <ul className="space-y-3 text-sm text-gray-600">
+              <li>• Smoke Detector Sensitivity Testing</li>
+              <li>• Horn/Strobe Functional Testing</li>
+              <li>• Battery Load Testing</li>
+              <li>• Control Panel Diagnostics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Our Fire Safety Partners</h2>
+        <div className="flex flex-wrap justify-center gap-12 opacity-40">
+          {['Honeywell', 'Fire-Lite', 'Silent Knight', 'Notifier'].map((brand) => (
+            <span key={brand} className="text-2xl font-bold italic">{brand}</span>
+          ))}
         </div>
       </div>
     </section>
@@ -746,10 +942,10 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
               A great security or automation system is only as good as the network it runs on. We provide expert structured cabling and robust Wi-Fi solutions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Enterprise Wi-Fi</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Cat6 Cabling</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Fiber Optics</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Rack Management</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Enterprise Wi-Fi</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Cat6 Cabling</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Fiber Optics</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Rack Management</div>
             </div>
           </div>
           <img 
@@ -758,6 +954,56 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
             className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto mt-8 lg:mt-0 border-4 border-white"
             referrerPolicy="no-referrer"
           />
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="order-2 md:order-1">
+            <img 
+              src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=800" 
+              alt="Fiber Optics" 
+              className="rounded-3xl shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+          <div className="order-1 md:order-2">
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Fiber Optic Solutions</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">For large properties or high-bandwidth requirements, fiber optics provide the ultimate in speed and reliability. We offer professional fiber splicing and termination services.</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-4 bg-blue-50 rounded-2xl">
+                <div className="text-blue-600 font-bold mb-1">10Gbps+</div>
+                <div className="text-xs text-gray-500">Speed Potential</div>
+              </div>
+              <div className="p-4 bg-blue-50 rounded-2xl">
+                <div className="text-blue-600 font-bold mb-1">Immune</div>
+                <div className="text-xs text-gray-500">to Interference</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center max-w-2xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold text-[#0B2447] mb-4">Network Security</h2>
+          <p className="text-gray-600">A fast network is useless if it's not secure. We implement enterprise-grade security protocols to protect your data.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Firewall Setup', desc: 'Robust perimeter defense for your network.' },
+            { title: 'VLAN Segregation', desc: 'Isolate guest Wi-Fi from secure business data.' },
+            { title: 'VPN Solutions', desc: 'Secure remote access for your employees.' }
+          ].map((item) => (
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 transition-all group">
+              <h4 className="font-bold text-[#0B2447] mb-3 group-hover:text-blue-600">{item.title}</h4>
+              <p className="text-sm text-gray-500">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -794,14 +1040,57 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
     <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4">Home Theater</h3>
+          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">Home Theater</h3>
             <p className="text-gray-600 text-sm md:text-base">Custom surround sound, 4K projectors, and acoustic treatments for the ultimate cinematic experience at home.</p>
           </div>
-          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl">
-            <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4">Commercial Video Walls</h3>
+          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">Commercial Video Walls</h3>
             <p className="text-gray-600 text-sm md:text-base">High-impact video wall installation for sports bars, lobbies, and command centers across South Florida.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Custom Audio Solutions</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">We design and install multi-room audio systems that allow you to enjoy your favorite music in every corner of your home or business, all controlled from your smartphone.</p>
+            <div className="space-y-4">
+              {[
+                'In-Ceiling & In-Wall Speakers',
+                'Outdoor Audio Systems',
+                'Wireless Multi-Room Integration',
+                'High-Fidelity Audio Components'
+              ].map((item) => (
+                <div key={item} className="flex items-center space-x-3">
+                  <Monitor className="text-blue-600" size={20} />
+                  <span className="text-gray-700 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1545016803-a63d00071e11?auto=format&fit=crop&q=80&w=800" 
+              alt="Audio System" 
+              className="rounded-3xl shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8 text-center">
+        <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Premium Audio Partners</h2>
+        <div className="flex flex-wrap justify-center gap-12 opacity-40">
+          {['Sonos', 'Bose', 'Klipsch', 'Denon', 'Marantz'].map((brand) => (
+            <span key={brand} className="text-2xl font-bold italic">{brand}</span>
+          ))}
         </div>
       </div>
     </section>
@@ -845,14 +1134,14 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
               Video walls are the ultimate way to deliver high-impact visual content. Whether you're looking to create a stunning <strong>home theater video wall</strong> or a professional <strong>commercial display system</strong>, Security on the Spot is your expert partner in South Florida.
             </p>
             <div className="space-y-6">
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center group-hover:text-blue-600 transition-colors">
                   <Monitor className="mr-2 text-blue-600" size={20} /> Commercial Applications
                 </h3>
                 <p className="text-sm text-gray-500">Perfect for sports bars, corporate lobbies, command centers, and retail showrooms. Engage your audience with massive, crystal-clear displays.</p>
               </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
-                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center">
+              <div className="bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center group-hover:text-blue-600 transition-colors">
                   <Home className="mr-2 text-blue-600" size={20} /> Residential Luxury
                 </h3>
                 <p className="text-sm text-gray-500">Elevate your home entertainment with a custom video wall. Ideal for dedicated media rooms and high-end living spaces.</p>
@@ -892,6 +1181,38 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
               <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Custom Configuration Options</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">Every space is unique. We offer a variety of configurations to meet your specific visual goals and architectural requirements.</p>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                { label: '2x2 Matrix', value: 'Standard' },
+                { label: '3x3 Matrix', value: 'High Impact' },
+                { label: 'Custom Aspect', value: 'Artistic' },
+                { label: 'Curved Walls', value: 'Immersive' }
+              ].map((opt) => (
+                <div key={opt.label} className="p-4 bg-white rounded-2xl shadow-sm border border-blue-100">
+                  <div className="text-blue-600 font-bold">{opt.value}</div>
+                  <div className="text-xs text-gray-500">{opt.label}</div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <img 
+              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" 
+              alt="Video Wall Design" 
+              className="rounded-3xl shadow-2xl"
+              referrerPolicy="no-referrer"
+            />
+          </div>
         </div>
       </div>
     </section>
