@@ -174,9 +174,9 @@
     </nav>
 
     <!-- Mobile Menu Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden pointer-events-none">
-        <div id="menu-backdrop" class="absolute inset-0 bg-brand-navy/20 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
-        <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-8 pointer-events-auto">
+    <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden invisible opacity-0 transition-all duration-300">
+        <div id="menu-backdrop" class="absolute inset-0 bg-brand-navy/40 backdrop-blur-sm"></div>
+        <div id="menu-content" class="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-8 translate-x-full transition-transform duration-300 ease-in-out">
             <div class="flex flex-col space-y-6 mt-12">
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
@@ -205,28 +205,42 @@
 document.addEventListener('DOMContentLoaded', function() {
     const menuToggle = document.getElementById('menu-toggle');
     const mobileMenu = document.getElementById('mobile-menu');
+    const menuContent = document.getElementById('menu-content');
     const menuBackdrop = document.getElementById('menu-backdrop');
     const menuIcon = document.getElementById('menu-icon');
     const closeIcon = document.getElementById('close-icon');
 
-    function toggleMenu() {
-        const isOpen = mobileMenu.classList.contains('active');
-        if (isOpen) {
-            mobileMenu.classList.remove('active');
-            menuBackdrop.style.opacity = '0';
-            menuIcon.classList.remove('hidden');
-            closeIcon.classList.add('hidden');
-            document.body.style.overflow = '';
-        } else {
-            mobileMenu.classList.add('active');
-            menuBackdrop.style.opacity = '1';
-            menuIcon.classList.add('hidden');
-            closeIcon.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        }
+    function openMenu() {
+        mobileMenu.classList.remove('invisible');
+        mobileMenu.classList.add('opacity-100');
+        menuContent.classList.remove('translate-x-full');
+        menuIcon.classList.add('hidden');
+        closeIcon.classList.remove('hidden');
+        document.body.style.overflow = 'hidden';
     }
 
-    menuToggle.addEventListener('click', toggleMenu);
-    menuBackdrop.addEventListener('click', toggleMenu);
+    function closeMenu() {
+        mobileMenu.classList.remove('opacity-100');
+        menuContent.classList.add('translate-x-full');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = '';
+        setTimeout(() => {
+            if (!mobileMenu.classList.contains('opacity-100')) {
+                mobileMenu.classList.add('invisible');
+            }
+        }, 300);
+    }
+
+    menuToggle.addEventListener('click', function() {
+        const isOpen = mobileMenu.classList.contains('opacity-100');
+        if (isOpen) {
+            closeMenu();
+        } else {
+            openMenu();
+        }
+    });
+
+    menuBackdrop.addEventListener('click', closeMenu);
 });
 </script>

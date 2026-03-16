@@ -70,32 +70,79 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
         </div>
       </nav>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-gray-100 p-4 space-y-4 shadow-xl">
-          {navItems.map((item) => (
-            <button
-              key={item.slug}
-              onClick={() => {
-                setActivePage(item.slug);
-                setIsMenuOpen(false);
-              }}
-              className="block w-full text-left font-semibold text-[#0B2447] py-2 border-b border-gray-50"
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <div className="fixed inset-0 z-50 lg:hidden">
+            {/* Backdrop */}
+            <motion.div 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setIsMenuOpen(false)}
+              className="absolute inset-0 bg-[#0B2447]/40 backdrop-blur-sm"
+            />
+            
+            {/* Menu Content */}
+            <motion.div 
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-8 overflow-y-auto"
             >
-              {item.name}
-            </button>
-          ))}
-          <button 
-            onClick={() => {
-              setActivePage('who-we-are');
-              setIsMenuOpen(false);
-            }}
-            className="block w-full text-left font-semibold text-[#0B2447] py-2"
-          >
-            Who We Are
-          </button>
-        </div>
-      )}
+              <div className="flex justify-end mb-8">
+                <button 
+                  onClick={() => setIsMenuOpen(false)}
+                  className="p-2 bg-gray-50 rounded-xl text-[#0B2447] hover:bg-blue-50 transition-colors"
+                >
+                  <X size={24} />
+                </button>
+              </div>
+              
+              <div className="flex flex-col space-y-6">
+                {navItems.map((item) => (
+                  <button
+                    key={item.slug}
+                    onClick={() => {
+                      setActivePage(item.slug);
+                      setIsMenuOpen(false);
+                    }}
+                    className={`text-xl font-bold text-left transition ${activePage === item.slug ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
+                  >
+                    {item.name}
+                  </button>
+                ))}
+                <button 
+                  onClick={() => {
+                    setActivePage('who-we-are');
+                    setIsMenuOpen(false);
+                  }}
+                  className={`text-xl font-bold text-left transition ${activePage === 'who-we-are' ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
+                >
+                  Who We Are
+                </button>
+                
+                <div className="pt-8 border-t border-gray-100">
+                  <a href="tel:7868227868" className="flex items-center space-x-3 text-[#0B2447] font-bold mb-6">
+                    <Phone className="w-6 h-6 text-blue-600" />
+                    <span>(786) 822-7868</span>
+                  </a>
+                  <button 
+                    onClick={() => {
+                      setActivePage('contact-us');
+                      setIsMenuOpen(false);
+                    }}
+                    className="w-full bg-[#0B2447] text-white text-center py-4 rounded-2xl font-bold shadow-lg active:scale-95 transition-transform"
+                  >
+                    Get a Free Quote
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </header>
   );
 };
