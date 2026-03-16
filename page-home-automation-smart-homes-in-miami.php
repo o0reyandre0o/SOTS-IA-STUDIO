@@ -36,25 +36,25 @@ get_header();
                         From <strong>smart home lighting control in Florida</strong> to integrated climate and security systems, we design solutions that fit your lifestyle perfectly.
                     </p>
                     <div class="grid grid-cols-2 gap-6">
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-brand-security mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                            <span class="text-gray-700 font-medium">Smart Lighting Control</span>
+                        <div class="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-security mt-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Smart Lighting Control</span>
                         </div>
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-brand-security mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                            <span class="text-gray-700 font-medium">Climate Integration</span>
+                        <div class="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-security mt-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.989-2.386l-.548-.547z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Climate Integration</span>
                         </div>
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-brand-security mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                            <span class="text-gray-700 font-medium">Automated Shades</span>
+                        <div class="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-security mt-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Automated Shades</span>
                         </div>
-                        <div class="flex items-start space-x-3">
-                            <svg class="w-6 h-6 text-brand-security mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                            <span class="text-gray-700 font-medium">Whole Home Audio</span>
+                        <div class="flex items-start space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                            <svg class="w-6 h-6 text-brand-security mt-1 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Whole Home Audio</span>
                         </div>
                     </div>
                 </div>
-                <div class="relative">
+                <div class="relative hover-card">
                     <img src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" alt="Smart Home System Miami" class="rounded-3xl shadow-xl">
                     <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hidden md:block">
                         <div class="text-brand-security font-bold text-2xl">100%</div>
@@ -70,19 +70,43 @@ get_header();
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-3xl font-bold text-brand-navy text-center mb-16">Smart Solutions for Modern Miami Living</h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-brand-navy mb-4">Smart Lighting Control</h3>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-brand-security/30 hover:shadow-xl transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-security transition-colors">Smart Lighting Control</h3>
                     <p class="text-gray-600 text-sm">Automate your <strong>smart home lighting control in Florida</strong>. Save energy and create the perfect ambiance with custom scenes.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-brand-navy mb-4">Voice Control Integration</h3>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-brand-security/30 hover:shadow-xl transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-security transition-colors">Voice Control Integration</h3>
                     <p class="text-gray-600 text-sm">Control your <strong>smart home miami</strong> with your voice. Seamless integration with Alexa, Google Home, and Siri.</p>
                 </div>
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
-                    <h3 class="text-xl font-bold text-brand-navy mb-4">Energy Automation</h3>
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-brand-security/30 hover:shadow-xl transition-all duration-300 group">
+                    <h3 class="text-xl font-bold text-brand-navy mb-4 group-hover:text-brand-security transition-colors">Energy Automation</h3>
                     <p class="text-gray-600 text-sm">Optimize your home's energy usage with smart thermostats and automated shade control.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Partner Brands -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">Our Smart Home Partners</h2>
+            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd_iQqVslxsiDSq-_X8LrTSasRfkMp0rD3nZK0L4d6OhuHRinNFoKDPwnnb7jWBv92U7Qjffl-DFABdUGe8Ru7-Neo1t9KBQ6tgTdH_dUWbQ7_QbEG7p14CDfUYMd3QnBUmB9cSwem-x3Kt_H1mVjo24YfK3OaHsLfSVDf6ga2ZTyTE8IBCoV0DRoOUtWADQ-aGiG81UIx-pHPBSrh4OOvYuMorRtKeL8bW7gX9DHUvNtgODEKbhIzQzNsCxu1cbzWmEQGWyEGyD8x" alt="Partner" class="h-10">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexWnInQIk2--6wKSE7_9fnuqBZT-WzKAoeoHv0Mu9lpOyeJ2BiyAQtJ-gPrfwf9pGYs8kM6vgPbHC5z4J_ptt7E0RX_5HajgRvf74_kwJVGZsO47zq-HnYUcirikAaA3RAZ59wEPPSjeV87NSm02K7OWEtNgZHeYLMZU_SojcSjpuZVtafcI33CK1dTiWFZYD28chy9PsjEbJysyoy6vV5kZ0PL2B_QQqD055yzmamhlunDlHNflLyDZ-aAtmi7uM-OAjzZW6iYM_" alt="Partner" class="h-10">
+                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRe6AwXLBxpLgo5mhoDtfNRIDhHL4nCxTdT1pYQ169q9Euy9qAtp5iTPElKy9fxju75bkKYYOMh1r8AGQqNMYtiOdYrN9xCLhG5C7bw5jVLx-vphBGuapiE4hm25IBrfmhDj8s8OiyP3_eiNUt6JdsB5yRsXWrTr8AmWOWCLj0-YVCPnXyIjEednzsYSzSW0ybEgVBjo2zJ8yb4v1ZW5CiFKqQuI0OAzB8AMqqTTl-gwZcwMhdVPACVmWl4fmzMkXmW2txXOZERUb" alt="Partner" class="h-10">
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
+        <div class="absolute inset-0 bg-brand-security/10 blur-3xl translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Transform Your Home Today</h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Get a personalized consultation for your smart home project in Miami.</p>
+            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl active-scale inline-block">
+                Schedule Your Consultation
+            </a>
         </div>
     </section>
 </main>

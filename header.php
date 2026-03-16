@@ -135,12 +135,14 @@
 <?php wp_body_open(); ?>
 
 <header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-    <nav class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+    <nav class="container mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
         <div class="flex items-center space-x-2">
-            <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img alt="Security on the Spot Logo" class="h-10 md:h-14 w-auto object-contain" src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp">
+            <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="flex items-center">
+                <img alt="Security on the Spot Logo" class="h-8 md:h-14 w-auto object-contain" src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp">
             </a>
         </div>
+
+        <!-- Desktop Nav -->
         <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-brand-navy">
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
@@ -148,13 +150,76 @@
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
         </div>
-        <div class="flex items-center space-x-4">
-            <a class="hidden sm:block text-brand-navy font-bold text-sm" href="tel:7868227868">
+
+        <div class="flex items-center space-x-2 md:space-x-4">
+            <a class="hidden lg:block text-brand-navy font-bold text-sm" href="tel:7868227868">
                 (786) 822-7868
             </a>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-navy hover:bg-brand-security text-white px-6 py-2 rounded-full text-sm font-bold transition">
+            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-navy hover:bg-brand-security text-white px-4 md:px-6 py-2.5 rounded-full text-[11px] md:text-sm font-bold transition whitespace-nowrap shadow-md active-scale">
                 Free Quote
             </a>
+            
+            <!-- Mobile Menu Toggle -->
+            <button id="menu-toggle" class="lg:hidden text-brand-navy p-2 bg-gray-50 rounded-xl flex-shrink-0 ml-1 hover:bg-blue-50 transition-colors border border-gray-100">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                <svg id="close-icon" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+            </button>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden pointer-events-none">
+        <div id="menu-backdrop" class="absolute inset-0 bg-brand-navy/20 backdrop-blur-sm opacity-0 transition-opacity duration-300"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-8 pointer-events-auto">
+            <div class="flex flex-col space-y-6 mt-12">
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-services' ) ); ?>">Audio & Video</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/who-we-are' ) ); ?>">Who We Are</a>
+                <div class="pt-8 border-t border-gray-100">
+                    <a href="tel:7868227868" class="flex items-center space-x-3 text-brand-navy font-bold mb-6">
+                        <svg class="w-6 h-6 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                        <span>(786) 822-7868</span>
+                    </a>
+                    <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="block w-full bg-brand-navy text-white text-center py-4 rounded-2xl font-bold shadow-lg active-scale">
+                        Get a Free Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 </header>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const menuBackdrop = document.getElementById('menu-backdrop');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    function toggleMenu() {
+        const isOpen = mobileMenu.classList.contains('active');
+        if (isOpen) {
+            mobileMenu.classList.remove('active');
+            menuBackdrop.style.opacity = '0';
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            document.body.style.overflow = '';
+        } else {
+            mobileMenu.classList.add('active');
+            menuBackdrop.style.opacity = '1';
+            menuIcon.classList.add('hidden');
+            closeIcon.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuBackdrop.addEventListener('click', toggleMenu);
+});
+</script>

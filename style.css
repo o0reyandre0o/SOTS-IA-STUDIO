@@ -3,7 +3,7 @@ Theme Name: Security on the Spot
 Theme URI: https://ais-dev-tvdzldhhhlxnxk6zlzm23l-484875484455.us-east1.run.app
 Author: AI Studio
 Description: Expert Security Camera Installation and CCTV Systems in Miami.
-Version: 1.0.12
+Version: 1.0.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: security-on-the-spot
@@ -12,4 +12,48 @@ Text Domain: security-on-the-spot
 /* Tailwind is loaded via CDN in header.php for simplicity in this export */
 body {
     font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* Custom Interactive Accents */
+.hover-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(37, 99, 235, 0.3);
+    box-shadow: 0 20px 25px -5px rgba(37, 99, 235, 0.1), 0 10px 10px -5px rgba(37, 99, 235, 0.04);
+}
+
+.hover-blue-text:hover {
+    color: #2563eb !important;
+}
+
+.hover-blue-bg:hover {
+    background-color: #eff6ff !important;
+}
+
+.active-scale:active {
+    transform: scale(0.95);
+}
+
+/* Mobile Menu Animation */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    transform: translateX(100%);
+    opacity: 0;
+}
+
+#mobile-menu.active {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+/* Sticky CTA Blur */
+.glass-morphism {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
