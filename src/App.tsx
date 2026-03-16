@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram } from 'lucide-react';
+import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 // --- Components ---
@@ -20,10 +20,10 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
-        PREVIEW UPDATED (v1.0.12): Expanded Content for All Internal Pages.
+      <div className="bg-[#0B2447] py-2 px-4 text-center text-[10px] md:text-xs text-white font-bold border-b border-blue-900">
+        PREVIEW UPDATED (v1.0.13): Mobile Optimization & Sticky CTA.
       </div>
-      <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+      <nav className="container mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <button onClick={() => setActivePage('home')} className="flex items-center">
             <img 
@@ -48,24 +48,24 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
           ))}
         </div>
 
-        <div className="flex items-center space-x-1 md:space-x-4">
-          <a className="hidden sm:block text-[#0B2447] font-bold text-sm" href="tel:7868227868">
+        <div className="flex items-center space-x-2 md:space-x-4">
+          <a className="hidden lg:block text-[#0B2447] font-bold text-sm" href="tel:7868227868">
             (786) 822-7868
           </a>
           <button 
             onClick={() => setActivePage('contact-us')}
-            className="bg-[#0B2447] hover:bg-blue-600 text-white px-3 md:px-6 py-2 rounded-full text-[10px] md:text-sm font-bold transition whitespace-nowrap"
+            className="bg-[#0B2447] hover:bg-blue-600 text-white px-4 md:px-6 py-2.5 rounded-full text-[11px] md:text-sm font-bold transition whitespace-nowrap shadow-md active:scale-95"
           >
             Free Quote
           </button>
           
           {/* Mobile Menu Toggle */}
           <button 
-            className="lg:hidden text-[#0B2447] p-2 bg-gray-100 rounded-lg flex-shrink-0 ml-1" 
+            className="lg:hidden text-[#0B2447] p-2 bg-gray-50 rounded-xl flex-shrink-0 ml-1 hover:bg-blue-50 transition-colors border border-gray-100" 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
           >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
+            {isMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
         </div>
       </nav>
@@ -380,9 +380,9 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
                 'Smart Motion & AI Human Detection',
                 'Weatherproof & Vandal-Resistant Designs'
               ].map((item) => (
-                <li key={item} className="flex items-center space-x-3">
-                  <Shield className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700 font-medium text-sm md:text-base">{item}</span>
+                <li key={item} className="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
+                  <Shield className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform" />
+                  <span className="text-gray-700 font-medium text-sm md:text-base group-hover:text-blue-600 transition-colors">{item}</span>
                 </li>
               ))}
             </ul>
@@ -424,7 +424,7 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
             <img 
               src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000" 
               alt="Security Monitoring" 
-              className="rounded-3xl shadow-2xl"
+              className="rounded-3xl shadow-2xl border-4 border-white"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -437,18 +437,44 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
                 { title: 'Cloud Storage', desc: 'Securely back up your footage to the cloud for extra protection.' },
                 { title: 'AI Analytics', desc: 'Smart detection for people, vehicles, and specific events to reduce false alarms.' }
               ].map((feature) => (
-                <div key={feature.title} className="flex space-x-4 p-4 rounded-2xl hover:bg-blue-50 transition-colors group">
-                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <div key={feature.title} className="flex space-x-4 p-4 rounded-2xl bg-white border border-transparent hover:border-blue-500/20 hover:bg-blue-50/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 group">
+                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
                     <Shield size={24} />
                   </div>
                   <div>
-                    <h4 className="font-bold text-[#0B2447]">{feature.title}</h4>
+                    <h4 className="font-bold text-[#0B2447] group-hover:text-blue-600 transition-colors">{feature.title}</h4>
                     <p className="text-sm text-gray-600">{feature.desc}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-900 text-white overflow-hidden relative">
+      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Security on the Spot?</h2>
+          <p className="text-gray-400">We are Miami's premier security camera installation experts, dedicated to your safety.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { title: 'Local Expertise', desc: 'Serving Miami-Dade for over 20 years.' },
+            { title: 'Certified Techs', desc: 'Expert installation by trained professionals.' },
+            { title: 'Top Brands', desc: 'We only use reliable, high-end equipment.' },
+            { title: '24/7 Support', desc: 'Always here when you need help.' }
+          ].map((item) => (
+            <div key={item.title} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-300 group">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
+                <Check size={24} />
+              </div>
+              <h4 className="font-bold mb-2 text-blue-400">{item.title}</h4>
+              <p className="text-sm text-gray-400">{item.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -544,11 +570,41 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
             { title: 'Voice Control Integration', desc: 'Control your smart home miami with your voice. Seamless integration with Alexa, Google Home, and Siri.' },
             { title: 'Energy Automation', desc: 'Optimize your home\'s energy usage with smart thermostats and automated shade control.' }
           ].map((item) => (
-            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/10 transition-all duration-300 group hover:-translate-y-1">
+              <div className="w-12 h-12 bg-blue-50 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <Zap size={24} />
+              </div>
               <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
               <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <div className="order-2 lg:order-1">
+            <div className="grid grid-cols-2 gap-4">
+              <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=400" alt="Smart Home 1" className="rounded-2xl shadow-lg hover:scale-105 transition-transform duration-500" />
+              <img src="https://images.unsplash.com/photo-1585232004423-244e0e6904e3?auto=format&fit=crop&q=80&w=400" alt="Smart Home 2" className="rounded-2xl shadow-lg mt-8 hover:scale-105 transition-transform duration-500" />
+            </div>
+          </div>
+          <div className="order-1 lg:order-2">
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Automated Climate Control</h2>
+            <p className="text-gray-600 mb-8 leading-relaxed">In Miami's heat, smart climate control is a necessity. We integrate high-end thermostats that learn your schedule and optimize cooling for maximum comfort and minimum cost.</p>
+            <ul className="space-y-4">
+              {['Remote Temperature Adjustment', 'Humidity Monitoring', 'Zoned Cooling Systems', 'Smart Vent Integration'].map((item) => (
+                <li key={item} className="flex items-center space-x-3 text-gray-700 p-2 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
+                  <div className="w-5 h-5 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                    <Check size={12} />
+                  </div>
+                  <span className="font-medium group-hover:text-blue-600 transition-colors">{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -590,9 +646,9 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
     <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8 text-center">
         <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Our Integration Partners</h2>
-        <div className="flex flex-wrap justify-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
+        <div className="flex flex-wrap justify-center gap-8 md:gap-16">
           {['Control4', 'Lutron', 'Savant', 'Crestron', 'Sonos'].map((brand) => (
-            <span key={brand} className="text-2xl md:text-4xl font-black text-[#0B2447]">{brand}</span>
+            <span key={brand} className="text-2xl md:text-4xl font-black text-[#0B2447] opacity-30 hover:opacity-100 hover:text-blue-600 transition-all duration-300 cursor-default">{brand}</span>
           ))}
         </div>
       </div>
@@ -617,42 +673,43 @@ const ContactPage = () => (
           <div>
             <h2 className="text-2xl md:text-3xl font-bold text-[#0B2447] mb-8">Get in Touch</h2>
             <div className="space-y-6 md:space-y-8">
-              <div className="flex items-start space-x-4">
-                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0">
+              <div className="flex items-start space-x-4 group cursor-pointer">
+                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Phone size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base md:text-lg text-[#0B2447]">Phone</h3>
+                  <h3 className="font-bold text-base md:text-lg text-[#0B2447] group-hover:text-blue-600 transition-colors">Phone</h3>
                   <p className="text-gray-600 text-sm md:text-base">(786) 822-7868</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0">
+              <div className="flex items-start space-x-4 group cursor-pointer">
+                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <Mail size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base md:text-lg text-[#0B2447]">Email</h3>
+                  <h3 className="font-bold text-base md:text-lg text-[#0B2447] group-hover:text-blue-600 transition-colors">Email</h3>
                   <p className="text-gray-600 text-sm md:text-base">info@securityonthespot.com</p>
                 </div>
               </div>
-              <div className="flex items-start space-x-4">
-                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0">
+              <div className="flex items-start space-x-4 group cursor-pointer">
+                <div className="bg-slate-50 p-3 rounded-lg text-blue-600 flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                   <MapPin size={20} className="md:w-6 md:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-base md:text-lg text-[#0B2447]">Service Area</h3>
+                  <h3 className="font-bold text-base md:text-lg text-[#0B2447] group-hover:text-blue-600 transition-colors">Service Area</h3>
                   <p className="text-gray-600 text-sm md:text-base">Miami, FL and surrounding South Florida areas.</p>
                 </div>
               </div>
             </div>
           </div>
-          <div className="bg-slate-50 p-6 md:p-8 rounded-3xl border border-gray-100 mt-8 lg:mt-0">
-            <h2 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-6">Send us a Message</h2>
-            <form className="space-y-4">
-              <input type="text" placeholder="Full Name" className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base" />
-              <input type="email" placeholder="Email Address" className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base" />
-              <textarea placeholder="Message" rows={4} className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base"></textarea>
-              <button className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition text-sm md:text-base">
+          <div className="bg-white p-6 md:p-10 rounded-[2.5rem] shadow-2xl shadow-blue-500/5 border border-gray-100 mt-8 lg:mt-0 relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-50 rounded-full -translate-y-1/2 translate-x-1/2"></div>
+            <h2 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-6 relative z-10">Send us a Message</h2>
+            <form className="space-y-4 relative z-10">
+              <input type="text" placeholder="Full Name" className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all" />
+              <input type="email" placeholder="Email Address" className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all" />
+              <textarea placeholder="Message" rows={4} className="w-full p-4 rounded-xl border border-gray-200 text-sm md:text-base focus:border-blue-500 focus:ring-2 focus:ring-blue-500/20 outline-none transition-all"></textarea>
+              <button className="w-full bg-blue-600 text-white font-bold py-4 rounded-xl hover:bg-blue-700 transition text-sm md:text-base shadow-lg shadow-blue-600/20 active:scale-95">
                 Send Message
               </button>
             </form>
@@ -690,16 +747,53 @@ const WhoWeArePage = () => (
             <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
               At Security on the Spot, we believe that safety is a fundamental right. Our mission is to provide high-quality, reliable, and innovative security solutions to the Miami community and beyond.
             </p>
-            <p className="text-base md:text-lg text-gray-600 leading-relaxed">
+            <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">
               With years of experience in the industry, we have built a reputation for excellence, professionalism, and unparalleled customer service.
             </p>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-blue-500/30 hover:shadow-xl transition-all group">
+                <div className="text-3xl font-bold text-blue-600 mb-1">20+</div>
+                <div className="text-xs text-gray-500 uppercase font-bold">Years Experience</div>
+              </div>
+              <div className="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-blue-500/30 hover:shadow-xl transition-all group">
+                <div className="text-3xl font-bold text-blue-600 mb-1">1k+</div>
+                <div className="text-xs text-gray-500 uppercase font-bold">Projects Done</div>
+              </div>
+            </div>
           </div>
-          <img 
-            src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" 
-            alt="Our Team" 
-            className="rounded-3xl shadow-2xl w-full object-cover h-64 md:h-auto"
-            referrerPolicy="no-referrer"
-          />
+          <div className="relative group">
+            <img 
+              src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp" 
+              alt="Our Team" 
+              className="w-full max-w-md mx-auto opacity-80 group-hover:opacity-100 transition-opacity duration-500"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-blue-600/5 rounded-3xl blur-3xl -z-10"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl font-bold text-[#0B2447] mb-4">Our Core Values</h2>
+          <p className="text-gray-600">The principles that guide everything we do at Security on the Spot.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Integrity', desc: 'We are honest, transparent, and ethical in all our interactions.' },
+            { title: 'Innovation', desc: 'We stay ahead of the curve with the latest security technologies.' },
+            { title: 'Customer First', desc: 'Your safety and satisfaction are our top priorities.' }
+          ].map((value) => (
+            <div key={value.title} className="bg-white p-10 rounded-[2.5rem] shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 group text-center">
+              <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <Shield size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-[#0B2447] mb-4">{value.title}</h4>
+              <p className="text-gray-600 text-sm leading-relaxed">{value.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -765,21 +859,54 @@ const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) =>
                 'License Plate Recognition',
                 'Time and Attendance Tracking'
               ].map((feature) => (
-                <div key={feature} className="flex items-center space-x-3 text-[#0B2447] font-semibold">
-                  <div className="w-2 h-2 bg-blue-600 rounded-full"></div>
+                <div key={feature} className="flex items-center space-x-3 text-[#0B2447] font-semibold p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                  <div className="w-2 h-2 bg-blue-600 rounded-full group-hover:scale-150 transition-transform"></div>
                   <span>{feature}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative">
+          <div className="relative group">
             <img 
               src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80&w=800" 
               alt="Access Control Hardware" 
-              className="rounded-3xl shadow-2xl"
+              className="rounded-3xl shadow-2xl border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-24 h-24 bg-blue-600/20 rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute inset-0 rounded-3xl bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-900 text-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold mb-6">Cloud-Based Management</h2>
+            <p className="text-gray-400 mb-8">Manage your entire facility's access from a single dashboard. Add or remove users, set schedules, and view entry logs in real-time from any device.</p>
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+                <div className="text-2xl font-bold text-blue-400 mb-1">Real-time</div>
+                <div className="text-xs text-gray-500 uppercase">Alerts</div>
+              </div>
+              <div className="p-6 bg-white/5 rounded-2xl border border-white/10 hover:border-blue-500/50 transition-colors">
+                <div className="text-2xl font-bold text-blue-400 mb-1">Unlimited</div>
+                <div className="text-xs text-gray-500 uppercase">Users</div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-blue-600 p-8 md:p-12 rounded-[3rem] shadow-2xl shadow-blue-600/20 relative overflow-hidden group">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2 group-hover:scale-150 transition-transform duration-700"></div>
+            <h3 className="text-2xl font-bold mb-4">Ready to upgrade your security?</h3>
+            <p className="text-blue-100 mb-8">Contact us for a professional assessment of your property's access needs.</p>
+            <button 
+              onClick={() => setActivePage('contact-us')}
+              className="bg-white text-blue-600 font-bold px-8 py-4 rounded-full hover:bg-blue-50 transition shadow-xl"
+            >
+              Get Started
+            </button>
           </div>
         </div>
       </div>
@@ -854,6 +981,14 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
               <Check className="text-green-500 group-hover:scale-110 transition-transform" />
               <span className="font-semibold text-[#0B2447]">UL Listed Monitoring</span>
             </div>
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl border border-transparent hover:border-red-500/30 hover:shadow-lg transition-all duration-300 group">
+              <Check className="text-green-500 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold text-[#0B2447]">Miami-Dade Fire Code Certified</span>
+            </div>
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl border border-transparent hover:border-red-500/30 hover:shadow-lg transition-all duration-300 group">
+              <Check className="text-green-500 group-hover:scale-110 transition-transform" />
+              <span className="font-semibold text-[#0B2447]">Annual Certification Services</span>
+            </div>
           </div>
         </div>
       </div>
@@ -872,9 +1007,9 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
                 'Instant Notification via Mobile App',
                 'Professional Dispatch Services'
               ].map((item) => (
-                <div key={item} className="flex items-center space-x-3">
-                  <Shield className="text-red-600" size={20} />
-                  <span className="text-gray-700 font-medium">{item}</span>
+                <div key={item} className="flex items-center space-x-3 p-3 rounded-xl hover:bg-red-50 transition-colors group cursor-default">
+                  <Shield className="text-red-600 group-hover:scale-110 transition-transform" size={20} />
+                  <span className="text-gray-700 font-medium group-hover:text-red-600 transition-colors">{item}</span>
                 </div>
               ))}
             </div>
@@ -896,9 +1031,9 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
     <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8 text-center">
         <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Our Fire Safety Partners</h2>
-        <div className="flex flex-wrap justify-center gap-12 opacity-40">
+        <div className="flex flex-wrap justify-center gap-12">
           {['Honeywell', 'Fire-Lite', 'Silent Knight', 'Notifier'].map((brand) => (
-            <span key={brand} className="text-2xl font-bold italic">{brand}</span>
+            <span key={brand} className="text-2xl font-bold italic text-[#0B2447] opacity-30 hover:opacity-100 hover:text-red-600 transition-all duration-300 cursor-default">{brand}</span>
           ))}
         </div>
       </div>
@@ -942,18 +1077,29 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
               A great security or automation system is only as good as the network it runs on. We provide expert structured cabling and robust Wi-Fi solutions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Enterprise Wi-Fi</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Cat6 Cabling</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Fiber Optics</div>
-              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1">Rack Management</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                <span className="group-hover:text-blue-600 transition-colors">Enterprise Wi-Fi</span>
+              </div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                <span className="group-hover:text-blue-600 transition-colors">Cat6 Cabling</span>
+              </div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                <span className="group-hover:text-blue-600 transition-colors">Fiber Optics</span>
+              </div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base border border-transparent hover:border-blue-500/30 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 group">
+                <span className="group-hover:text-blue-600 transition-colors">Rack Management</span>
+              </div>
             </div>
           </div>
-          <img 
-            src="https://securityonthespot.com/wp-content/uploads/2025/08/network-cables.jpg" 
-            alt="Network Cables" 
-            className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto mt-8 lg:mt-0 border-4 border-white"
-            referrerPolicy="no-referrer"
-          />
+          <div className="relative group">
+            <img 
+              src="https://securityonthespot.com/wp-content/uploads/2025/08/network-cables.jpg" 
+              alt="Network Cables" 
+              className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto mt-8 lg:mt-0 border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 rounded-3xl bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
+          </div>
         </div>
       </div>
     </section>
@@ -1065,9 +1211,9 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
                 'Wireless Multi-Room Integration',
                 'High-Fidelity Audio Components'
               ].map((item) => (
-                <div key={item} className="flex items-center space-x-3">
-                  <Monitor className="text-blue-600" size={20} />
-                  <span className="text-gray-700 font-medium">{item}</span>
+                <div key={item} className="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
+                  <Monitor className="text-blue-600 group-hover:scale-110 transition-transform" size={20} />
+                  <span className="text-gray-700 font-medium group-hover:text-blue-600 transition-colors">{item}</span>
                 </div>
               ))}
             </div>
@@ -1087,9 +1233,26 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
     <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8 text-center">
         <h2 className="text-3xl font-bold text-[#0B2447] mb-12">Premium Audio Partners</h2>
-        <div className="flex flex-wrap justify-center gap-12 opacity-40">
+        <div className="flex flex-wrap justify-center gap-12">
           {['Sonos', 'Bose', 'Klipsch', 'Denon', 'Marantz'].map((brand) => (
-            <span key={brand} className="text-2xl font-bold italic">{brand}</span>
+            <span key={brand} className="text-2xl font-bold italic text-[#0B2447] opacity-30 hover:opacity-100 hover:text-blue-600 cursor-default transition-all duration-300">{brand}</span>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Outdoor Audio', desc: 'Weatherproof speakers for pools, patios, and outdoor living spaces.' },
+            { title: 'Acoustic Treatment', desc: 'Professional sound dampening for theaters and media rooms.' },
+            { title: 'Smart Integration', desc: 'Control your entire AV system from a single interface.' }
+          ].map((item) => (
+            <div key={item.title} className="p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-500/30 hover:bg-white hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group">
+              <h4 className="font-bold text-[#0B2447] mb-3 group-hover:text-blue-600">{item.title}</h4>
+              <p className="text-sm text-gray-500">{item.desc}</p>
+            </div>
           ))}
         </div>
       </div>
@@ -1173,11 +1336,11 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
             { title: 'Robust Mounting', desc: 'Our team uses professional-grade hardware to safely secure heavy displays on any wall surface.', icon: <Shield /> },
             { title: 'Expert Calibration', desc: 'We optimize brightness, contrast, and color settings to ensure your video wall looks stunning in any lighting.', icon: <Monitor /> }
           ].map((benefit) => (
-            <div key={benefit.title} className="text-center p-8 bg-slate-50 rounded-3xl border border-gray-100">
-              <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mx-auto mb-6">
+            <div key={benefit.title} className="text-center p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-500/30 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 group">
+              <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                 {benefit.icon}
               </div>
-              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{benefit.title}</h3>
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{benefit.title}</h3>
               <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
             </div>
           ))}
@@ -1198,22 +1361,34 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
                 { label: 'Custom Aspect', value: 'Artistic' },
                 { label: 'Curved Walls', value: 'Immersive' }
               ].map((opt) => (
-                <div key={opt.label} className="p-4 bg-white rounded-2xl shadow-sm border border-blue-100">
-                  <div className="text-blue-600 font-bold">{opt.value}</div>
+                <div key={opt.label} className="p-4 bg-white rounded-2xl shadow-sm border border-blue-100 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition-all group">
+                  <div className="text-blue-600 font-bold group-hover:scale-110 transition-transform origin-left">{opt.value}</div>
                   <div className="text-xs text-gray-500">{opt.label}</div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="relative">
+          <div className="relative group">
             <img 
               src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" 
               alt="Video Wall Design" 
-              className="rounded-3xl shadow-2xl"
+              className="rounded-3xl shadow-2xl border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]"
               referrerPolicy="no-referrer"
             />
+            <div className="absolute inset-0 rounded-3xl bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-[#0B2447] text-white overflow-hidden relative">
+      <div className="absolute top-0 left-0 w-full h-full opacity-10">
+        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920" alt="Pattern" className="w-full h-full object-cover" />
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
+        <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready for a Visual Transformation?</h2>
+        <p className="text-gray-300 mb-12 max-w-2xl mx-auto">Contact us today for a free consultation and see how our video wall solutions can elevate your Miami business or home.</p>
+        <button onClick={() => setActivePage('contact-us')} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-12 py-5 rounded-full transition shadow-2xl hover:scale-105 active:scale-95">Get a Custom Quote</button>
       </div>
     </section>
   </div>
@@ -1263,6 +1438,26 @@ export default function App() {
           </motion.div>
         </AnimatePresence>
       </main>
+
+      {/* Sticky Mobile CTA */}
+      <div className="lg:hidden fixed bottom-6 left-0 right-0 z-40 px-6 pointer-events-none">
+        <div className="flex space-x-3 pointer-events-auto bg-white/10 backdrop-blur-md p-2 rounded-[2rem] border border-white/20 shadow-2xl">
+          <a 
+            href="tel:7868227868"
+            className="flex-1 bg-[#0B2447] text-white py-4 rounded-2xl font-bold text-center shadow-lg flex items-center justify-center space-x-2 active:scale-95 transition-transform"
+          >
+            <Phone size={18} />
+            <span className="text-sm">Call Now</span>
+          </a>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="flex-1 bg-blue-600 text-white py-4 rounded-2xl font-bold text-center shadow-lg flex items-center justify-center space-x-2 active:scale-95 transition-transform"
+          >
+            <MessageSquare size={18} />
+            <span className="text-sm">Quote</span>
+          </button>
+        </div>
+      </div>
 
       <Footer setActivePage={setActivePage} />
     </div>
