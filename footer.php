@@ -25,11 +25,11 @@
             <div>
                 <h4 class="font-bold text-lg mb-6">Quick Links</h4>
                 <ul class="space-y-4 text-gray-400">
-                    <li><a class="hover:text-white transition" href="#">Security Cameras</a></li>
-                    <li><a class="hover:text-white transition" href="#">Home Automation</a></li>
-                    <li><a class="hover:text-white transition" href="#">Access Control</a></li>
-                    <li><a class="hover:text-white transition" href="#">Fire Systems</a></li>
-                    <li><a class="hover:text-white transition" href="#">Networking</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a></li>
                 </ul>
             </div>
             <div>

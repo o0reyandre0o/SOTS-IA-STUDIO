@@ -39,19 +39,19 @@
             </a>
         </div>
         <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-brand-navy">
-            <a class="hover:text-brand-security transition" href="#">Security Cameras</a>
-            <a class="hover:text-brand-security transition" href="#">Home Automation</a>
-            <a class="hover:text-brand-security transition" href="#">Access Control</a>
-            <a class="hover:text-brand-security transition" href="#">Fire Systems</a>
-            <a class="hover:text-brand-security transition" href="#">Networking</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
         </div>
         <div class="flex items-center space-x-4">
             <a class="hidden sm:block text-brand-navy font-bold text-sm" href="tel:7868227868">
                 (786) 822-7868
             </a>
-            <button class="bg-brand-navy hover:bg-brand-security text-white px-6 py-2 rounded-full text-sm font-bold transition">
+            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-navy hover:bg-brand-security text-white px-6 py-2 rounded-full text-sm font-bold transition">
                 Free Quote
-            </button>
+            </a>
         </div>
     </nav>
 </header>
