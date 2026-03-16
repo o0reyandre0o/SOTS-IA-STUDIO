@@ -41,10 +41,14 @@
         $page_title = "Networking & Fiber Optics Miami | Structured Cabling";
         $meta_desc = "Robust networking and fiber optic installation in Miami. Structured cabling and high-speed Wi-Fi solutions for homes and businesses.";
         $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/networking-services-miami-structured-cabling-scaled.jpg";
-    } elseif ( is_page('audio-video-services') ) {
-        $page_title = "Home Theater Installation Miami & Video Walls South Florida";
-        $meta_desc = "Expert home theater installation in Miami and professional video wall integration in South Florida. High-end audio/video solutions for every space.";
+    } elseif ( is_page('audio-video-services') || is_page('audio-video-integration-miami') ) {
+        $page_title = "Audio & Video Integration Miami | Home Theater Setup";
+        $meta_desc = "Expert audio & video integration in Miami. High-end home theater installation and multi-room audio solutions for luxury homes and businesses.";
         $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-theater-installation-miami-surround-sound-setup-scaled.jpg";
+    } elseif ( is_page('video-wall-installation-miami') ) {
+        $page_title = "Professional Video Wall Installation Miami | South Florida";
+        $meta_desc = "Top-rated video wall installation in Miami. Seamless LED & LCD displays for commercial spaces, sports bars, and high-end residential entertainment.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg";
     } else {
         $page_title = wp_get_document_title();
         $meta_desc = "Security on the Spot provides professional security camera installation, home automation, and technology integration in Miami, FL.";
@@ -143,12 +147,14 @@
         </div>
 
         <!-- Desktop Nav -->
-        <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-brand-navy">
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-brand-navy">
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-integration-miami' ) ); ?>">Audio & Video</a>
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/video-wall-installation-miami' ) ); ?>">Video Walls</a>
         </div>
 
         <div class="flex items-center space-x-2 md:space-x-4">
@@ -178,7 +184,8 @@
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-services' ) ); ?>">Audio & Video</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-integration-miami' ) ); ?>">Audio & Video</a>
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/video-wall-installation-miami' ) ); ?>">Video Walls</a>
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/who-we-are' ) ); ?>">Who We Are</a>
                 <div class="pt-8 border-t border-gray-100">
                     <a href="tel:7868227868" class="flex items-center space-x-3 text-brand-navy font-bold mb-6">

@@ -35,6 +35,8 @@
                     <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a></li>
                     <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a></li>
                     <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/audio-video-integration-miami' ) ); ?>">Audio & Video</a></li>
+                    <li><a class="hover:text-white transition" href="<?php echo esc_url( home_url( '/video-wall-installation-miami' ) ); ?>">Video Walls</a></li>
                 </ul>
             </div>
             <div>
