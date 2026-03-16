@@ -20,14 +20,14 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
-        PREVIEW UPDATED (v1.0.6): Mobile Layout Fixes & Design Enhancements.
+        PREVIEW UPDATED (v1.0.7): Mobile Menu Visibility Fix.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <button onClick={() => setActivePage('home')} className="flex items-center">
             <img 
               alt="Security on the Spot Logo" 
-              className="h-10 md:h-14 w-auto object-contain" 
+              className="h-8 md:h-14 w-auto object-contain" 
               src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp"
               referrerPolicy="no-referrer"
             />
@@ -53,14 +53,18 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
           </a>
           <button 
             onClick={() => setActivePage('contact-us')}
-            className="bg-[#0B2447] hover:bg-blue-600 text-white px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold transition whitespace-nowrap"
+            className="bg-[#0B2447] hover:bg-blue-600 text-white px-3 md:px-6 py-1.5 md:py-2 rounded-full text-[10px] md:text-sm font-bold transition whitespace-nowrap"
           >
             Free Quote
           </button>
           
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden text-[#0B2447] p-1" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          <button 
+            className="lg:hidden text-[#0B2447] p-2 bg-gray-100 rounded-lg flex-shrink-0" 
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </nav>
