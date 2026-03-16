@@ -14,28 +14,37 @@
     $site_name = "Security on the Spot";
     $page_title = "";
     $meta_desc = "";
+    $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp";
+    $current_url = home_url( add_query_arg( array(), $wp->request ) );
     
     if ( is_front_page() ) {
         $page_title = "Security Camera Installation Miami & Home Automation | " . $site_name;
         $meta_desc = "Miami's #1 experts in security camera installation, CCTV systems, and smart home automation. Professional UNV surveillance for homes & businesses in Miami-Dade.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp";
     } elseif ( is_page('security-cameras-security-on-the-spot') ) {
         $page_title = "Best Security Camera Installation Miami | CCTV & Surveillance";
         $meta_desc = "Expert security camera installation in Miami. High-definition UNV CCTV systems for restaurants, small businesses, and homes. Get a free quote today!";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/restaurants-restaurant-outdoor-security-camera-scaled.jpg";
     } elseif ( is_page('home-automation-smart-homes-in-miami') ) {
         $page_title = "Smart Home Automation Miami | Lighting & Integration Experts";
         $meta_desc = "Top-rated home automation installers near me in Miami. Smart lighting control, climate integration, and whole-home automation systems in South Florida.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-automation-smart-homes-in-miami-miami-smart-home-control-scaled.jpg";
     } elseif ( is_page('access-control') ) {
         $page_title = "Access Control Systems Miami | Intercom & Keyless Entry";
         $meta_desc = "Professional access control and intercom system installation in Miami. Secure your property with video intercoms and managed entry solutions.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-keyless-entry-installation-scaled.jpg";
     } elseif ( is_page('fire-systems') ) {
         $page_title = "Commercial Fire Alarm Installation Miami | Fire Safety Systems";
         $meta_desc = "Certified commercial fire alarm installation in Miami. Professional fire safety systems and monitoring for businesses in South Florida.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/fire-alarm-systems-miami-commercial-installation-scaled.jpg";
     } elseif ( is_page('networking-fiber-optics') ) {
         $page_title = "Networking & Fiber Optics Miami | Structured Cabling";
         $meta_desc = "Robust networking and fiber optic installation in Miami. Structured cabling and high-speed Wi-Fi solutions for homes and businesses.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/networking-services-miami-structured-cabling-scaled.jpg";
     } elseif ( is_page('audio-video-services') ) {
         $page_title = "Home Theater Installation Miami & Video Walls South Florida";
         $meta_desc = "Expert home theater installation in Miami and professional video wall integration in South Florida. High-end audio/video solutions for every space.";
+        $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-theater-installation-miami-surround-sound-setup-scaled.jpg";
     } else {
         $page_title = wp_get_document_title();
         $meta_desc = "Security on the Spot provides professional security camera installation, home automation, and technology integration in Miami, FL.";
@@ -44,6 +53,20 @@
 
     <title><?php echo $page_title; ?></title>
     <meta name="description" content="<?php echo $meta_desc; ?>">
+
+    <!-- Social Graph (Open Graph) -->
+    <meta property="og:title" content="<?php echo $page_title; ?>">
+    <meta property="og:description" content="<?php echo $meta_desc; ?>">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="<?php echo $current_url; ?>">
+    <meta property="og:image" content="<?php echo $og_image; ?>">
+    <meta property="og:site_name" content="<?php echo $site_name; ?>">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="<?php echo $page_title; ?>">
+    <meta name="twitter:description" content="<?php echo $meta_desc; ?>">
+    <meta name="twitter:image" content="<?php echo $og_image; ?>">
 
     <!-- Schema.org JSON-LD -->
     <script type="application/ld+json">
