@@ -20,15 +20,15 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
-        PREVIEW UPDATED (v1.0.2): Social Graph (OG & Twitter) & SEO Optimized.
+        PREVIEW UPDATED (v1.0.3): New Logo & Responsive Fixes.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
           <button onClick={() => setActivePage('home')} className="flex items-center">
             <img 
               alt="Security on the Spot Logo" 
-              className="h-10 md:h-12" 
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gyCMySe6rBDd9YcgtSHL4hJ_7SLpT6waVlVB3Fl7IZLNM7-qBKJqGLFoompc_sfl1MdBQ-sgaP7cMTcydJo4vX_n6Ix_AKB9U8hehpxhJ-Zz9qdZt6-3OlOHENhVdeEkSgSq4Xfgs78cQOnfwDcrutTTKtz5IWlJd8mZsHvk-fAO-r7WrdC_QIlO6WVM-b6TYCrzMWb_q1qZdyDqprKMnz7mDVSOtOh9DY56mc0ve3dnazXZFp-sJa6lrwb9WZOf3Qme_b-rjBWR"
+              className="h-10 md:h-14 w-auto object-contain" 
+              src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp"
               referrerPolicy="no-referrer"
             />
           </button>

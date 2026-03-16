@@ -53,6 +53,7 @@
 
     <title><?php echo $page_title; ?></title>
     <meta name="description" content="<?php echo $meta_desc; ?>">
+    <link rel="icon" type="image/webp" href="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp">
 
     <!-- Social Graph (Open Graph) -->
     <meta property="og:title" content="<?php echo $page_title; ?>">
@@ -74,7 +75,7 @@
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
       "name": "Security on the Spot",
-      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD_gyCMySe6rBDd9YcgtSHL4hJ_7SLpT6waVlVB3Fl7IZLNM7-qBKJqGLFoompc_sfl1MdBQ-sgaP7cMTcydJo4vX_n6Ix_AKB9U8hehpxhJ-Zz9qdZt6-3OlOHENhVdeEkSgSq4Xfgs78cQOnfwDcrutTTKtz5IWlJd8mZsHvk-fAO-r7WrdC_QIlO6WVM-b6TYCrzMWb_q1qZdyDqprKMnz7mDVSOtOh9DY56mc0ve3dnazXZFp-sJa6lrwb9WZOf3Qme_b-rjBWR",
+      "image": "https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp",
       "@id": "https://securityonthespot.com",
       "url": "https://securityonthespot.com",
       "telephone": "+17868227868",
@@ -137,7 +138,7 @@
     <nav class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div class="flex items-center space-x-2">
             <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-                <img alt="Security on the Spot Logo" class="h-10 md:h-12" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gyCMySe6rBDd9YcgtSHL4hJ_7SLpT6waVlVB3Fl7IZLNM7-qBKJqGLFoompc_sfl1MdBQ-sgaP7cMTcydJo4vX_n6Ix_AKB9U8hehpxhJ-Zz9qdZt6-3OlOHENhVdeEkSgSq4Xfgs78cQOnfwDcrutTTKtz5IWlJd8mZsHvk-fAO-r7WrdC_QIlO6WVM-b6TYCrzMWb_q1qZdyDqprKMnz7mDVSOtOh9DY56mc0ve3dnazXZFp-sJa6lrwb9WZOf3Qme_b-rjBWR">
+                <img alt="Security on the Spot Logo" class="h-10 md:h-14 w-auto object-contain" src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp">
             </a>
         </div>
         <div class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-brand-navy">
