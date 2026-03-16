@@ -20,7 +20,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
-        PREVIEW UPDATED (v1.0.5): Footer Logo & Final Tweaks.
+        PREVIEW UPDATED (v1.0.6): Mobile Layout Fixes & Design Enhancements.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -47,20 +47,20 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
           ))}
         </div>
 
-        <div className="flex items-center space-x-4">
+        <div className="flex items-center space-x-2 md:space-x-4">
           <a className="hidden sm:block text-[#0B2447] font-bold text-sm" href="tel:7868227868">
             (786) 822-7868
           </a>
           <button 
             onClick={() => setActivePage('contact-us')}
-            className="bg-[#0B2447] hover:bg-blue-600 text-white px-6 py-2 rounded-full text-sm font-bold transition"
+            className="bg-[#0B2447] hover:bg-blue-600 text-white px-4 md:px-6 py-2 rounded-full text-xs md:text-sm font-bold transition whitespace-nowrap"
           >
             Free Quote
           </button>
           
           {/* Mobile Menu Toggle */}
-          <button className="lg:hidden text-[#0B2447]" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-            {isMenuOpen ? <X /> : <Menu />}
+          <button className="lg:hidden text-[#0B2447] p-1" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
@@ -162,7 +162,7 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
 const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
   <>
     {/* Hero Section */}
-    <section className="relative h-[600px] md:h-[700px] flex items-center overflow-hidden">
+    <section className="relative min-h-[650px] md:h-[700px] flex items-center py-12 md:py-0">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp" 
@@ -175,7 +175,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="max-w-3xl text-white">
-          <div className="inline-flex items-center space-x-2 bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-[10px] md:text-xs font-bold mb-6 border border-blue-600/30">
+          <div className="inline-flex items-center space-x-2 bg-blue-600/30 text-blue-300 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold mb-6 border border-blue-500/40">
             <Shield size={14} />
             <span>MIAMI'S #1 SECURITY CAMERA & SMART HOME EXPERTS</span>
           </div>
@@ -183,7 +183,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             Professional <br className="hidden md:block" />
             <span className="text-blue-500">Security Camera Installation</span> in Miami
           </h1>
-          <p className="text-lg md:text-xl text-gray-300 mb-8 md:text-xl mb-10 leading-relaxed">
+          <p className="text-lg md:text-xl text-gray-300 mb-8 leading-relaxed">
             Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years. From <strong>CCTV systems</strong> to <strong>smart home integration</strong>, we are your local experts.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
@@ -353,7 +353,7 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
       </div>
     </section>
 
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
@@ -378,7 +378,7 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
               ))}
             </ul>
           </div>
-          <div className="bg-slate-50 p-6 md:p-12 rounded-3xl border border-gray-100">
+          <div className="bg-white p-6 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
             <img 
               src="https://securityonthespot.com/wp-content/uploads/2025/08/surveillance-camera-isolated-on-white-background-2021-08-26-18-17-38-utc.png" 
               alt="CCTV Camera Miami" 
@@ -436,7 +436,7 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
       </div>
     </section>
 
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
@@ -465,7 +465,7 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
             <img 
               src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" 
               alt="Smart Home System Miami" 
-              className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto"
+              className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto border-4 border-white"
               referrerPolicy="no-referrer"
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hidden md:block">
@@ -630,18 +630,18 @@ const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) =>
       </div>
     </section>
 
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
             <h3 className="text-xl font-bold text-[#0B2447] mb-4">Keyless Entry</h3>
             <p className="text-gray-600 text-sm">Fob and mobile-based access for employees and residents. No more lost keys.</p>
           </div>
-          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
             <h3 className="text-xl font-bold text-[#0B2447] mb-4">Intercom Systems</h3>
             <p className="text-gray-600 text-sm">Video intercom installation in Miami for multi-family buildings and gated communities.</p>
           </div>
-          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+          <div className="p-8 bg-white shadow-sm rounded-3xl border border-gray-100">
             <h3 className="text-xl font-bold text-[#0B2447] mb-4">Cloud Management</h3>
             <p className="text-gray-600 text-sm">Manage permissions and view access logs from anywhere via a secure cloud dashboard.</p>
           </div>
@@ -678,7 +678,7 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
       </div>
     </section>
 
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-2xl md:text-3xl font-bold text-[#0B2447] mb-6 md:mb-8">Compliance & Safety First</h2>
@@ -686,11 +686,11 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
             We provide end-to-end fire safety solutions, from initial plans and permitting to final inspection and ongoing 24/7 monitoring.
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 text-left">
-            <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl">
               <Check className="text-green-500" />
               <span className="font-semibold">NFPA 72 Compliant</span>
             </div>
-            <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+            <div className="flex items-center space-x-3 p-4 bg-white shadow-sm rounded-xl">
               <Check className="text-green-500" />
               <span className="font-semibold">UL Listed Monitoring</span>
             </div>
@@ -728,7 +728,7 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
       </div>
     </section>
 
-    <section className="py-12 md:py-20 bg-white">
+    <section className="py-12 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
           <div>
@@ -737,16 +737,16 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
               A great security or automation system is only as good as the network it runs on. We provide expert structured cabling and robust Wi-Fi solutions.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 md:gap-4">
-              <div className="p-3 md:p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Enterprise Wi-Fi</div>
-              <div className="p-3 md:p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Cat6 Cabling</div>
-              <div className="p-3 md:p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Fiber Optics</div>
-              <div className="p-3 md:p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Rack Management</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Enterprise Wi-Fi</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Cat6 Cabling</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Fiber Optics</div>
+              <div className="p-3 md:p-4 bg-white shadow-sm rounded-xl font-bold text-[#0B2447] text-sm md:text-base">Rack Management</div>
             </div>
           </div>
           <img 
             src="https://securityonthespot.com/wp-content/uploads/2025/08/network-cables.jpg" 
             alt="Network Cables" 
-            className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto mt-8 lg:mt-0"
+            className="rounded-3xl shadow-xl w-full object-cover h-64 md:h-auto mt-8 lg:mt-0 border-4 border-white"
             referrerPolicy="no-referrer"
           />
         </div>
@@ -782,14 +782,14 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
       </div>
     </section>
 
-    <section className="py-16 md:py-20 bg-white">
+    <section className="py-16 md:py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-          <div className="p-8 md:p-10 bg-slate-50 rounded-3xl">
+          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl">
             <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4">Home Theater</h3>
             <p className="text-gray-600 text-sm md:text-base">Custom surround sound, 4K projectors, and acoustic treatments for the ultimate cinematic experience at home.</p>
           </div>
-          <div className="p-8 md:p-10 bg-slate-50 rounded-3xl">
+          <div className="p-8 md:p-10 bg-white shadow-sm rounded-3xl">
             <h3 className="text-xl md:text-2xl font-bold text-[#0B2447] mb-4">Commercial Video Walls</h3>
             <p className="text-gray-600 text-sm md:text-base">High-impact video wall installation for sports bars, lobbies, and command centers across South Florida.</p>
           </div>
