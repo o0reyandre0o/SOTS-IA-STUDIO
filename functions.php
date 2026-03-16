@@ -26,34 +26,42 @@ function security_on_the_spot_create_pages() {
         'security-cameras-security-on-the-spot' => array(
             'title' => 'Security Cameras',
             'content' => 'Professional security camera installation services in Miami.',
+            'template' => 'page-security-cameras-security-on-the-spot.php'
         ),
         'home-automation-smart-homes-in-miami' => array(
             'title' => 'Home Automation',
             'content' => 'Smart home automation and integration services.',
+            'template' => 'page-home-automation-smart-homes-in-miami.php'
         ),
         'access-control' => array(
             'title' => 'Access Control',
             'content' => 'Managed entry and access control solutions.',
+            'template' => 'page-access-control.php'
         ),
         'fire-systems' => array(
             'title' => 'Fire Systems',
             'content' => 'Commercial fire alarm and life safety systems.',
+            'template' => 'page-fire-systems.php'
         ),
         'networking-fiber-optics' => array(
             'title' => 'Networking & Fiber Optics',
             'content' => 'Robust networking and structured cabling solutions.',
+            'template' => 'page-networking-fiber-optics.php'
         ),
         'contact-us' => array(
             'title' => 'Contact Us',
             'content' => 'Get in touch with Miami\'s security experts.',
+            'template' => 'page-contact-us.php'
         ),
         'who-we-are' => array(
             'title' => 'Who We Are',
             'content' => 'Learn more about Security on the Spot.',
+            'template' => 'page-who-we-are.php'
         ),
         'audio-video-services' => array(
             'title' => 'Audio & Video Services',
             'content' => 'Professional audio and video integration.',
+            'template' => 'page-audio-video-services.php'
         ),
     );
 
@@ -62,13 +70,22 @@ function security_on_the_spot_create_pages() {
         $page_check = get_page_by_path( $slug );
         
         if ( ! isset( $page_check->ID ) ) {
-            wp_insert_post( array(
+            $page_id = wp_insert_post( array(
                 'post_type'   => 'page',
                 'post_title'  => $page_data['title'],
                 'post_content' => $page_data['content'],
                 'post_status' => 'publish',
                 'post_name'   => $slug,
             ) );
+
+            if ( $page_id && isset( $page_data['template'] ) ) {
+                update_post_meta( $page_id, '_wp_page_template', $page_data['template'] );
+            }
+        } else {
+            // If page exists, ensure template is set
+            if ( isset( $page_data['template'] ) ) {
+                update_post_meta( $page_check->ID, '_wp_page_template', $page_data['template'] );
+            }
         }
     }
 

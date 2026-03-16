@@ -1,75 +1,91 @@
 <?php
 /**
- * Template Name: Access Control Service
- * The template for displaying the access control service page
+ * Template Name: Access Control Page
  */
 get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <section class="bg-brand-navy text-white py-24 relative overflow-hidden">
-        <div class="absolute inset-0 opacity-30">
-            <img src="https://securityonthespot.com/wp-content/uploads/2025/08/image-1.jpg" alt="Access Control" class="w-full h-full object-cover">
+    <!-- Hero Section -->
+    <section class="relative h-[500px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-intercom-installation-scaled.jpg" alt="Access Control Miami" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-brand-navy/80"></div>
         </div>
-        <div class="container mx-auto px-4 md:px-8 relative z-10">
-            <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold mb-6">Advanced Access Control Systems</h1>
-                <p class="text-xl text-gray-300 mb-8">
-                    Manage who enters your property with state-of-the-art keyless entry, intercoms, and biometric systems in Miami.
-                </p>
-                <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="inline-block bg-brand-security hover:bg-brand-accent text-white font-bold px-8 py-4 rounded-lg transition shadow-lg">
-                    Request a Demo
-                </a>
-            </div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10 text-white">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">Access Control & Intercom Installation Miami</h1>
+            <p class="text-xl text-gray-300 max-w-2xl mb-8">
+                Secure your property with advanced <strong>access control systems in Miami</strong>. Manage entry points with ease and precision.
+            </p>
+            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
+                Secure Your Property
+            </a>
         </div>
     </section>
 
+    <!-- Content Section -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div>
-                    <h2 class="text-3xl font-bold text-brand-navy mb-6">Secure Your Perimeter</h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Access control is about more than just locking doors. It's about data, convenience, and total control over your environment. We provide integrated solutions that work seamlessly with your existing security infrastructure.
+                    <h2 class="text-3xl font-bold text-brand-navy mb-6">Modern Entry Management Solutions</h2>
+                    <p class="text-lg text-gray-600 mb-6 leading-relaxed">
+                        Security on the Spot provides comprehensive <strong>intercom installation in Miami</strong> and sophisticated <strong>access control for businesses</strong>. From keyless entry to biometric scanners, we have you covered.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+                        Our systems integrate seamlessly with your existing security infrastructure, allowing you to monitor and control access from your smartphone or computer.
                     </p>
                     <div class="space-y-6">
                         <div class="flex items-start space-x-4">
-                            <div class="text-brand-security mt-1">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
+                            <div class="bg-brand-light p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-brand-navy">Keyless Entry</h3>
-                                <p class="text-gray-600">Eliminate the risk of lost keys with card readers, fobs, or mobile-based entry.</p>
+                                <h4 class="font-bold text-brand-navy">Keyless Entry Systems</h4>
+                                <p class="text-gray-500 text-sm">Eliminate the need for physical keys with secure card readers and PIN pads.</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">
-                            <div class="text-brand-security mt-1">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09a10.116 10.116 0 001.283-3.562V11c0-2.739-.693-5.319-1.913-7.576M12 11a10.07 10.07 0 011.572-5.424M12 11a10.07 10.07 0 00-1.572-5.424M12 11V3m0 8c0 2.739.693 5.319 1.913 7.576M12 11a10.116 10.116 0 00-1.283 3.562l-.054.09m4.723-4.131a8.959 8.959 0 01-1.913 7.576M12 11a8.959 8.959 0 011.913-7.576" /></svg>
+                            <div class="bg-brand-light p-3 rounded-lg">
+                                <svg class="w-6 h-6 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                             </div>
                             <div>
-                                <h3 class="font-bold text-brand-navy">Biometric Systems</h3>
-                                <p class="text-gray-600">High-security fingerprint or facial recognition for sensitive areas.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start space-x-4">
-                            <div class="text-brand-security mt-1">
-                                <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-brand-navy">Video Intercoms</h3>
-                                <p class="text-gray-600">See and speak with visitors before granting access from your smartphone.</p>
+                                <h4 class="font-bold text-brand-navy">Video Intercom Installation</h4>
+                                <p class="text-gray-500 text-sm">See and speak with visitors before granting access with high-definition video intercoms.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <img src="https://securityonthespot.com/wp-content/uploads/2025/09/entry-exit-systems-aluminum-access-control-panel-with-keypad-scaled.jpg" alt="Keypad" class="rounded-2xl shadow-lg mt-8">
-                    <img src="https://securityonthespot.com/wp-content/uploads/2026/03/intercom-systems-butterflymx-video-intercoms-560558.webp" alt="Intercom" class="rounded-2xl shadow-lg">
+                <div class="bg-brand-light p-12 rounded-3xl border border-gray-100">
+                    <img src="https://securityonthespot.com/wp-content/uploads/2025/08/access-control-reader-on-wall.png" alt="Access Control Reader Miami" class="mx-auto">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Commercial Focus -->
+    <section class="py-20 bg-brand-navy text-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-8">Commercial Access Control Specialists</h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
+                We design and install <strong>commercial access control systems</strong> for offices, warehouses, and gated communities across South Florida.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="border border-white/10 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Multi-Tenant Buildings</h3>
+                    <p class="text-gray-400 text-sm">Cloud-based intercoms for apartment complexes and office buildings.</p>
+                </div>
+                <div class="border border-white/10 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Industrial Facilities</h3>
+                    <p class="text-gray-400 text-sm">Heavy-duty gate operators and long-range card readers.</p>
+                </div>
+                <div class="border border-white/10 p-8 rounded-2xl">
+                    <h3 class="text-xl font-bold mb-4">Retail & SMB</h3>
+                    <p class="text-gray-400 text-sm">Simple yet effective door controllers for small businesses.</p>
                 </div>
             </div>
         </div>
     </section>
 </main>
 
-<?php
-get_footer();
+<?php get_footer(); ?>

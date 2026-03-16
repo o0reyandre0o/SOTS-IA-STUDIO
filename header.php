@@ -8,6 +8,85 @@
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <?php
+    // SEO Optimization
+    $site_name = "Security on the Spot";
+    $page_title = "";
+    $meta_desc = "";
+    
+    if ( is_front_page() ) {
+        $page_title = "Security Camera Installation Miami & Home Automation | " . $site_name;
+        $meta_desc = "Miami's #1 experts in security camera installation, CCTV systems, and smart home automation. Professional UNV surveillance for homes & businesses in Miami-Dade.";
+    } elseif ( is_page('security-cameras-security-on-the-spot') ) {
+        $page_title = "Best Security Camera Installation Miami | CCTV & Surveillance";
+        $meta_desc = "Expert security camera installation in Miami. High-definition UNV CCTV systems for restaurants, small businesses, and homes. Get a free quote today!";
+    } elseif ( is_page('home-automation-smart-homes-in-miami') ) {
+        $page_title = "Smart Home Automation Miami | Lighting & Integration Experts";
+        $meta_desc = "Top-rated home automation installers near me in Miami. Smart lighting control, climate integration, and whole-home automation systems in South Florida.";
+    } elseif ( is_page('access-control') ) {
+        $page_title = "Access Control Systems Miami | Intercom & Keyless Entry";
+        $meta_desc = "Professional access control and intercom system installation in Miami. Secure your property with video intercoms and managed entry solutions.";
+    } elseif ( is_page('fire-systems') ) {
+        $page_title = "Commercial Fire Alarm Installation Miami | Fire Safety Systems";
+        $meta_desc = "Certified commercial fire alarm installation in Miami. Professional fire safety systems and monitoring for businesses in South Florida.";
+    } elseif ( is_page('networking-fiber-optics') ) {
+        $page_title = "Networking & Fiber Optics Miami | Structured Cabling";
+        $meta_desc = "Robust networking and fiber optic installation in Miami. Structured cabling and high-speed Wi-Fi solutions for homes and businesses.";
+    } elseif ( is_page('audio-video-services') ) {
+        $page_title = "Home Theater Installation Miami & Video Walls South Florida";
+        $meta_desc = "Expert home theater installation in Miami and professional video wall integration in South Florida. High-end audio/video solutions for every space.";
+    } else {
+        $page_title = wp_get_document_title();
+        $meta_desc = "Security on the Spot provides professional security camera installation, home automation, and technology integration in Miami, FL.";
+    }
+    ?>
+
+    <title><?php echo $page_title; ?></title>
+    <meta name="description" content="<?php echo $meta_desc; ?>">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Security on the Spot",
+      "image": "https://lh3.googleusercontent.com/aida-public/AB6AXuD_gyCMySe6rBDd9YcgtSHL4hJ_7SLpT6waVlVB3Fl7IZLNM7-qBKJqGLFoompc_sfl1MdBQ-sgaP7cMTcydJo4vX_n6Ix_AKB9U8hehpxhJ-Zz9qdZt6-3OlOHENhVdeEkSgSq4Xfgs78cQOnfwDcrutTTKtz5IWlJd8mZsHvk-fAO-r7WrdC_QIlO6WVM-b6TYCrzMWb_q1qZdyDqprKMnz7mDVSOtOh9DY56mc0ve3dnazXZFp-sJa6lrwb9WZOf3Qme_b-rjBWR",
+      "@id": "https://securityonthespot.com",
+      "url": "https://securityonthespot.com",
+      "telephone": "+17868227868",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4861 NW 72nd Ave",
+        "addressLocality": "Miami",
+        "addressRegion": "FL",
+        "postalCode": "33166",
+        "addressCountry": "US"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 25.8185,
+        "longitude": -80.3125
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday"
+        ],
+        "opens": "08:00",
+        "closes": "18:00"
+      },
+      "sameAs": [
+        "https://www.facebook.com/securityonthespot",
+        "https://www.instagram.com/securityonthespot"
+      ]
+    }
+    </script>
+
     <?php wp_head(); ?>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
