@@ -7,7 +7,12 @@
     <div class="container mx-auto px-4 md:px-8">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
             <div>
-                <img alt="Security on the Spot Logo" class="h-10 mb-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDl5sBFB1KXm1BqSd4Ty96NnRNvqp_Uo5K78hIecgaWWJYsAzF3x_sW345bY86IfCjXg8Ns3IUASHAtxiwsjIAUIV45dPr10UOwYmfuBFdTiI7aZeGsyKDVEOzz7UtvW2ZXrwxOoGTs32I5AFc7COUR91PjGxUxwrBADjRb9jycwd_zaSYQiyg5dtff_VI3Lh_vjLCzVLcDy8j-TVQRQC9aup4BzVGOLheGXMTskUmNJQep8ii51B7HqscrYVJ8rhCyUQiIUFITuoSw">
+                <img 
+                    alt="Security on the Spot Logo" 
+                    class="h-10 md:h-12 mb-6 object-contain" 
+                    src="https://securityonthespot.com/wp-content/uploads/2025/08/security-on-the-spot-logo-6.webp"
+                    referrerPolicy="no-referrer"
+                >
                 <p class="text-gray-400 text-sm leading-relaxed mb-6">
                     Security on the Spot: Providing Miami's families and businesses with high-end, reliable security solutions for over 20 years. 4.9-star rated.
                 </p>
