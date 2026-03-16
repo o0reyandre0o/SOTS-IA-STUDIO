@@ -14,12 +14,13 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
     { name: 'Access Control', slug: 'access-control' },
     { name: 'Fire Systems', slug: 'fire-systems' },
     { name: 'Networking', slug: 'networking-fiber-optics' },
+    { name: 'Audio & Video', slug: 'audio-video-services' },
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
-      <div className="bg-yellow-50 py-1 px-4 text-center text-[10px] text-yellow-800 font-medium border-b border-yellow-100">
-        PREVIEW MODE: This is a React simulation of your WordPress Theme. Files generated in root.
+      <div className="bg-red-600 py-2 px-4 text-center text-xs text-white font-bold border-b border-red-700 animate-pulse">
+        PREVIEW UPDATED: This is the latest version of your Miami Security Theme simulation.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -113,11 +114,12 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
           <div>
             <h4 className="font-bold text-lg mb-6">Quick Links</h4>
             <ul className="space-y-4 text-gray-400 text-sm">
-              <li><button onClick={() => setActivePage('security-cameras')} className="hover:text-white transition">Security Cameras</button></li>
-              <li><button onClick={() => setActivePage('home-automation')} className="hover:text-white transition">Home Automation</button></li>
+              <li><button onClick={() => setActivePage('security-cameras-security-on-the-spot')} className="hover:text-white transition">Security Cameras</button></li>
+              <li><button onClick={() => setActivePage('home-automation-smart-homes-in-miami')} className="hover:text-white transition">Home Automation</button></li>
               <li><button onClick={() => setActivePage('access-control')} className="hover:text-white transition">Access Control</button></li>
               <li><button onClick={() => setActivePage('fire-systems')} className="hover:text-white transition">Fire Systems</button></li>
-              <li><button onClick={() => setActivePage('networking')} className="hover:text-white transition">Networking</button></li>
+              <li><button onClick={() => setActivePage('networking-fiber-optics')} className="hover:text-white transition">Networking</button></li>
+              <li><button onClick={() => setActivePage('audio-video-services')} className="hover:text-white transition">Audio & Video</button></li>
             </ul>
           </div>
           <div>
@@ -160,60 +162,102 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
 const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
   <>
     {/* Hero Section */}
-    <section className="relative h-[600px] flex items-center overflow-hidden">
+    <section className="relative h-[700px] flex items-center overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp" 
-          alt="Security Camera" 
+          alt="Security Camera Installation Miami" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447] via-[#0B2447]/80 to-transparent"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447] via-[#0B2447]/90 to-transparent"></div>
       </div>
       
       <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-2xl text-white">
+        <div className="max-w-3xl text-white">
           <div className="inline-flex items-center space-x-2 bg-blue-600/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold mb-6 border border-blue-600/30">
             <Shield size={14} />
-            <span>MIAMI'S #1 SECURITY EXPERTS</span>
+            <span>MIAMI'S #1 SECURITY CAMERA & SMART HOME EXPERTS</span>
           </div>
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            HOLA <br />
-            <span className="text-blue-500">Security</span> on the Spot
+            Professional <br />
+            <span className="text-blue-500">Security Camera Installation</span> in Miami
           </h1>
           <p className="text-xl text-gray-300 mb-10 leading-relaxed">
-            Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years.
+            Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years. From <strong>CCTV systems</strong> to <strong>smart home integration</strong>, we are your local experts.
           </p>
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <button 
               onClick={() => setActivePage('contact-us')}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-blue-600/20"
             >
-              Get a Free Quote
+              Get a Free Quote — (786) 822-7868
             </button>
             <button 
               onClick={() => setActivePage('security-cameras-security-on-the-spot')}
               className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition"
             >
-              Explore Services
+              Explore Our Services
             </button>
           </div>
         </div>
       </div>
     </section>
 
-    {/* Quick Services */}
-    <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-[#0B2447] mb-4">Our Core Services</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">Comprehensive security and automation solutions tailored to your specific needs.</p>
+    {/* Trust Bar */}
+    <section className="py-12 bg-white border-b border-gray-100">
+      <div className="container mx-auto px-4">
+        <p className="text-center text-gray-500 uppercase tracking-widest text-sm font-bold mb-8">Trusted by Leading Brands & Homeowners in Miami</p>
+        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition duration-500">
+          <img alt="Partner Logo" className="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd_iQqVslxsiDSq-_X8LrTSasRfkMp0rD3nZK0L4d6OhuHRinNFoKDPwnnb7jWBv92U7Qjffl-DFABdUGe8Ru7-Neo1t9KBQ6tgTdH_dUWbQ7_QbEG7p14CDfUYMd3QnBUmB9cSwem-x3Kt_H1mVjo24YfK3OaHsLfSVDf6ga2ZTyTE8IBCoV0DRoOUtWADQ-aGiG81UIx-pHPBSrh4OOvYuMorRtKeL8bW7gX9DHUvNtgODEKbhIzQzNsCxu1cbzWmEQGWyEGyD8x" referrerPolicy="no-referrer" />
+          <img alt="Partner Logo" className="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexWnInQIk2--6wKSE7_9fnuqBZT-WzKAoeoHv0Mu9lpOyeJ2BiyAQtJ-gPrfwf9pGYs8kM6vgPbHC5z4J_ptt7E0RX_5HajgRvf74_kwJVGZsO47zq-HnYUcirikAaA3RAZ59wEPPSjeV87NSm02K7OWEtNgZHeYLMZU_SojcSjpuZVtafcI33CK1dTiWFZYD28chy9PsjEbJysyoy6vV5kZ0PL2B_QQqD055yzmamhlunDlHNflLyDZ-aAtmi7uM-OAjzZW6iYM_" referrerPolicy="no-referrer" />
+          <img alt="Partner Logo" className="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRe6AwXLBxpLgo5mhoDtfNRIDhHL4nCxTdT1pYQ169q9Euy9qAtp5iTPElKy9fxju75bkKYYOMh1r8AGQqNMYtiOdYrN9xCLhG5C7bw5jVLx-vphBGuapiE4hm25IBrfmhDj8s8OiyP3_eiNUt6JdsB5yRsXWrTr8AmWOWCLj0-YVCPnXyIjEednzsYSzSW0ybEgVBjo2zJ8yb4v1ZW5CiFKqQuI0OAzB8AMqqTTl-gwZcwMhdVPACVmWl4fmzMkXmW2txXOZERUb" referrerPolicy="no-referrer" />
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+      </div>
+    </section>
+
+    {/* Stats Section */}
+    <section className="py-12 bg-[#0B2447] border-y border-white/10">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-1">20+</div>
+            <div className="text-xs text-blue-400 font-bold uppercase tracking-wider">Years Experience in Miami</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-1">5k+</div>
+            <div className="text-xs text-blue-400 font-bold uppercase tracking-wider">Satisfied Clients</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-1">4.9/5</div>
+            <div className="text-xs text-blue-400 font-bold uppercase tracking-wider">Google Rating</div>
+          </div>
+          <div className="text-center">
+            <div className="text-3xl font-bold text-white mb-1">24/7</div>
+            <div className="text-xs text-blue-400 font-bold uppercase tracking-wider">Local Support</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Services Grid */}
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl font-bold text-[#0B2447] mb-4">Miami’s Comprehensive Security & Technology Solutions</h2>
+            <p className="text-gray-600">We design, install, and maintain state-of-the-art security systems for every type of property. From <strong>restaurant CCTV</strong> to <strong>home theater installation in Miami</strong>.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
           {[
-            { title: 'Security Cameras', icon: <Camera />, slug: 'security-cameras-security-on-the-spot', desc: 'High-definition UNV cameras with remote access and smart alerts.' },
-            { title: 'Home Automation', icon: <Home />, slug: 'home-automation-smart-homes-in-miami', desc: 'Fully integrated smart home systems for lighting, climate, and more.' },
-            { title: 'Access Control', icon: <Lock />, slug: 'access-control', desc: 'Manage who enters your property with keyless entry and intercoms.' }
+            { title: 'Security Camera Installation', icon: <Camera />, slug: 'security-cameras-security-on-the-spot', desc: 'High-definition UNV cameras with remote access and smart alerts. Best for homes and small businesses in Miami.' },
+            { title: 'Home Automation Near Me', icon: <Home />, slug: 'home-automation-smart-homes-in-miami', desc: 'Fully integrated smart home systems for lighting, climate, and more. Control everything from your phone.' },
+            { title: 'Access Control Systems', icon: <Lock />, slug: 'access-control', desc: 'Manage who enters your property with keyless entry, intercom installation in Miami, and mag-locks.' },
+            { title: 'Commercial Fire Alarms', icon: <Flame />, slug: 'fire-systems', desc: 'Certified commercial fire alarm installation in Miami. Professional monitoring and compliance.' },
+            { title: 'Networking & Fiber', icon: <Network />, slug: 'networking-fiber-optics', desc: 'Structured cabling and robust Wi-Fi networks. High-speed connectivity for homes and businesses.' },
+            { title: 'Audio & Video Services', icon: <Music />, slug: 'audio-video-services', desc: 'Home theater installation in Miami and video walls in South Florida. Immersive entertainment.' }
           ].map((service) => (
             <div key={service.slug} className="p-8 bg-slate-50 rounded-3xl border border-gray-100 hover:shadow-xl transition duration-300 group">
               <div className="w-14 h-14 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition duration-300">
@@ -232,50 +276,100 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
         </div>
       </div>
     </section>
+
+    {/* Why Choose Us */}
+    <section className="py-24 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="lg:w-1/2">
+            <img src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" alt="Security Experts Miami" className="rounded-3xl shadow-2xl" referrerPolicy="no-referrer" />
+          </div>
+          <div className="lg:w-1/2">
+            <h2 className="text-4xl font-bold text-[#0B2447] mb-6">Why Miami Trusts Security on the Spot</h2>
+            <p className="text-gray-600 mb-8 text-lg">With over two decades of experience, we have become the go-to provider for <strong>security cameras in Miami</strong> and <strong>smart home integration</strong>. Our commitment to quality and local expertise sets us apart.</p>
+            <div className="space-y-6">
+              {[
+                { title: 'Local Miami Experts', desc: 'We know Miami-Dade and the specific security needs of South Florida residents.', icon: <Check /> },
+                { title: 'Fast, Professional Installation', desc: 'Our technicians are highly trained for clean, efficient, and robust setups.', icon: <Zap /> },
+                { title: '3-Year Total Guarantee', desc: 'We stand behind our work with a comprehensive warranty on parts and labor.', icon: <Shield /> }
+              ].map((item) => (
+                <div key={item.title} className="flex items-start space-x-4">
+                  <div className="w-12 h-12 bg-white rounded-xl shadow-sm flex items-center justify-center text-blue-600 flex-shrink-0">
+                    {item.icon}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-[#0B2447]">{item.title}</h4>
+                    <p className="text-sm text-gray-500">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Final CTA */}
+    <section className="py-24 bg-[#0B2447] relative overflow-hidden text-center">
+      <div className="container mx-auto px-4 relative z-10">
+        <h2 className="text-4xl md:text-6xl font-bold text-white mb-6">Ready to Secure Your Property?</h2>
+        <p className="text-gray-300 text-xl mb-10 max-w-2xl mx-auto">Join thousands of satisfied customers in Miami. Get your free security consultation today.</p>
+        <button 
+          onClick={() => setActivePage('contact-us')}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-12 py-6 rounded-full font-bold text-2xl transition shadow-xl inline-block"
+        >
+          Call Now: (786) 822-7868
+        </button>
+      </div>
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
+    </section>
   </>
 );
 
 const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
   <div className="animate-in fade-in duration-500">
-    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
+    <section className="relative h-[500px] flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
         <img 
           src="https://securityonthespot.com/wp-content/uploads/2025/09/restaurants-restaurant-outdoor-security-camera-scaled.jpg" 
-          alt="Security Cameras" 
+          alt="Security Camera Installation Miami" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
+        <div className="absolute inset-0 bg-[#0B2447]/80"></div>
       </div>
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Professional Security Camera Installation</h1>
-          <p className="text-xl text-gray-300 mb-8">
-            High-definition surveillance systems for homes and businesses in Miami. Monitor your property from anywhere in the world.
-          </p>
-          <button 
-            onClick={() => setActivePage('contact-us')}
-            className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg"
-          >
-            Get a Free Quote
-          </button>
-        </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Best Security Camera Installation in Miami</h1>
+        <p className="text-xl text-gray-300 max-w-2xl mb-8">
+          High-definition surveillance systems for homes, restaurants, and small businesses. Monitor your property 24/7 from anywhere.
+        </p>
+        <button 
+          onClick={() => setActivePage('contact-us')}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block"
+        >
+          Get a Free Quote
+        </button>
       </div>
     </section>
 
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Advanced Surveillance Technology</h2>
-            <p className="text-lg text-gray-600 mb-6">
-              We specialize in UNV (Uniview) security cameras, known for their exceptional image quality, reliability, and advanced features like night vision, motion detection, and AI-powered analytics.
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Professional CCTV & Surveillance Solutions</h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Looking for <strong>security camera installation near me</strong>? Security on the Spot provides top-tier <strong>CCTV security camera installation in Miami</strong>. We specialize in UNV (Uniview) technology, offering crystal-clear 4K resolution and advanced AI analytics.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Whether you need <strong>best security cameras for small business</strong> or a robust system for a large warehouse, our team ensures every corner is covered.
             </p>
             <ul className="space-y-4">
               {[
-                '4K Ultra HD Resolution',
-                'Remote Mobile App Access',
-                'Smart Motion Alerts',
-                'Professional Cable Management'
+                '4K Ultra HD Surveillance Cameras',
+                'Remote Mobile App Monitoring',
+                'Smart Motion & AI Human Detection',
+                'Weatherproof & Vandal-Resistant Designs'
               ].map((item) => (
                 <li key={item} className="flex items-center space-x-3">
                   <Shield className="h-5 w-5 text-blue-600" />
@@ -287,7 +381,7 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
           <div className="bg-slate-50 p-12 rounded-3xl border border-gray-100">
             <img 
               src="https://securityonthespot.com/wp-content/uploads/2025/08/surveillance-camera-isolated-on-white-background-2021-08-26-18-17-38-utc.png" 
-              alt="UNV Camera" 
+              alt="CCTV Camera Miami" 
               className="mx-auto"
               referrerPolicy="no-referrer"
             />
@@ -295,45 +389,106 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
         </div>
       </div>
     </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl font-bold text-[#0B2447] text-center mb-16">Tailored Surveillance for Every Need</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            { title: 'Restaurant CCTV', desc: 'Protect your staff and assets with specialized restaurant security systems. Monitor dining areas and kitchens in real-time.' },
+            { title: 'Small Business Security', desc: 'We offer the best security cameras for retail stores and offices, helping you prevent loss and improve safety.' },
+            { title: 'Residential Surveillance', desc: 'Peace of mind for your family with outdoor security camera miami setups and smart doorbell integration.' }
+          ].map((item) => (
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm">
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   </div>
 );
 
-const HomeAutomationPage = () => (
+const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
   <div className="animate-in fade-in duration-500">
-    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-30">
+    <section className="relative h-[500px] flex items-center overflow-hidden">
+      <div className="absolute inset-0 z-0">
         <img 
           src="https://securityonthespot.com/wp-content/uploads/2025/09/home-automation-smart-homes-in-miami-miami-smart-home-control-scaled.jpg" 
-          alt="Smart Home" 
+          alt="Home Automation Miami" 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
+        <div className="absolute inset-0 bg-[#0B2447]/80"></div>
       </div>
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6">Smart Home Automation & Integration</h1>
-          <p className="text-xl text-gray-300 mb-8">
-            Transform your Miami residence into a fully integrated smart home. Control lighting, climate, security, and entertainment with a single touch.
-          </p>
-        </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10 text-white">
+        <h1 className="text-4xl md:text-6xl font-bold mb-6">Smart Home Automation Miami</h1>
+        <p className="text-xl text-gray-300 max-w-2xl mb-8">
+          Experience the future of living with <strong>smart home integration in Miami</strong>. Control your entire home from a single interface.
+        </p>
+        <button 
+          onClick={() => setActivePage('contact-us')}
+          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block"
+        >
+          Consult an Expert
+        </button>
       </div>
     </section>
 
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Miami's Top-Rated Home Automation Installers</h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              Searching for <strong>home automation installers near me</strong>? Security on the Spot is your premier <strong>smart home integrator</strong> in South Florida. We bring comfort, security, and efficiency together.
+            </p>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              From <strong>smart home lighting control in Florida</strong> to integrated climate and security systems, we design solutions that fit your lifestyle perfectly.
+            </p>
+            <div className="grid grid-cols-2 gap-6">
+              {[
+                'Smart Lighting Control',
+                'Climate Integration',
+                'Automated Shades',
+                'Whole Home Audio'
+              ].map((item) => (
+                <div key={item} className="flex items-start space-x-3">
+                  <Check className="w-5 h-5 text-blue-600 mt-1" />
+                  <span className="text-gray-700 font-medium">{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="relative">
+            <img 
+              src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" 
+              alt="Smart Home System Miami" 
+              className="rounded-3xl shadow-xl"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-2xl shadow-lg border border-gray-100 hidden md:block">
+              <div className="text-blue-600 font-bold text-2xl">100%</div>
+              <div className="text-gray-500 text-xs uppercase font-bold">Integrated</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-slate-50">
+      <div className="container mx-auto px-4 md:px-8">
+        <h2 className="text-3xl font-bold text-[#0B2447] text-center mb-16">Smart Solutions for Modern Miami Living</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {[
-            { title: 'Lighting Control', icon: <Zap />, desc: 'Set the perfect mood and save energy with automated lighting scenes.' },
-            { title: 'Climate Control', icon: <Monitor />, desc: 'Smart thermostats that learn your preferences and keep you comfortable.' },
-            { title: 'Home Theater', icon: <Music />, desc: 'Immersive audio and video experiences tailored to your space.' },
-            { title: 'Smart Security', icon: <Lock />, desc: 'Integrated locks, cameras, and alarms that talk to each other.' }
+            { title: 'Smart Lighting Control', desc: 'Automate your smart home lighting control in Florida. Save energy and create the perfect ambiance with custom scenes.' },
+            { title: 'Voice Control Integration', desc: 'Control your smart home miami with your voice. Seamless integration with Alexa, Google Home, and Siri.' },
+            { title: 'Energy Automation', desc: 'Optimize your home\'s energy usage with smart thermostats and automated shade control.' }
           ].map((item) => (
-            <div key={item.title} className="p-8 bg-slate-50 rounded-3xl text-center border border-gray-100">
-              <div className="text-blue-600 mb-4 flex justify-center">
-                {item.icon}
-              </div>
-              <h3 className="font-bold text-[#0B2447] mb-2">{item.title}</h3>
-              <p className="text-sm text-gray-600">{item.desc}</p>
+            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100">
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{item.title}</h3>
+              <p className="text-gray-600 text-sm">{item.desc}</p>
             </div>
           ))}
         </div>
@@ -448,7 +603,204 @@ const WhoWeArePage = () => (
   </div>
 );
 
+const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
+  <div className="animate-in fade-in duration-500">
+    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-keyless-entry-installation-scaled.jpg" 
+          alt="Access Control" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Access Control Systems Miami</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Secure your property with advanced keyless entry, intercoms, and managed access solutions.
+          </p>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg"
+          >
+            Secure Your Property
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Keyless Entry</h3>
+            <p className="text-gray-600 text-sm">Fob and mobile-based access for employees and residents. No more lost keys.</p>
+          </div>
+          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Intercom Systems</h3>
+            <p className="text-gray-600 text-sm">Video intercom installation in Miami for multi-family buildings and gated communities.</p>
+          </div>
+          <div className="p-8 bg-slate-50 rounded-3xl border border-gray-100">
+            <h3 className="text-xl font-bold text-[#0B2447] mb-4">Cloud Management</h3>
+            <p className="text-gray-600 text-sm">Manage permissions and view access logs from anywhere via a secure cloud dashboard.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
+  <div className="animate-in fade-in duration-500">
+    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://securityonthespot.com/wp-content/uploads/2025/09/fire-alarm-systems-miami-commercial-installation-scaled.jpg" 
+          alt="Fire Systems" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Commercial Fire Alarm Installation Miami</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Life safety systems that meet all Miami-Dade fire codes. Professional design, installation, and monitoring.
+          </p>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-red-600 hover:bg-red-700 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg"
+          >
+            Request a Fire Inspection
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#0B2447] mb-8">Compliance & Safety First</h2>
+          <p className="text-lg text-gray-600 mb-12">
+            We provide end-to-end fire safety solutions, from initial plans and permitting to final inspection and ongoing 24/7 monitoring.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-left">
+            <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+              <Check className="text-green-500" />
+              <span className="font-semibold">NFPA 72 Compliant</span>
+            </div>
+            <div className="flex items-center space-x-3 p-4 bg-slate-50 rounded-xl">
+              <Check className="text-green-500" />
+              <span className="font-semibold">UL Listed Monitoring</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
+  <div className="animate-in fade-in duration-500">
+    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://securityonthespot.com/wp-content/uploads/2025/09/networking-services-miami-structured-cabling-scaled.jpg" 
+          alt="Networking" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Networking & Structured Cabling Miami</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Reliable networking services in Miami. High-speed Wi-Fi, structured cabling, and secure network infrastructure.
+          </p>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg"
+          >
+            Optimize Your Network
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">The Backbone of Your Smart Property</h2>
+            <p className="text-gray-600 mb-6">
+              A great security or automation system is only as good as the network it runs on. We provide expert structured cabling and robust Wi-Fi solutions.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447]">Enterprise Wi-Fi</div>
+              <div className="p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447]">Cat6 Cabling</div>
+              <div className="p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447]">Fiber Optics</div>
+              <div className="p-4 bg-slate-50 rounded-xl font-bold text-[#0B2447]">Rack Management</div>
+            </div>
+          </div>
+          <img 
+            src="https://securityonthespot.com/wp-content/uploads/2025/08/network-cables.jpg" 
+            alt="Network Cables" 
+            className="rounded-3xl shadow-xl"
+            referrerPolicy="no-referrer"
+          />
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
+const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
+  <div className="animate-in fade-in duration-500">
+    <section className="bg-[#0B2447] text-white py-24 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-30">
+        <img 
+          src="https://securityonthespot.com/wp-content/uploads/2025/09/home-theater-installation-miami-surround-sound-setup-scaled.jpg" 
+          alt="Audio Video" 
+          className="w-full h-full object-cover"
+          referrerPolicy="no-referrer"
+        />
+      </div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="max-w-3xl">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">Audio & Video Integration Miami</h1>
+          <p className="text-xl text-gray-300 mb-8">
+            Professional home theater installation in Miami and video walls in South Florida. Immersive entertainment experiences.
+          </p>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-lg transition shadow-lg"
+          >
+            Design Your Space
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-20 bg-white">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div className="p-10 bg-slate-50 rounded-3xl">
+            <h3 className="text-2xl font-bold text-[#0B2447] mb-4">Home Theater</h3>
+            <p className="text-gray-600">Custom surround sound, 4K projectors, and acoustic treatments for the ultimate cinematic experience at home.</p>
+          </div>
+          <div className="p-10 bg-slate-50 rounded-3xl">
+            <h3 className="text-2xl font-bold text-[#0B2447] mb-4">Commercial Video Walls</h3>
+            <p className="text-gray-600">High-impact video wall installation for sports bars, lobbies, and command centers across South Florida.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
 // --- Main App ---
+
 
 export default function App() {
   const [activePage, setActivePage] = useState('home');
@@ -462,30 +814,13 @@ export default function App() {
     switch (activePage) {
       case 'home': return <HomePage setActivePage={setActivePage} />;
       case 'security-cameras-security-on-the-spot': return <SecurityCamerasPage setActivePage={setActivePage} />;
-      case 'home-automation-smart-homes-in-miami': return <HomeAutomationPage />;
+      case 'home-automation-smart-homes-in-miami': return <HomeAutomationPage setActivePage={setActivePage} />;
       case 'contact-us': return <ContactPage />;
       case 'who-we-are': return <WhoWeArePage />;
-      case 'access-control': return (
-        <div className="py-32 text-center text-[#0B2447]">
-          <h1 className="text-4xl font-bold">Access Control Page Simulation</h1>
-          <p className="mt-4 text-gray-600">This design is already coded in your page-access-control.php file.</p>
-          <button onClick={() => setActivePage('home')} className="mt-8 text-blue-600 font-bold underline">Back to Home</button>
-        </div>
-      );
-      case 'fire-systems': return (
-        <div className="py-32 text-center text-[#0B2447]">
-          <h1 className="text-4xl font-bold">Fire Systems Page Simulation</h1>
-          <p className="mt-4 text-gray-600">This design is already coded in your page-fire-systems.php file.</p>
-          <button onClick={() => setActivePage('home')} className="mt-8 text-blue-600 font-bold underline">Back to Home</button>
-        </div>
-      );
-      case 'networking-fiber-optics': return (
-        <div className="py-32 text-center text-[#0B2447]">
-          <h1 className="text-4xl font-bold">Networking Page Simulation</h1>
-          <p className="mt-4 text-gray-600">This design is already coded in your page-networking-fiber-optics.php file.</p>
-          <button onClick={() => setActivePage('home')} className="mt-8 text-blue-600 font-bold underline">Back to Home</button>
-        </div>
-      );
+      case 'access-control': return <AccessControlPage setActivePage={setActivePage} />;
+      case 'fire-systems': return <FireSystemsPage setActivePage={setActivePage} />;
+      case 'networking-fiber-optics': return <NetworkingPage setActivePage={setActivePage} />;
+      case 'audio-video-services': return <AudioVideoPage setActivePage={setActivePage} />;
       default: return <HomePage setActivePage={setActivePage} />;
     }
   };
