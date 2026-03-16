@@ -30,7 +30,7 @@ import { motion, AnimatePresence } from 'motion/react';
 const Header = () => {
   return (
     <div className="bg-yellow-50 border-b border-yellow-100 py-2 px-4 text-center text-xs text-yellow-800 font-medium">
-      WordPress Theme files generated in <code className="bg-yellow-100 px-1 rounded">/wp-theme/</code> directory.
+      WordPress Theme files generated in the root directory (style.css, functions.php, etc.).
     </div>
   );
 };
