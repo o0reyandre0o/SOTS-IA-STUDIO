@@ -222,16 +222,14 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
       <section className="relative min-h-[600px] md:h-[800px] flex items-center py-12 md:py-0 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <video 
-            key={heroVideo}
-            autoPlay 
-            muted 
-            loop 
+            autoPlay
+            muted
+            loop
             playsInline
-            poster="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp"
+            preload="auto"
             className="w-full h-full object-cover"
-          >
-            <source src={heroVideo} type="video/mp4" />
-          </video>
+            src={heroVideo}
+          />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/80 via-[#0B2447]/40 to-transparent"></div>
         </div>
         

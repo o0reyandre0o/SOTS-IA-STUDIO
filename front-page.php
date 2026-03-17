@@ -14,8 +14,8 @@ get_header();
                 autoplay 
                 muted 
                 loop 
-                playsinline
-                poster="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp"
+                playsinline 
+                preload="auto"
                 class="w-full h-full object-cover"
             >
                 <source src="https://assets.mixkit.co/videos/preview/mixkit-security-camera-moving-and-recording-4004-large.mp4" type="video/mp4">
