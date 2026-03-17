@@ -1,5 +1,6 @@
 <?php
 /**
+ * Template Name: Home Page
  * The front page template file
  * This is the template that displays the home page by default.
  */
