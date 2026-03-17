@@ -20,7 +20,7 @@ get_header();
             >
                 <source src="https://anti2.workingtoctoc.com/wp/wp-content/uploads/2026/03/Flow_delpmaspu_.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-black/40"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-transparent"></div>
         </div>
         
         <div class="container mx-auto px-4 md:px-8 relative z-10">
@@ -32,7 +32,7 @@ get_header();
                 <p class="text-blue-400 font-bold tracking-wider text-sm md:text-base mb-4">
                     24/7 PROTECTION FOR YOUR HOME OR BUSINESS WITH MIAMI’S MOST TRUSTED SECURITY EXPERTS.
                 </p>
-                <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+                <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
                     Security Camera Installation & CCTV Systems in Miami
                 </h1>
                 <p class="text-base md:text-xl text-gray-200 mb-8 leading-relaxed">
