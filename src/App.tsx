@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare, Linkedin, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { generateHeroVideo } from './services/videoService';
+import { pages } from './services/pages';
 
 // --- Components ---
 
@@ -1526,141 +1527,7 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
   );
 };
 
-const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
-  return (
-    <div className="animate-in fade-in duration-500">
-    <section className="relative min-h-[350px] md:h-[600px] flex items-center py-12 md:py-0 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <img 
-          src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920" 
-          alt="Video Wall Installation Miami" 
-          className="w-full h-full object-cover"
-          referrerPolicy="no-referrer"
-        />
-        <div className="absolute inset-0 bg-[#0B2447]/85"></div>
-      </div>
-      <div className="container mx-auto px-4 md:px-8 relative z-10 text-white">
-        <div className="max-w-3xl">
-          <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">Professional Video Wall Installation Miami</h1>
-          <p className="text-base md:text-xl text-gray-300 mb-8">
-            Transform your space with high-impact, seamless video wall solutions for commercial and residential settings.
-          </p>
-          <button 
-            onClick={() => setActivePage('contact-us')}
-            className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-4 rounded-full transition shadow-lg"
-          >
-            Get a Custom Quote
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <section className="py-16 md:py-24 bg-slate-50">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-          <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#0B2447] mb-8">Cutting-Edge Visual Solutions</h2>
-            <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
-              Video walls are the ultimate way to deliver high-impact visual content. Whether you're looking to create a stunning <strong>home theater video wall</strong> or a professional <strong>commercial display system</strong>, Security on the Spot is your expert partner in South Florida.
-            </p>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
-                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center group-hover:text-blue-600 transition-colors">
-                  <Monitor className="mr-2 text-blue-600" size={20} /> Commercial Applications
-                </h3>
-                <p className="text-sm text-gray-500">Perfect for sports bars, corporate lobbies, command centers, and retail showrooms. Engage your audience with massive, crystal-clear displays.</p>
-              </div>
-              <div className="bg-white p-6 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
-                <h3 className="font-bold text-[#0B2447] mb-2 flex items-center group-hover:text-blue-600 transition-colors">
-                  <Home className="mr-2 text-blue-600" size={20} /> Residential Luxury
-                </h3>
-                <p className="text-sm text-gray-500">Elevate your home entertainment with a custom video wall. Ideal for dedicated media rooms and high-end living spaces.</p>
-              </div>
-            </div>
-          </div>
-          <div className="relative">
-            <img 
-              src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&q=80&w=1000" 
-              alt="Video Wall Display" 
-              className="rounded-3xl shadow-2xl w-full object-cover h-80 md:h-auto border-4 border-white"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-8 rounded-2xl shadow-xl hidden md:block">
-              <div className="text-3xl font-bold">4K/8K</div>
-              <div className="text-xs uppercase font-bold opacity-80">Resolution Ready</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-[#0B2447] text-center mb-16">Why Choose Professional Installation?</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-          {[
-            { title: 'Seamless Integration', desc: 'We ensure pixel-perfect alignment and color calibration across all displays for a truly unified look.', icon: <Zap /> },
-            { title: 'Robust Mounting', desc: 'Our team uses professional-grade hardware to safely secure heavy displays on any wall surface.', icon: <Shield /> },
-            { title: 'Expert Calibration', desc: 'We optimize brightness, contrast, and color settings to ensure your video wall looks stunning in any lighting.', icon: <Monitor /> }
-          ].map((benefit) => (
-            <div key={benefit.title} className="text-center p-8 bg-slate-50 rounded-3xl border border-transparent hover:border-blue-500/30 hover:bg-white hover:shadow-2xl hover:shadow-blue-500/5 transition-all duration-300 group">
-              <div className="w-16 h-16 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
-                {benefit.icon}
-              </div>
-              <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{benefit.title}</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">{benefit.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20 bg-slate-50">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div>
-            <h2 className="text-3xl font-bold text-[#0B2447] mb-6">Custom Configuration Options</h2>
-            <p className="text-gray-600 mb-8 leading-relaxed">Every space is unique. We offer a variety of configurations to meet your specific visual goals and architectural requirements.</p>
-            <div className="grid grid-cols-2 gap-6">
-              {[
-                { label: '2x2 Matrix', value: 'Standard' },
-                { label: '3x3 Matrix', value: 'High Impact' },
-                { label: 'Custom Aspect', value: 'Artistic' },
-                { label: 'Curved Walls', value: 'Immersive' }
-              ].map((opt) => (
-                <div key={opt.label} className="p-4 bg-white rounded-2xl shadow-sm border border-blue-100 hover:border-blue-500 hover:shadow-lg hover:shadow-blue-500/10 transition-all group">
-                  <div className="text-blue-600 font-bold group-hover:scale-110 transition-transform origin-left">{opt.value}</div>
-                  <div className="text-xs text-gray-500">{opt.label}</div>
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="relative group">
-            <img 
-              src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800" 
-              alt="Video Wall Design" 
-              className="rounded-3xl shadow-2xl border-4 border-white transition-transform duration-500 group-hover:scale-[1.02]"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 rounded-3xl bg-blue-600/10 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20 bg-[#0B2447] text-white overflow-hidden relative">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10">
-        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=1920" alt="Pattern" className="w-full h-full object-cover" />
-      </div>
-      <div className="container mx-auto px-4 md:px-8 relative z-10 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready for a Visual Transformation?</h2>
-        <p className="text-gray-300 mb-12 max-w-2xl mx-auto">Contact us today for a free consultation and see how our video wall solutions can elevate your Miami business or home.</p>
-        <button onClick={() => setActivePage('contact-us')} className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-12 py-5 rounded-full transition shadow-2xl hover:scale-105 active:scale-95">Get a Custom Quote</button>
-      </div>
-    </section>
-  </div>
-  );
-};
+// --- Sub-page Components ---
 
 // --- Main App ---
 
@@ -1770,6 +1637,22 @@ export default function App() {
   }, [activePage]);
 
   const renderPage = () => {
+    // Check if the active page is one of our dynamic sub-pages
+    if (pages[activePage]) {
+      const page = pages[activePage];
+      return (
+        <SubPage 
+          title={page.title}
+          description={page.description}
+          image={page.image}
+          features={page.features}
+          faqs={page.faqs}
+          setActivePage={setActivePage}
+          badge={page.badge}
+        />
+      );
+    }
+
     switch (activePage) {
       case 'home': return <HomePage setActivePage={setActivePage} />;
       case 'security-cameras-security-on-the-spot': return <SecurityCamerasPage setActivePage={setActivePage} />;
@@ -1780,248 +1663,6 @@ export default function App() {
       case 'fire-systems': return <FireSystemsPage setActivePage={setActivePage} />;
       case 'networking-fiber-optics': return <NetworkingPage setActivePage={setActivePage} />;
       case 'audio-video-services': return <AudioVideoPage setActivePage={setActivePage} />;
-      case 'video-wall-installation': return <VideoWallPage setActivePage={setActivePage} />;
-      // Fallback for submenus to show a generic message or the parent page
-      case 'commercial-warehouse':
-        return (
-          <SubPage 
-            title="Commercial & Warehouse Security"
-            description="Protect your inventory, equipment, and personnel with enterprise-grade surveillance solutions tailored for large-scale operations."
-            image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80"
-            features={[
-              "High-definition 4K cameras for crystal clear evidence.",
-              "Night vision and thermal imaging for 24/7 monitoring.",
-              "Remote access from any device, anywhere in the world.",
-              "Perimeter protection and motion alerts."
-            ]}
-            faqs={[
-              { q: "How many cameras do I need for my warehouse?", a: "The number of cameras depends on the size and layout of your facility. We provide a free on-site consultation to design a custom layout." },
-              { q: "Can I monitor multiple locations from one app?", a: "Yes, our advanced NVR systems allow you to integrate multiple locations into a single dashboard." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "24/7", sub: "Monitoring" }}
-          />
-        );
-      case 'restaurants':
-        return (
-          <SubPage 
-            title="Restaurant Security Solutions"
-            description="Protect your kitchen, staff, and customers with high-definition surveillance and remote monitoring."
-            image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80"
-            features={[
-              "Monitor POS areas to prevent theft and errors.",
-              "Ensure food safety protocols are followed in the kitchen.",
-              "Provide a safe environment for your customers.",
-              "Remote management for busy restaurant owners."
-            ]}
-            faqs={[
-              { q: "Can I see my restaurant from my phone?", a: "Yes, all our systems include a mobile app that allows you to view live and recorded footage." },
-              { q: "Are the cameras heat-resistant for the kitchen?", a: "We use specialized cameras designed to withstand the humidity and heat of a professional kitchen." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "HD", sub: "Video Quality" }}
-          />
-        );
-      case 'small-businesses':
-        return (
-          <SubPage 
-            title="Small Business Security"
-            description="Protect your investment with cost-effective, high-performance surveillance systems designed for small business owners."
-            image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80"
-            features={[
-              "Reduce theft and inventory shrinkage.",
-              "Monitor employee performance and customer service.",
-              "Easy-to-use mobile app for remote monitoring.",
-              "Scalable solutions that grow with your business."
-            ]}
-            faqs={[
-              { q: "Is a security system expensive for a small business?", a: "We offer scalable solutions that fit any budget, ensuring you get the protection you need." },
-              { q: "How long does installation take?", a: "Most small business installations are completed within a single day." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "24/7", sub: "Protection" }}
-          />
-        );
-      case 'retail':
-        return (
-          <SubPage 
-            title="Retail Store Security"
-            description="Reduce shoplifting, monitor foot traffic, and ensure customer safety with our advanced retail surveillance solutions."
-            image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80"
-            features={[
-              "High-resolution cameras for facial recognition and evidence.",
-              "Monitor entrances, exits, and high-value merchandise areas.",
-              "Integrate with POS systems to track transactions.",
-              "Deter shoplifting and internal theft."
-            ]}
-            faqs={[
-              { q: "Can the cameras help with shoplifting?", a: "Yes, visible cameras act as a strong deterrent and provide essential evidence." },
-              { q: "Can I monitor my store after hours?", a: "Yes, our systems include motion detection alerts that notify you on your phone." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "HD", sub: "Retail Security" }}
-          />
-        );
-      case 'families':
-        return (
-          <SubPage 
-            title="Home & Family Security"
-            description="Ensure the safety of your loved ones and your property with our reliable, easy-to-use home security systems."
-            image="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80"
-            features={[
-              "Monitor entrances, driveways, and backyards.",
-              "Receive instant alerts on your phone for any activity.",
-              "Easy-to-use mobile app for the whole family.",
-              "Smart home integration for added convenience."
-            ]}
-            faqs={[
-              { q: "Can I see my home from work?", a: "Yes, our systems allow you to view live and recorded footage from any mobile device." },
-              { q: "Are the cameras weather-resistant?", a: "Our outdoor cameras are designed to withstand rain, heat, and humidity." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "24/7", sub: "Peace of Mind" }}
-          />
-        );
-      case 'car-workshops':
-        return (
-          <SubPage 
-            title="Car Workshop Security"
-            description="Protect valuable tools, equipment, and customer vehicles with our specialized automotive surveillance solutions."
-            image="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80"
-            features={[
-              "Monitor service bays, tool storage, and customer vehicle areas.",
-              "High-resolution cameras for clear evidence in case of theft.",
-              "Remote monitoring for 24/7 peace of mind.",
-              "Durable cameras for harsh workshop environments."
-            ]}
-            faqs={[
-              { q: "Can the cameras see inside the vehicles?", a: "Depending on placement, our cameras can provide clear views of the interior and exterior." },
-              { q: "Are the cameras resistant to grease and oil?", a: "We use specialized cameras designed to withstand automotive shop environments." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "HD", sub: "Workshop Security" }}
-          />
-        );
-      case 'control-integration':
-        return (
-          <SubPage 
-            title="Smart Control Integration"
-            description="Unify your home's technology with a single, intuitive control system that manages everything from lighting to security."
-            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
-            features={[
-              "Manage lighting, climate, security, and entertainment from one app.",
-              "Create custom scenes for different times of the day.",
-              "Voice control integration for hands-free convenience.",
-              "Remote access to all home systems."
-            ]}
-            faqs={[
-              { q: "Can I add more devices later?", a: "Yes, our systems are scalable, allowing you to add more features as your needs evolve." },
-              { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly for the whole family." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "100%", sub: "Integration" }}
-          />
-        );
-      case 'lighting-control':
-        return (
-          <SubPage 
-            title="Smart Lighting Control"
-            description="Set the perfect mood and save energy with our advanced smart lighting solutions that respond to your lifestyle."
-            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
-            features={[
-              "Create custom lighting scenes for dining, relaxing, and more.",
-              "Automate lighting based on time of day or occupancy.",
-              "Improve home security with automated lighting patterns.",
-              "Energy-efficient LED integration."
-            ]}
-            faqs={[
-              { q: "Can I control my lights from my phone?", a: "Yes, our systems include a mobile app for remote control from anywhere." },
-              { q: "Can the system help save energy?", a: "Yes, by automating lighting and using energy-efficient bulbs, you can reduce consumption." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "Energy", sub: "Efficient" }}
-          />
-        );
-      case 'multi-zone-audio':
-        return (
-          <SubPage 
-            title="Multi-Zone Audio Systems"
-            description="Enjoy your favorite music in every room of your home with our high-performance multi-zone audio solutions."
-            image="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80"
-            features={[
-              "Stream high-fidelity audio to any room in your home.",
-              "Control each zone independently or as a group.",
-              "Integrate with your favorite streaming services.",
-              "High-performance architectural speakers."
-            ]}
-            faqs={[
-              { q: "Can I play different music in different rooms?", a: "Yes, our systems allow you to stream different music to each zone independently." },
-              { q: "Is the system easy to control?", a: "Our interfaces are designed to be intuitive and user-friendly." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "Hi-Fi", sub: "Audio Quality" }}
-          />
-        );
-      case 'home-theater':
-        return (
-          <SubPage 
-            title="Immersive Home Theater"
-            description="Bring the cinema experience home with our high-performance home theater solutions that deliver stunning visuals and immersive sound."
-            image="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80"
-            features={[
-              "High-definition 4K projectors and screens for stunning visuals.",
-              "Immersive surround sound systems for a true cinema feel.",
-              "Custom theater seating and lighting for maximum comfort.",
-              "Acoustic treatment for optimal sound performance."
-            ]}
-            faqs={[
-              { q: "Can I use my existing speakers?", a: "Depending on quality, we can often integrate your existing speakers into a new system." },
-              { q: "How long does installation take?", a: "Most home theater installations are completed within a few days." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "4K", sub: "Ultra HD" }}
-          />
-        );
-      case 'intercom-systems':
-        return (
-          <SubPage 
-            title="Advanced Intercom Systems"
-            description="Enhance your home's security and convenience with our high-performance intercom solutions."
-            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
-            features={[
-              "High-definition video and clear audio for reliable communication.",
-              "Remote access from any mobile device for convenience.",
-              "Integrate with existing security and access control systems.",
-              "Visitor logging and snapshot features."
-            ]}
-            faqs={[
-              { q: "Can I see visitors from my phone?", a: "Yes, our intercom systems include a mobile app for remote communication." },
-              { q: "Is the system easy to install?", a: "Most intercom installations are completed within a single day." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "HD", sub: "Video Quality" }}
-          />
-        );
-      case 'entry-exit-systems':
-        return (
-          <SubPage 
-            title="Secure Entry & Exit Systems"
-            description="Control access to your property with our high-performance entry and exit solutions."
-            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
-            features={[
-              "Manage access with keypads, card readers, and biometric systems.",
-              "Remote access from any mobile device for convenience.",
-              "Integrate with existing security and intercom systems.",
-              "Audit trails and access reports."
-            ]}
-            faqs={[
-              { q: "Can I manage access from my phone?", a: "Yes, our entry and exit systems include a mobile app for remote management." },
-              { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly." }
-            ]}
-            setActivePage={setActivePage}
-            badge={{ text: "Secure", sub: "Access" }}
-          />
-        );
       default: return <HomePage setActivePage={setActivePage} />;
     }
   };
