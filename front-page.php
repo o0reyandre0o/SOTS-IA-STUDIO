@@ -8,30 +8,40 @@ get_header();
 
 <main id="primary" class="site-main">
     <!-- Hero Section -->
-    <section class="relative h-[700px] flex items-center overflow-hidden">
+    <section class="relative min-h-[600px] md:h-[800px] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp" alt="Security Camera Installation Miami" class="w-full h-full object-cover">
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-transparent"></div>
+            <video 
+                autoplay 
+                muted 
+                loop 
+                playsinline
+                poster="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp"
+                class="w-full h-full object-cover"
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-security-camera-moving-and-recording-4004-large.mp4" type="video/mp4">
+            </video>
+            <!-- Enhanced Overlay for Readability -->
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/80 via-brand-navy/40 to-transparent"></div>
         </div>
         
         <div class="container mx-auto px-4 md:px-8 relative z-10">
             <div class="max-w-3xl text-white">
-                <div class="inline-flex items-center space-x-2 bg-brand-security/20 text-blue-400 px-4 py-1 rounded-full text-xs font-bold mb-6 border border-brand-security/30">
+                <div class="inline-flex items-center space-x-2 bg-brand-security/30 text-blue-300 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold mb-6 border border-brand-security/40 backdrop-blur-sm">
                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 19.444a11.954 11.954 0 007.834-14.445 11.954 11.954 0 00-15.668 0zM10 17.5a9.454 9.454 0 01-6.166-11.444 9.454 9.454 0 0112.332 0A9.454 9.454 0 0110 17.5z" clip-rule="evenodd" /></svg>
                     <span>MIAMI'S #1 SECURITY CAMERA & SMART HOME EXPERTS</span>
                 </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-                    Professional <br />
+                <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight">
+                    Professional <br class="hidden md:block" />
                     <span class="text-brand-security">Security Camera Installation</span> in Miami
                 </h1>
-                <p class="text-xl text-gray-300 mb-10 leading-relaxed">
+                <p class="text-base md:text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl">
                     Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years. From <strong>CCTV systems</strong> to <strong>smart home integration</strong>, we are your local experts.
                 </p>
                 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-lg shadow-brand-security/20 text-center">
+                    <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold text-lg transition shadow-xl shadow-brand-security/20 text-center active-scale">
                         Get a Free Quote — (786) 822-7868
                     </a>
-                    <a href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition text-center">
+                    <a href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-8 py-4 rounded-full font-bold text-lg transition text-center active-scale">
                         Explore Our Services
                     </a>
                 </div>

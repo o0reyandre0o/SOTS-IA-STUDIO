@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
+import { generateHeroVideo } from './services/videoService';
 
 // --- Components ---
 
@@ -212,53 +213,78 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
 
 // --- Page Components ---
 
-const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <>
-    {/* Hero Section */}
-    <section className="relative min-h-[550px] md:h-[700px] flex items-center py-12 md:py-0 overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <video 
-          autoPlay 
-          muted 
-          loop 
-          playsInline
-          className="w-full h-full object-cover"
-        >
-          <source src="https://assets.mixkit.co/videos/preview/mixkit-security-camera-moving-and-recording-4004-large.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447] via-[#0B2447]/95 md:via-[#0B2447]/90 to-transparent"></div>
-      </div>
-      
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="max-w-3xl text-white">
-          <div className="inline-flex items-center space-x-2 bg-blue-600/30 text-blue-300 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold mb-6 border border-blue-500/40">
-            <Shield size={14} />
-            <span>MIAMI'S #1 SECURITY CAMERA & SMART HOME EXPERTS</span>
-          </div>
-          <h1 className="text-3xl md:text-7xl font-extrabold mb-6 leading-tight">
-            Professional <br className="hidden md:block" />
-            <span className="text-blue-500">Security Camera Installation</span> in Miami
-          </h1>
-          <p className="text-base md:text-xl text-gray-300 mb-8 leading-relaxed">
-            Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years. From <strong>CCTV systems</strong> to <strong>smart home integration</strong>, we are your local experts.
-          </p>
-          <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-            <button 
-              onClick={() => setActivePage('contact-us')}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg transition shadow-lg shadow-blue-600/20"
+const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  const heroVideo = 'https://assets.mixkit.co/videos/preview/mixkit-security-camera-moving-and-recording-4004-large.mp4';
+
+  return (
+    <div className="animate-in fade-in duration-500">
+      {/* Hero Section */}
+      <section className="relative min-h-[600px] md:h-[800px] flex items-center py-12 md:py-0 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <video 
+            key={heroVideo}
+            autoPlay 
+            muted 
+            loop 
+            playsInline
+            poster="https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp"
+            className="w-full h-full object-cover"
+          >
+            <source src={heroVideo} type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/80 via-[#0B2447]/40 to-transparent"></div>
+        </div>
+        
+        <div className="container mx-auto px-4 md:px-8 relative z-10">
+          <div className="max-w-3xl text-white">
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="inline-flex items-center space-x-2 bg-blue-600/30 text-blue-300 px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold mb-6 border border-blue-500/40"
             >
-              Get a Free Quote — (786) 822-7868
-            </button>
-            <button 
-              onClick={() => setActivePage('security-cameras-security-on-the-spot')}
-              className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg transition"
+              <Shield size={14} />
+              <span>MIAMI'S #1 SECURITY CAMERA & SMART HOME EXPERTS</span>
+            </motion.div>
+            <motion.h1 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight"
             >
-              Explore Our Services
-            </button>
+              Professional <br className="hidden md:block" />
+              <span className="text-blue-500">Security Camera Installation</span> in Miami
+            </motion.h1>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="text-base md:text-xl text-gray-300 mb-8 leading-relaxed"
+            >
+              Protecting Miami's families and businesses with high-end, reliable security solutions for over 20 years. From <strong>CCTV systems</strong> to <strong>smart home integration</strong>, we are your local experts.
+            </motion.p>
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.6 }}
+              className="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <button 
+                onClick={() => setActivePage('contact-us')}
+                className="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg transition shadow-lg shadow-blue-600/20 active:scale-95"
+              >
+                Get a Free Quote — (786) 822-7868
+              </button>
+              <button 
+                onClick={() => setActivePage('security-cameras-security-on-the-spot')}
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md text-white border border-white/20 px-6 md:px-8 py-3 md:py-4 rounded-full font-bold text-sm md:text-lg transition active:scale-95"
+              >
+                Explore Our Services
+              </button>
+            </motion.div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
     {/* Trust Bar */}
     <section className="py-10 md:py-12 bg-white border-b border-gray-100">
@@ -380,11 +406,13 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl"></div>
     </section>
-  </>
-);
+    </div>
+  );
+};
 
-const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="relative min-h-[350px] md:h-[500px] flex items-center py-12 md:py-0 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
@@ -538,11 +566,13 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
         </button>
       </div>
     </section>
-  </div>
-);
+    </div>
+  );
+};
 
-const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="relative min-h-[350px] md:h-[500px] flex items-center py-12 md:py-0 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
@@ -701,10 +731,12 @@ const HomeAutomationPage = ({ setActivePage }: { setActivePage: (page: string) =
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const ContactPage = () => (
-  <div className="animate-in fade-in duration-500">
+const ContactPage = () => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-16 md:py-20">
       <div className="container mx-auto px-4 md:px-8 text-center">
         <h1 className="text-3xl md:text-6xl font-bold mb-6">Contact Us</h1>
@@ -765,10 +797,12 @@ const ContactPage = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const WhoWeArePage = () => (
-  <div className="animate-in fade-in duration-500">
+const WhoWeArePage = () => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-16 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-20">
         <img 
@@ -845,10 +879,12 @@ const WhoWeArePage = () => (
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
@@ -983,10 +1019,12 @@ const AccessControlPage = ({ setActivePage }: { setActivePage: (page: string) =>
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
@@ -1086,10 +1124,12 @@ const FireSystemsPage = ({ setActivePage }: { setActivePage: (page: string) => v
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
@@ -1201,10 +1241,12 @@ const NetworkingPage = ({ setActivePage }: { setActivePage: (page: string) => vo
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="bg-[#0B2447] text-white py-12 md:py-24 relative overflow-hidden">
       <div className="absolute inset-0 opacity-30">
         <img 
@@ -1305,10 +1347,12 @@ const AudioVideoPage = ({ setActivePage }: { setActivePage: (page: string) => vo
       </div>
     </section>
   </div>
-);
+  );
+};
 
-const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => (
-  <div className="animate-in fade-in duration-500">
+const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
+  return (
+    <div className="animate-in fade-in duration-500">
     <section className="relative min-h-[350px] md:h-[600px] flex items-center py-12 md:py-0 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
@@ -1439,7 +1483,8 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
       </div>
     </section>
   </div>
-);
+  );
+};
 
 // --- Main App ---
 
