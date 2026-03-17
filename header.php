@@ -149,10 +149,10 @@
         <!-- Desktop Nav -->
         <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-brand-navy">
             <div class="relative group">
-                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                <a href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot/' ) ); ?>" class="flex items-center space-x-1 hover:text-brand-security transition py-4">
                     <span>Security Cameras</span>
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
+                </a>
                 <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <a href="<?php echo esc_url( home_url( '/commercial-warehouse/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Commercial & Warehouse Properties</a>
                     <a href="<?php echo esc_url( home_url( '/restaurants/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Restaurants</a>
@@ -164,10 +164,10 @@
             </div>
 
             <div class="relative group">
-                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                <a href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami/' ) ); ?>" class="flex items-center space-x-1 hover:text-brand-security transition py-4">
                     <span>Home Automation</span>
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
+                </a>
                 <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <a href="<?php echo esc_url( home_url( '/control-integration/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Control Integration</a>
                     <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Lighting Control</a>
@@ -178,10 +178,10 @@
             </div>
 
             <div class="relative group">
-                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                <a href="<?php echo esc_url( home_url( '/access-control/' ) ); ?>" class="flex items-center space-x-1 hover:text-brand-security transition py-4">
                     <span>Access Control</span>
                     <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                </button>
+                </a>
                 <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
                     <a href="<?php echo esc_url( home_url( '/intercom-systems/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Intercom Systems</a>
                     <a href="<?php echo esc_url( home_url( '/entry-exit-systems/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Entry/Exit Systems</a>
@@ -226,10 +226,12 @@
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
                 
                 <div class="flex flex-col">
-                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
-                        <span>Security Cameras</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                    <div class="flex items-center justify-between py-2">
+                        <a href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot/' ) ); ?>" class="text-xl font-bold text-brand-navy hover:text-brand-security transition flex-1">Security Cameras</a>
+                        <button class="mobile-submenu-toggle p-2 text-brand-navy">
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
                     <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
                         <a href="<?php echo esc_url( home_url( '/commercial-warehouse/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Commercial & Warehouse Properties</a>
                         <a href="<?php echo esc_url( home_url( '/restaurants/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Restaurants</a>
@@ -241,10 +243,12 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
-                        <span>Home Automation</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                    <div class="flex items-center justify-between py-2">
+                        <a href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami/' ) ); ?>" class="text-xl font-bold text-brand-navy hover:text-brand-security transition flex-1">Home Automation</a>
+                        <button class="mobile-submenu-toggle p-2 text-brand-navy">
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
                     <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
                         <a href="<?php echo esc_url( home_url( '/control-integration/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Control Integration</a>
                         <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Lighting Control</a>
@@ -255,10 +259,12 @@
                 </div>
 
                 <div class="flex flex-col">
-                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
-                        <span>Access Control</span>
-                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-                    </button>
+                    <div class="flex items-center justify-between py-2">
+                        <a href="<?php echo esc_url( home_url( '/access-control/' ) ); ?>" class="text-xl font-bold text-brand-navy hover:text-brand-security transition flex-1">Access Control</a>
+                        <button class="mobile-submenu-toggle p-2 text-brand-navy">
+                            <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                        </button>
+                    </div>
                     <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
                         <a href="<?php echo esc_url( home_url( '/intercom-systems/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Intercom Systems</a>
                         <a href="<?php echo esc_url( home_url( '/entry-exit-systems/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Entry/Exit Systems</a>
@@ -337,7 +343,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
     submenuToggles.forEach(toggle => {
         toggle.addEventListener('click', function() {
-            const submenu = this.nextElementSibling;
+            const submenu = this.closest('.flex-col').querySelector('.mobile-submenu');
             const icon = this.querySelector('svg');
             
             // Close other submenus
@@ -347,7 +353,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     other.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
                 }
             });
-
+            
             submenu.classList.toggle('hidden');
             icon.classList.toggle('rotate-180');
         });

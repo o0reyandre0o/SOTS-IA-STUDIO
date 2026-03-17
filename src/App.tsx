@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare, Linkedin } from 'lucide-react';
+import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare, Linkedin, CheckCircle2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { generateHeroVideo } from './services/videoService';
 
@@ -79,7 +79,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
               onMouseLeave={() => setActiveDropdown(null)}
             >
               <button
-                onClick={() => !item.submenu && setActivePage(item.slug)}
+                onClick={() => setActivePage(item.slug)}
                 className={`flex items-center space-x-1 hover:text-blue-600 transition py-4 ${activePage === item.slug ? 'text-blue-600' : ''}`}
               >
                 <span>{item.name}</span>
@@ -170,20 +170,25 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
               <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <div key={item.slug} className="flex flex-col">
-                    <button
-                      onClick={() => {
-                        if (item.submenu) {
-                          setActiveDropdown(activeDropdown === item.slug ? null : item.slug);
-                        } else {
+                    <div className="flex items-center justify-between py-2">
+                      <button
+                        onClick={() => {
                           setActivePage(item.slug);
                           setIsMenuOpen(false);
-                        }
-                      }}
-                      className={`flex items-center justify-between text-lg font-bold transition py-2 ${activePage === item.slug ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
-                    >
-                      <span>{item.name}</span>
-                      {item.submenu && <ChevronDown size={20} className={`transition-transform duration-200 ${activeDropdown === item.slug ? 'rotate-180' : ''}`} />}
-                    </button>
+                        }}
+                        className={`text-lg font-bold transition flex-1 text-left ${activePage === item.slug ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
+                      >
+                        {item.name}
+                      </button>
+                      {item.submenu && (
+                        <button 
+                          onClick={() => setActiveDropdown(activeDropdown === item.slug ? null : item.slug)}
+                          className="p-2 text-[#0B2447]"
+                        >
+                          <ChevronDown size={20} className={`transition-transform duration-200 ${activeDropdown === item.slug ? 'rotate-180' : ''}`} />
+                        </button>
+                      )}
+                    </div>
                     
                     {item.submenu && activeDropdown === item.slug && (
                       <motion.div 
@@ -1660,6 +1665,102 @@ const VideoWallPage = ({ setActivePage }: { setActivePage: (page: string) => voi
 // --- Main App ---
 
 
+interface SubPageProps {
+  title: string;
+  description: string;
+  image: string;
+  features: string[];
+  faqs: { q: string; a: string }[];
+  setActivePage: (page: string) => void;
+  badge?: { text: string; sub: string };
+}
+
+const SubPage: React.FC<SubPageProps> = ({ title, description, image, features, faqs, setActivePage, badge }) => (
+  <div className="pt-20">
+    <section className="relative py-24 bg-[#0B2447] overflow-hidden">
+      <div className="absolute inset-0 opacity-20">
+        <img src={image} alt={title} className="w-full h-full object-cover" />
+      </div>
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="max-w-3xl"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">{title}</h1>
+          <p className="text-xl text-blue-100 mb-8 leading-relaxed">{description}</p>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-blue-600 text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center space-x-2"
+          >
+            <span>Get Your Free Consultation Today</span>
+            <ChevronRight size={20} />
+          </button>
+        </motion.div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-white">
+      <div className="container mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B2447] mb-8">Comprehensive Solutions</h2>
+            <div className="space-y-6">
+              {features.map((feature, idx) => (
+                <div key={idx} className="flex items-start space-x-4">
+                  <div className="mt-1 bg-blue-50 p-2 rounded-xl">
+                    <CheckCircle2 className="text-blue-600" size={20} />
+                  </div>
+                  <p className="text-gray-600 text-lg leading-relaxed">{feature}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            className="relative"
+          >
+            <img src={image} alt="Security Solution" className="rounded-[2.5rem] shadow-2xl w-full aspect-square object-cover" />
+            {badge && (
+              <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-8 rounded-3xl shadow-2xl hidden md:block">
+                <p className="text-4xl font-bold mb-1">{badge.text}</p>
+                <p className="text-sm font-medium opacity-90 uppercase tracking-wider">{badge.sub}</p>
+              </div>
+            )}
+          </motion.div>
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-gray-50">
+      <div className="container mx-auto px-6 max-w-4xl">
+        <h2 className="text-3xl md:text-4xl font-bold text-[#0B2447] mb-16 text-center">Frequently Asked Questions</h2>
+        <div className="space-y-4">
+          {faqs.map((faq, idx) => (
+            <motion.div 
+              key={idx}
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: idx * 0.1 }}
+              className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100"
+            >
+              <h3 className="text-xl font-bold text-[#0B2447] mb-3">{faq.q}</h3>
+              <p className="text-gray-600 leading-relaxed">{faq.a}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+);
+
 export default function App() {
   const [activePage, setActivePage] = useState('home');
 
@@ -1682,20 +1783,245 @@ export default function App() {
       case 'video-wall-installation': return <VideoWallPage setActivePage={setActivePage} />;
       // Fallback for submenus to show a generic message or the parent page
       case 'commercial-warehouse':
+        return (
+          <SubPage 
+            title="Commercial & Warehouse Security"
+            description="Protect your inventory, equipment, and personnel with enterprise-grade surveillance solutions tailored for large-scale operations."
+            image="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80"
+            features={[
+              "High-definition 4K cameras for crystal clear evidence.",
+              "Night vision and thermal imaging for 24/7 monitoring.",
+              "Remote access from any device, anywhere in the world.",
+              "Perimeter protection and motion alerts."
+            ]}
+            faqs={[
+              { q: "How many cameras do I need for my warehouse?", a: "The number of cameras depends on the size and layout of your facility. We provide a free on-site consultation to design a custom layout." },
+              { q: "Can I monitor multiple locations from one app?", a: "Yes, our advanced NVR systems allow you to integrate multiple locations into a single dashboard." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "24/7", sub: "Monitoring" }}
+          />
+        );
       case 'restaurants':
+        return (
+          <SubPage 
+            title="Restaurant Security Solutions"
+            description="Protect your kitchen, staff, and customers with high-definition surveillance and remote monitoring."
+            image="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80"
+            features={[
+              "Monitor POS areas to prevent theft and errors.",
+              "Ensure food safety protocols are followed in the kitchen.",
+              "Provide a safe environment for your customers.",
+              "Remote management for busy restaurant owners."
+            ]}
+            faqs={[
+              { q: "Can I see my restaurant from my phone?", a: "Yes, all our systems include a mobile app that allows you to view live and recorded footage." },
+              { q: "Are the cameras heat-resistant for the kitchen?", a: "We use specialized cameras designed to withstand the humidity and heat of a professional kitchen." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "HD", sub: "Video Quality" }}
+          />
+        );
       case 'small-businesses':
+        return (
+          <SubPage 
+            title="Small Business Security"
+            description="Protect your investment with cost-effective, high-performance surveillance systems designed for small business owners."
+            image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80"
+            features={[
+              "Reduce theft and inventory shrinkage.",
+              "Monitor employee performance and customer service.",
+              "Easy-to-use mobile app for remote monitoring.",
+              "Scalable solutions that grow with your business."
+            ]}
+            faqs={[
+              { q: "Is a security system expensive for a small business?", a: "We offer scalable solutions that fit any budget, ensuring you get the protection you need." },
+              { q: "How long does installation take?", a: "Most small business installations are completed within a single day." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "24/7", sub: "Protection" }}
+          />
+        );
       case 'retail':
+        return (
+          <SubPage 
+            title="Retail Store Security"
+            description="Reduce shoplifting, monitor foot traffic, and ensure customer safety with our advanced retail surveillance solutions."
+            image="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80"
+            features={[
+              "High-resolution cameras for facial recognition and evidence.",
+              "Monitor entrances, exits, and high-value merchandise areas.",
+              "Integrate with POS systems to track transactions.",
+              "Deter shoplifting and internal theft."
+            ]}
+            faqs={[
+              { q: "Can the cameras help with shoplifting?", a: "Yes, visible cameras act as a strong deterrent and provide essential evidence." },
+              { q: "Can I monitor my store after hours?", a: "Yes, our systems include motion detection alerts that notify you on your phone." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "HD", sub: "Retail Security" }}
+          />
+        );
       case 'families':
+        return (
+          <SubPage 
+            title="Home & Family Security"
+            description="Ensure the safety of your loved ones and your property with our reliable, easy-to-use home security systems."
+            image="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80"
+            features={[
+              "Monitor entrances, driveways, and backyards.",
+              "Receive instant alerts on your phone for any activity.",
+              "Easy-to-use mobile app for the whole family.",
+              "Smart home integration for added convenience."
+            ]}
+            faqs={[
+              { q: "Can I see my home from work?", a: "Yes, our systems allow you to view live and recorded footage from any mobile device." },
+              { q: "Are the cameras weather-resistant?", a: "Our outdoor cameras are designed to withstand rain, heat, and humidity." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "24/7", sub: "Peace of Mind" }}
+          />
+        );
       case 'car-workshops':
-        return <SecurityCamerasPage setActivePage={setActivePage} />;
+        return (
+          <SubPage 
+            title="Car Workshop Security"
+            description="Protect valuable tools, equipment, and customer vehicles with our specialized automotive surveillance solutions."
+            image="https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&q=80"
+            features={[
+              "Monitor service bays, tool storage, and customer vehicle areas.",
+              "High-resolution cameras for clear evidence in case of theft.",
+              "Remote monitoring for 24/7 peace of mind.",
+              "Durable cameras for harsh workshop environments."
+            ]}
+            faqs={[
+              { q: "Can the cameras see inside the vehicles?", a: "Depending on placement, our cameras can provide clear views of the interior and exterior." },
+              { q: "Are the cameras resistant to grease and oil?", a: "We use specialized cameras designed to withstand automotive shop environments." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "HD", sub: "Workshop Security" }}
+          />
+        );
       case 'control-integration':
+        return (
+          <SubPage 
+            title="Smart Control Integration"
+            description="Unify your home's technology with a single, intuitive control system that manages everything from lighting to security."
+            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
+            features={[
+              "Manage lighting, climate, security, and entertainment from one app.",
+              "Create custom scenes for different times of the day.",
+              "Voice control integration for hands-free convenience.",
+              "Remote access to all home systems."
+            ]}
+            faqs={[
+              { q: "Can I add more devices later?", a: "Yes, our systems are scalable, allowing you to add more features as your needs evolve." },
+              { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly for the whole family." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "100%", sub: "Integration" }}
+          />
+        );
       case 'lighting-control':
+        return (
+          <SubPage 
+            title="Smart Lighting Control"
+            description="Set the perfect mood and save energy with our advanced smart lighting solutions that respond to your lifestyle."
+            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
+            features={[
+              "Create custom lighting scenes for dining, relaxing, and more.",
+              "Automate lighting based on time of day or occupancy.",
+              "Improve home security with automated lighting patterns.",
+              "Energy-efficient LED integration."
+            ]}
+            faqs={[
+              { q: "Can I control my lights from my phone?", a: "Yes, our systems include a mobile app for remote control from anywhere." },
+              { q: "Can the system help save energy?", a: "Yes, by automating lighting and using energy-efficient bulbs, you can reduce consumption." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "Energy", sub: "Efficient" }}
+          />
+        );
       case 'multi-zone-audio':
+        return (
+          <SubPage 
+            title="Multi-Zone Audio Systems"
+            description="Enjoy your favorite music in every room of your home with our high-performance multi-zone audio solutions."
+            image="https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&q=80"
+            features={[
+              "Stream high-fidelity audio to any room in your home.",
+              "Control each zone independently or as a group.",
+              "Integrate with your favorite streaming services.",
+              "High-performance architectural speakers."
+            ]}
+            faqs={[
+              { q: "Can I play different music in different rooms?", a: "Yes, our systems allow you to stream different music to each zone independently." },
+              { q: "Is the system easy to control?", a: "Our interfaces are designed to be intuitive and user-friendly." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "Hi-Fi", sub: "Audio Quality" }}
+          />
+        );
       case 'home-theater':
-        return <HomeAutomationPage setActivePage={setActivePage} />;
+        return (
+          <SubPage 
+            title="Immersive Home Theater"
+            description="Bring the cinema experience home with our high-performance home theater solutions that deliver stunning visuals and immersive sound."
+            image="https://images.unsplash.com/photo-1593784991095-a205069470b6?auto=format&fit=crop&q=80"
+            features={[
+              "High-definition 4K projectors and screens for stunning visuals.",
+              "Immersive surround sound systems for a true cinema feel.",
+              "Custom theater seating and lighting for maximum comfort.",
+              "Acoustic treatment for optimal sound performance."
+            ]}
+            faqs={[
+              { q: "Can I use my existing speakers?", a: "Depending on quality, we can often integrate your existing speakers into a new system." },
+              { q: "How long does installation take?", a: "Most home theater installations are completed within a few days." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "4K", sub: "Ultra HD" }}
+          />
+        );
       case 'intercom-systems':
+        return (
+          <SubPage 
+            title="Advanced Intercom Systems"
+            description="Enhance your home's security and convenience with our high-performance intercom solutions."
+            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
+            features={[
+              "High-definition video and clear audio for reliable communication.",
+              "Remote access from any mobile device for convenience.",
+              "Integrate with existing security and access control systems.",
+              "Visitor logging and snapshot features."
+            ]}
+            faqs={[
+              { q: "Can I see visitors from my phone?", a: "Yes, our intercom systems include a mobile app for remote communication." },
+              { q: "Is the system easy to install?", a: "Most intercom installations are completed within a single day." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "HD", sub: "Video Quality" }}
+          />
+        );
       case 'entry-exit-systems':
-        return <AccessControlPage setActivePage={setActivePage} />;
+        return (
+          <SubPage 
+            title="Secure Entry & Exit Systems"
+            description="Control access to your property with our high-performance entry and exit solutions."
+            image="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80"
+            features={[
+              "Manage access with keypads, card readers, and biometric systems.",
+              "Remote access from any mobile device for convenience.",
+              "Integrate with existing security and intercom systems.",
+              "Audit trails and access reports."
+            ]}
+            faqs={[
+              { q: "Can I manage access from my phone?", a: "Yes, our entry and exit systems include a mobile app for remote management." },
+              { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly." }
+            ]}
+            setActivePage={setActivePage}
+            badge={{ text: "Secure", sub: "Access" }}
+          />
+        );
       default: return <HomePage setActivePage={setActivePage} />;
     }
   };
