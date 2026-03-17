@@ -9,16 +9,16 @@ get_header();
     <!-- Hero Section -->
     <section class="relative h-[500px] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://securityonthespot.com/wp-content/uploads/2025/09/home-automation-smart-homes-in-miami-miami-smart-home-control-scaled.jpg" alt="Home Automation Miami" class="w-full h-full object-cover">
+            <img src="https://securityonthespot.com/wp-content/uploads/2025/09/home-automation-smart-homes-in-miami-miami-smart-home-control-scaled.jpg" alt="Smart Home Automation Miami" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-brand-navy/80"></div>
         </div>
         <div class="container mx-auto px-4 md:px-8 relative z-10 text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Smart Home Automation Miami</h1>
             <p class="text-xl text-gray-300 max-w-2xl mb-8">
-                Experience the future of living with <strong>smart home integration in Miami</strong>. Control your entire home from a single interface.
+                Experience the future of living with <strong>smart home integration in Miami</strong>. Control your entire home—lighting, climate, and security—from a single interface.
             </p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
-                Consult an Expert
+            <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
+                Get Your Free Consultation Today – (786) 822-7868
             </a>
         </div>
     </section>
@@ -86,27 +86,20 @@ get_header();
         </div>
     </section>
 
-    <!-- Partner Brands -->
-    <section class="py-20 bg-white">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl font-bold text-brand-navy text-center mb-12">Our Smart Home Partners</h2>
-            <div class="flex flex-wrap justify-center items-center gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCd_iQqVslxsiDSq-_X8LrTSasRfkMp0rD3nZK0L4d6OhuHRinNFoKDPwnnb7jWBv92U7Qjffl-DFABdUGe8Ru7-Neo1t9KBQ6tgTdH_dUWbQ7_QbEG7p14CDfUYMd3QnBUmB9cSwem-x3Kt_H1mVjo24YfK3OaHsLfSVDf6ga2ZTyTE8IBCoV0DRoOUtWADQ-aGiG81UIx-pHPBSrh4OOvYuMorRtKeL8bW7gX9DHUvNtgODEKbhIzQzNsCxu1cbzWmEQGWyEGyD8x" alt="Partner" class="h-10">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAexWnInQIk2--6wKSE7_9fnuqBZT-WzKAoeoHv0Mu9lpOyeJ2BiyAQtJ-gPrfwf9pGYs8kM6vgPbHC5z4J_ptt7E0RX_5HajgRvf74_kwJVGZsO47zq-HnYUcirikAaA3RAZ59wEPPSjeV87NSm02K7OWEtNgZHeYLMZU_SojcSjpuZVtafcI33CK1dTiWFZYD28chy9PsjEbJysyoy6vV5kZ0PL2B_QQqD055yzmamhlunDlHNflLyDZ-aAtmi7uM-OAjzZW6iYM_" alt="Partner" class="h-10">
-                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDuRe6AwXLBxpLgo5mhoDtfNRIDhHL4nCxTdT1pYQ169q9Euy9qAtp5iTPElKy9fxju75bkKYYOMh1r8AGQqNMYtiOdYrN9xCLhG5C7bw5jVLx-vphBGuapiE4hm25IBrfmhDj8s8OiyP3_eiNUt6JdsB5yRsXWrTr8AmWOWCLj0-YVCPnXyIjEednzsYSzSW0ybEgVBjo2zJ8yb4v1ZW5CiFKqQuI0OAzB8AMqqTTl-gwZcwMhdVPACVmWl4fmzMkXmW2txXOZERUb" alt="Partner" class="h-10">
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">What can I control with a smart home system?</h3>
+                    <p class="text-gray-600">You can control lighting, climate, security cameras, locks, audio/video, and even window shades from one app.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Does it work with my existing devices?</h3>
+                    <p class="text-gray-600">We specialize in integrating various brands into a single, cohesive system for easy management.</p>
+                </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Final CTA -->
-    <section class="py-20 bg-brand-navy text-white text-center relative overflow-hidden">
-        <div class="absolute inset-0 bg-brand-security/10 blur-3xl translate-x-1/2 translate-y-1/2 rounded-full w-96 h-96"></div>
-        <div class="container mx-auto px-4 md:px-8 relative z-10">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">Transform Your Home Today</h2>
-            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Get a personalized consultation for your smart home project in Miami.</p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl active-scale inline-block">
-                Schedule Your Consultation
-            </a>
         </div>
     </section>
 </main>

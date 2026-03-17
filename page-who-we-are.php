@@ -9,13 +9,13 @@ get_header();
     <!-- Hero Section -->
     <section class="relative h-[400px] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
-            <img src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" alt="About Security on the Spot" class="w-full h-full object-cover">
+            <img src="https://securityonthespot.com/wp-content/uploads/2025/08/image-2.jpg" alt="About Security on the Spot Miami" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-brand-navy/80"></div>
         </div>
         <div class="container mx-auto px-4 md:px-8 relative z-10 text-white text-center">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">About Security on the Spot</h1>
             <p class="text-xl text-gray-300 max-w-2xl mx-auto">
-                Miami's trusted experts in security, automation, and technology integration.
+                Miami's trusted experts in security, automation, and technology integration. Protecting what matters most with precision and care.
             </p>
         </div>
     </section>
@@ -24,7 +24,7 @@ get_header();
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
             <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl font-bold text-brand-navy mb-8">Your Local Technology Partner</h2>
+                <h2 class="text-3xl font-bold text-brand-navy mb-8">Your Local Technology Partner in Miami</h2>
                 <p class="text-lg text-gray-600 mb-12 leading-relaxed">
                     At Security on the Spot, we believe that technology should make your life safer and simpler. With years of experience serving the Miami community, we have built a reputation for excellence in <strong>security camera installation</strong>, <strong>smart home automation</strong>, and <strong>commercial technology solutions</strong>.
                 </p>
@@ -124,8 +124,8 @@ get_header();
         <div class="container mx-auto px-4 md:px-8">
             <h2 class="text-3xl md:text-4xl font-bold mb-8">Experience the Security on the Spot Difference</h2>
             <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join hundreds of satisfied customers who trust us with their technology needs.</p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl active-scale inline-block">
-                Work With Us
+            <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl active-scale inline-block">
+                Get Your Free Consultation Today – (786) 822-7868
             </a>
         </div>
     </section>

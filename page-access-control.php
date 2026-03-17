@@ -15,10 +15,10 @@ get_header();
         <div class="container mx-auto px-4 md:px-8 relative z-10 text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Access Control & Intercom Installation Miami</h1>
             <p class="text-xl text-gray-300 max-w-2xl mb-8">
-                Secure your property with advanced <strong>access control systems in Miami</strong>. Manage entry points with ease and precision.
+                Secure your property with advanced <strong>access control systems in Miami</strong>. Manage entry points with ease and precision using keyless entry and video intercoms.
             </p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
-                Secure Your Property
+            <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
+                Get Your Free Consultation Today – (786) 822-7868
             </a>
         </div>
     </section>
@@ -63,37 +63,12 @@ get_header();
         </div>
     </section>
 
-    <!-- Commercial Focus -->
-    <section class="py-20 bg-brand-navy text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-security/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-        <div class="container mx-auto px-4 md:px-8 text-center relative z-10">
-            <h2 class="text-3xl font-bold mb-8">Commercial Access Control Specialists</h2>
-            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-12">
-                We design and install <strong>commercial access control systems</strong> for offices, warehouses, and gated communities across South Florida.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="border border-white/10 p-8 rounded-2xl hover:bg-white/5 hover:border-brand-security/50 transition-all duration-300 group">
-                    <h3 class="text-xl font-bold mb-4 text-brand-security">Multi-Tenant Buildings</h3>
-                    <p class="text-gray-400 text-sm">Cloud-based intercoms for apartment complexes and office buildings.</p>
-                </div>
-                <div class="border border-white/10 p-8 rounded-2xl hover:bg-white/5 hover:border-brand-security/50 transition-all duration-300 group">
-                    <h3 class="text-xl font-bold mb-4 text-brand-security">Industrial Facilities</h3>
-                    <p class="text-gray-400 text-sm">Heavy-duty gate operators and long-range card readers.</p>
-                </div>
-                <div class="border border-white/10 p-8 rounded-2xl hover:bg-white/5 hover:border-brand-security/50 transition-all duration-300 group">
-                    <h3 class="text-xl font-bold mb-4 text-brand-security">Retail & SMB</h3>
-                    <p class="text-gray-400 text-sm">Simple yet effective door controllers for small businesses.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Why Access Control Matters -->
     <section class="py-20 bg-white">
         <div class="container mx-auto px-4 md:px-8">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1 hover-card">
-                    <img src="https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-keyless-entry-installation-scaled.jpg" alt="Access Control Benefits" class="rounded-3xl shadow-2xl">
+                    <img src="https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-keyless-entry-installation-scaled.jpg" alt="Access Control Benefits Miami" class="rounded-3xl shadow-2xl">
                 </div>
                 <div class="order-1 lg:order-2">
                     <h2 class="text-3xl font-bold text-brand-navy mb-8">Why Access Control Matters</h2>
@@ -122,14 +97,20 @@ get_header();
         </div>
     </section>
 
-    <!-- Final CTA -->
-    <section class="py-20 bg-brand-light text-center">
-        <div class="container mx-auto px-4 md:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-8">Secure Your Entry Points Today</h2>
-            <p class="text-xl text-gray-600 mb-10 max-w-2xl mx-auto">Professional installation and managed access solutions for Miami-Dade.</p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl active-scale inline-block">
-                Get a Free Security Audit
-            </a>
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Can I manage access from my phone?</h3>
+                    <p class="text-gray-600">Yes, our cloud-based systems allow you to grant or revoke access remotely using a mobile app.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">What happens if the power goes out?</h3>
+                    <p class="text-gray-600">Our systems include battery backups to ensure your property remains secure during power outages.</p>
+                </div>
+            </div>
         </div>
     </section>
 </main>

@@ -17,8 +17,8 @@ get_header();
             <p class="text-xl text-gray-300 max-w-2xl mb-8">
                 Premium <strong>audio & video integration in Miami</strong>. We design and install immersive entertainment systems for luxury homes and commercial spaces.
             </p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block active-scale">
-                Get a Free Quote
+            <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block active-scale">
+                Get Your Free Consultation Today – (786) 822-7868
             </a>
         </div>
     </section>
@@ -40,24 +40,47 @@ get_header();
                             <div class="w-10 h-10 bg-blue-100 text-brand-security rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-security group-hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Whole-Home Audio Systems</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Whole-Home Audio: Immersive sound in every room.</span>
                         </li>
                         <li class="flex items-center space-x-4 p-3 rounded-xl hover:bg-blue-50 transition-all duration-300 group cursor-default">
                             <div class="w-10 h-10 bg-blue-100 text-brand-security rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-security group-hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Smart TV & Projector Installation</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Home Theater: Cinema-quality visuals and surround sound.</span>
                         </li>
                         <li class="flex items-center space-x-4 p-3 rounded-xl hover:bg-blue-50 transition-all duration-300 group cursor-default">
                             <div class="w-10 h-10 bg-blue-100 text-brand-security rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-security group-hover:text-white transition-colors">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Outdoor Entertainment Solutions</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Outdoor Entertainment: Weatherproof audio and video for your patio or pool.</span>
+                        </li>
+                        <li class="flex items-center space-x-4 p-3 rounded-xl hover:bg-blue-50 transition-all duration-300 group cursor-default">
+                            <div class="w-10 h-10 bg-blue-100 text-brand-security rounded-full flex items-center justify-center flex-shrink-0 group-hover:bg-brand-security group-hover:text-white transition-colors">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Smart Control: Manage all your AV systems from a single interface.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="hover-card">
-                    <img src="https://securityonthespot.com/wp-content/uploads/2025/09/home-theater-installation-miami-surround-sound-setup-scaled.jpg" alt="Audio Video Integration" class="rounded-3xl shadow-xl">
+                    <img src="https://securityonthespot.com/wp-content/uploads/2025/09/home-theater-installation-miami-surround-sound-setup-scaled.jpg" alt="Audio Video Integration Miami" class="rounded-3xl shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Can you integrate with my existing smart home system?</h3>
+                    <p class="text-gray-600">Yes, we specialize in integrating AV solutions with popular smart home platforms like Control4, Crestron, and Savant.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Do you offer outdoor audio solutions?</h3>
+                    <p class="text-gray-600">Absolutely. We provide high-quality, weatherproof speakers and TVs designed specifically for outdoor use.</p>
                 </div>
             </div>
         </div>

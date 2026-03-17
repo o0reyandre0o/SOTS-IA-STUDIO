@@ -15,10 +15,10 @@ get_header();
         <div class="container mx-auto px-4 md:px-8 relative z-10 text-white">
             <h1 class="text-4xl md:text-6xl font-bold mb-6">Commercial Fire Alarm Systems Miami</h1>
             <p class="text-xl text-gray-300 max-w-2xl mb-8">
-                Professional <strong>fire alarm installation in Miami</strong>. Protect your business and stay compliant with local fire codes.
+                Professional <strong>fire alarm installation in Miami</strong>. Protect your business and stay compliant with local fire codes. High-performance smoke and heat detection.
             </p>
-            <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
-                Get a Safety Audit
+            <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block">
+                Get Your Free Consultation Today – (786) 822-7868
             </a>
         </div>
     </section>
@@ -38,25 +38,42 @@ get_header();
                     <ul class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <li class="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
                             <svg class="w-6 h-6 text-brand-security group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Code Compliance</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Code Compliance: NFPA 72 and local fire codes.</span>
                         </li>
                         <li class="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
                             <svg class="w-6 h-6 text-brand-security group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">24/7 Monitoring</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">24/7 Monitoring: Immediate response to fire alerts.</span>
                         </li>
                         <li class="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
                             <svg class="w-6 h-6 text-brand-security group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Smoke Detection</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Smoke Detection: Early warning for fire hazards.</span>
                         </li>
                         <li class="flex items-center space-x-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
                             <svg class="w-6 h-6 text-brand-security group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20"><path d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"></path></svg>
-                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Heat Sensors</span>
+                            <span class="text-gray-700 font-medium group-hover:text-brand-security transition-colors">Heat Sensors: Reliable detection in high-temperature areas.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative hover-card">
                     <img src="https://securityonthespot.com/wp-content/uploads/2025/08/fire-alarm-system.jpg" alt="Fire Alarm Panel Miami" class="rounded-3xl shadow-2xl">
                     <div class="absolute top-4 right-4 bg-brand-security text-white px-4 py-2 rounded-full text-xs font-bold uppercase">UL Listed</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Do you provide fire alarm monitoring?</h3>
+                    <p class="text-gray-600">Yes, we offer 24/7 professional monitoring for all our fire alarm systems.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Are your systems compliant with Miami-Dade fire codes?</h3>
+                    <p class="text-gray-600">Absolutely. All our installations meet or exceed local fire safety regulations.</p>
                 </div>
             </div>
         </div>

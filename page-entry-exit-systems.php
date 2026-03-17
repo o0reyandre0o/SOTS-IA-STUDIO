@@ -8,17 +8,17 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Entry/Exit Systems" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Entry Exit Systems Miami" class="w-full h-full object-cover">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Secure Entry & Exit Systems</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Secure Entry & Exit Systems in Miami</h1>
                 <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Control access to your property with our high-performance entry and exit solutions that provide security and convenience.
+                    Control access to your property with precision. High-performance entry and exit solutions for Miami homes and businesses. Security and convenience at every point of entry.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="tel:7868227868" class="bg-brand-security text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center space-x-2">
-                        <span>Get a Free Quote</span>
+                        <span>Get Your Free Consultation Today – (786) 822-7868</span>
                     </a>
                 </div>
             </div>
@@ -39,24 +39,30 @@ get_header(); ?>
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Manage access with keypads, card readers, and biometric systems.</span>
+                            <span class="text-gray-700 font-medium">Gate Automation: Motorized gate systems with remote and smartphone control.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Remote access from any mobile device for convenience.</span>
+                            <span class="text-gray-700 font-medium">License Plate Recognition: Automated entry for authorized vehicles.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Integrate with your existing security and intercom systems.</span>
+                            <span class="text-gray-700 font-medium">Visitor Management: Screen and grant access to guests from your phone.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Audit Trails: Keep a detailed log of all entries and exits.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Entry/Exit Systems" class="rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Entry Exit Systems Miami" class="rounded-3xl shadow-2xl">
                     <div class="absolute -bottom-6 -right-6 bg-brand-security text-white p-8 rounded-2xl shadow-xl hidden md:block">
                         <p class="text-4xl font-bold mb-1">Secure</p>
                         <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Access</p>
@@ -73,11 +79,11 @@ get_header(); ?>
             <div class="space-y-4">
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
                     <h3 class="text-lg font-bold text-brand-navy mb-2">Can I manage access from my phone?</h3>
-                    <p class="text-gray-600">Yes, our entry and exit systems include a mobile app that allows you to manage access from anywhere.</p>
+                    <p class="text-gray-600">Yes, our systems include a mobile app for remote access management from anywhere.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
                     <h3 class="text-lg font-bold text-brand-navy mb-2">Is the system easy to use?</h3>
-                    <p class="text-gray-600">Our interfaces are designed to be intuitive and user-friendly, ensuring everyone can easily manage access to the property.</p>
+                    <p class="text-gray-600">Our interfaces are designed to be intuitive and user-friendly for everyone.</p>
                 </div>
             </div>
         </div>

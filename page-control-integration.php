@@ -8,17 +8,17 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Control Integration" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Smart Home Integration Miami" class="w-full h-full object-cover">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Seamless Control Integration</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Smart Home Integration & Centralized Control in Miami</h1>
                 <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Unify your home's technology with a single, intuitive control system that manages everything from lighting to security.
+                    Unify your home's technology. Control lighting, security, climate, and audio from a single, intuitive interface. Professional smart home solutions for Miami residences.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="tel:7868227868" class="bg-brand-security text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center space-x-2">
-                        <span>Get a Free Quote</span>
+                        <span>Get Your Free Consultation Today – (786) 822-7868</span>
                     </a>
                 </div>
             </div>
@@ -39,24 +39,30 @@ get_header(); ?>
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Manage lighting, climate, security, and entertainment from one app.</span>
+                            <span class="text-gray-700 font-medium">One-App Control: Manage your entire home from your smartphone or tablet.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Create custom scenes for different times of the day.</span>
+                            <span class="text-gray-700 font-medium">Custom Scenes: Set the mood for movie night or dinner with one tap.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Voice control integration for hands-free convenience.</span>
+                            <span class="text-gray-700 font-medium">Voice Control: Integration with Alexa, Google Assistant, and Siri.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Energy Efficiency: Automate systems to reduce energy consumption.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Control Integration" class="rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Control Integration Miami" class="rounded-3xl shadow-2xl">
                     <div class="absolute -bottom-6 -right-6 bg-brand-security text-white p-8 rounded-2xl shadow-xl hidden md:block">
                         <p class="text-4xl font-bold mb-1">100%</p>
                         <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Integration</p>
@@ -72,12 +78,12 @@ get_header(); ?>
             <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
             <div class="space-y-4">
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-bold text-brand-navy mb-2">Can I add more devices to my system later?</h3>
-                    <p class="text-gray-600">Yes, our systems are scalable, allowing you to add more devices and features as your needs evolve.</p>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Can I add more devices later?</h3>
+                    <p class="text-gray-600">Yes, our systems are scalable, allowing you to add more features as your needs evolve.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
-                    <h3 class="text-lg font-bold text-brand-navy mb-2">Is the system easy to use for everyone in the family?</h3>
-                    <p class="text-gray-600">Our interfaces are designed to be intuitive and user-friendly, ensuring everyone in the family can easily manage the home's technology.</p>
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Is the system easy to use?</h3>
+                    <p class="text-gray-600">Our interfaces are designed to be intuitive and user-friendly for the whole family.</p>
                 </div>
             </div>
         </div>

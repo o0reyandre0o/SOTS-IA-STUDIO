@@ -15,15 +15,11 @@ get_header();
         <div class="container mx-auto px-4 md:px-8 relative z-10 text-white">
             <h1 class="text-4xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight max-w-4xl">Security Cameras Miami: Professional CCTV Installation</h1>
             <p class="text-lg md:text-2xl text-gray-300 max-w-2xl mb-10">
-                Protect your property with high-definition surveillance and 24/7 remote access.
+                Protect your property with high-definition surveillance and 24/7 remote access. Expert installation for Miami homes and businesses.
             </p>
             <div class="flex flex-col sm:flex-row gap-4">
-                <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-5 rounded-full font-bold transition shadow-lg inline-block text-lg text-center">
-                    Get Your Free Consultation Today
-                </a>
-                <a href="tel:7868227868" class="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-5 rounded-full font-bold transition border border-white/20 inline-flex items-center justify-center text-lg">
-                    <svg class="mr-2 h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                    (786) 822-7868
+                <a href="tel:7868227868" class="bg-brand-security hover:bg-brand-accent text-white px-8 py-5 rounded-full font-bold transition shadow-lg inline-block text-lg text-center active-scale">
+                    Get Your Free Consultation Today – (786) 822-7868
                 </a>
             </div>
         </div>
@@ -41,16 +37,47 @@ get_header();
                     <p class="text-lg text-gray-600 mb-8 leading-relaxed">
                         From high-traffic restaurants in <strong>Wynwood</strong> to warehouses in <strong>Doral</strong>, our <strong>security cameras miami</strong> systems give you total control from your phone.
                     </p>
-                    <div class="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-8">
-                        <p class="text-brand-navy font-bold text-xl flex items-center">
-                            <svg class="mr-3 text-brand-security w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
-                            Get Your Free Consultation Today – (786) 822-7868
-                        </p>
-                    </div>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Remote Asset Tracking: Monitor your property 24/7 from any device.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Smart Motion Detection: Instant AI alerts for unauthorized access.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">System Integration: Seamlessly works with access control and networking.</span>
+                        </li>
+                    </ul>
                 </div>
                 <div class="relative">
                     <div class="absolute -inset-4 bg-brand-security/5 rounded-[40px] blur-2xl"></div>
                     <img src="https://securityonthespot.com/wp-content/uploads/2025/08/surveillance-camera-isolated-on-white-background-2021-08-26-18-17-38-utc.png" alt="CCTV Camera Miami" class="relative z-10 mx-auto max-h-[400px] object-contain drop-shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-4xl">
+            <h2 class="text-3xl font-bold text-brand-navy mb-12 text-center">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Do you offer security camera installation for Miami warehouses?</h3>
+                    <p class="text-gray-600">Yes. We provide professional installation for warehouses, offices, and industrial complexes in South Florida.</p>
+                </div>
+                <div class="bg-white p-6 rounded-2xl shadow-sm">
+                    <h3 class="text-lg font-bold text-brand-navy mb-2">Can I view my cameras remotely?</h3>
+                    <p class="text-gray-600">Absolutely. All our systems include mobile app access so you can monitor your property from anywhere in the world.</p>
                 </div>
             </div>
         </div>

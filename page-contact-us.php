@@ -42,7 +42,7 @@ get_header();
                             </div>
                             <div>
                                 <h4 class="font-bold text-brand-navy">Phone Number</h4>
-                                <p class="text-gray-500 text-sm">(305) 555-0123</p>
+                                <p class="text-gray-500 text-sm">(786) 822-7868</p>
                             </div>
                         </div>
                         <div class="flex items-start space-x-4">

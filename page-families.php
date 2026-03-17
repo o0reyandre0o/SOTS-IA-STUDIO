@@ -8,17 +8,17 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80" alt="Family Home" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1513584684374-8bdb7489feef?auto=format&fit=crop&q=80" alt="Family Home Security Miami" class="w-full h-full object-cover">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Protect Your Family and Your Home</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Protect Your Family and Your Miami Home</h1>
                 <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Ensure the safety of your loved ones and your property with our reliable, easy-to-use home security systems.
+                    Ensure the safety of your loved ones with our reliable, easy-to-use home security systems. From smart doorbells to full perimeter surveillance.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="tel:7868227868" class="bg-brand-security text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center space-x-2">
-                        <span>Get a Free Quote</span>
+                        <span>Get Your Free Consultation Today – (786) 822-7868</span>
                     </a>
                 </div>
             </div>
@@ -39,24 +39,30 @@ get_header(); ?>
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Monitor entrances, driveways, and backyards.</span>
+                            <span class="text-gray-700 font-medium">Full Perimeter Monitoring: Keep an eye on entrances, driveways, and backyards.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Receive instant alerts on your phone for any activity.</span>
+                            <span class="text-gray-700 font-medium">Instant Activity Alerts: Receive notifications on your phone for any movement.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Easy-to-use mobile app for the whole family.</span>
+                            <span class="text-gray-700 font-medium">Smart Home Integration: Connect your cameras with smart locks and lighting.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Easy Mobile Access: View live and recorded footage from anywhere.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Home Security" class="rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Home Security Miami" class="rounded-3xl shadow-2xl">
                     <div class="absolute -bottom-6 -right-6 bg-brand-security text-white p-8 rounded-2xl shadow-xl hidden md:block">
                         <p class="text-4xl font-bold mb-1">24/7</p>
                         <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Peace of Mind</p>
@@ -73,11 +79,11 @@ get_header(); ?>
             <div class="space-y-4">
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
                     <h3 class="text-lg font-bold text-brand-navy mb-2">Can I see my home from work?</h3>
-                    <p class="text-gray-600">Yes, our systems allow you to view live and recorded footage from any mobile device, ensuring you're always connected to your home.</p>
+                    <p class="text-gray-600">Yes, our systems allow you to view live and recorded footage from any mobile device.</p>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
                     <h3 class="text-lg font-bold text-brand-navy mb-2">Are the cameras weather-resistant?</h3>
-                    <p class="text-gray-600">Our outdoor cameras are designed to withstand the elements, including rain, heat, and humidity.</p>
+                    <p class="text-gray-600">Our outdoor cameras are designed to withstand Miami's rain, heat, and humidity.</p>
                 </div>
             </div>
         </div>

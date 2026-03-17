@@ -173,7 +173,7 @@
                     <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Lighting Control</a>
                     <a href="<?php echo esc_url( home_url( '/multi-zone-audio/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Multi-Zone Audio</a>
                     <a href="<?php echo esc_url( home_url( '/home-theater/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Home Theater</a>
-                    <a href="<?php echo esc_url( home_url( '/video-wall-installation/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Video-Wall Installation</a>
+                    <a href="<?php echo esc_url( home_url( '/video-wall-installation-miami/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Video-Wall Installation</a>
                 </div>
             </div>
 
@@ -254,7 +254,7 @@
                         <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Lighting Control</a>
                         <a href="<?php echo esc_url( home_url( '/multi-zone-audio/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Multi-Zone Audio</a>
                         <a href="<?php echo esc_url( home_url( '/home-theater/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Home Theater</a>
-                        <a href="<?php echo esc_url( home_url( '/video-wall-installation/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Video-Wall Installation</a>
+                        <a href="<?php echo esc_url( home_url( '/video-wall-installation-miami/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Video-Wall Installation</a>
                     </div>
                 </div>
 

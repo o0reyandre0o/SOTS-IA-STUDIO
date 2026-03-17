@@ -8,17 +8,17 @@ get_header(); ?>
     <!-- Hero Section -->
     <section class="relative pt-32 pb-20 bg-brand-navy overflow-hidden">
         <div class="absolute inset-0 opacity-20">
-            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Intercom Systems" class="w-full h-full object-cover">
+            <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Intercom Systems Miami" class="w-full h-full object-cover">
         </div>
         <div class="container mx-auto px-4 relative z-10">
             <div class="max-w-3xl">
-                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Advanced Intercom Systems</h1>
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Advanced Intercom Systems in Miami</h1>
                 <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                    Enhance your home's security and convenience with our high-performance intercom solutions that allow you to communicate with visitors from anywhere.
+                    Enhance your home's security and convenience with our high-performance intercom solutions that allow you to communicate with visitors from anywhere. Professional installation for residential and commercial properties.
                 </p>
                 <div class="flex flex-wrap gap-4">
                     <a href="tel:7868227868" class="bg-brand-security text-white px-8 py-4 rounded-2xl font-bold hover:bg-blue-700 transition shadow-lg flex items-center space-x-2">
-                        <span>Get a Free Quote</span>
+                        <span>Get Your Free Consultation Today – (786) 822-7868</span>
                     </a>
                 </div>
             </div>
@@ -39,24 +39,30 @@ get_header(); ?>
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">High-definition video and clear audio for reliable communication.</span>
+                            <span class="text-gray-700 font-medium">Video Intercom: See and speak with visitors before granting access.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Remote access from any mobile device for convenience.</span>
+                            <span class="text-gray-700 font-medium">Mobile Integration: Receive calls and unlock doors from your smartphone.</span>
                         </li>
                         <li class="flex items-start space-x-3">
                             <div class="mt-1 bg-blue-100 p-1 rounded-full">
                                 <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
                             </div>
-                            <span class="text-gray-700 font-medium">Integrate with your existing security and access control systems.</span>
+                            <span class="text-gray-700 font-medium">Multi-Unit Solutions: Ideal for apartment buildings and office complexes.</span>
+                        </li>
+                        <li class="flex items-start space-x-3">
+                            <div class="mt-1 bg-blue-100 p-1 rounded-full">
+                                <svg class="w-4 h-4 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                            </div>
+                            <span class="text-gray-700 font-medium">Seamless Integration: Works with your existing access control and security systems.</span>
                         </li>
                     </ul>
                 </div>
                 <div class="relative">
-                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Intercom Systems" class="rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&q=80" alt="Intercom Systems Miami" class="rounded-3xl shadow-2xl">
                     <div class="absolute -bottom-6 -right-6 bg-brand-security text-white p-8 rounded-2xl shadow-xl hidden md:block">
                         <p class="text-4xl font-bold mb-1">HD</p>
                         <p class="text-sm font-medium opacity-90 uppercase tracking-wider">Video Quality</p>
@@ -77,7 +83,7 @@ get_header(); ?>
                 </div>
                 <div class="bg-white p-6 rounded-2xl shadow-sm">
                     <h3 class="text-lg font-bold text-brand-navy mb-2">Is the system easy to install?</h3>
-                    <p class="text-gray-600">Most intercom installations are completed within a single day, minimizing disruption to your home or business.</p>
+                    <p class="text-gray-600">Most intercom installations are completed within a single day, minimizing disruption.</p>
                 </div>
             </div>
         </div>
