@@ -515,7 +515,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
       {/* Brands Carousel */}
       <section className="py-12 bg-slate-50 border-y border-gray-100">
         <div className="container mx-auto px-4">
-          <h3 className="text-center text-gray-400 font-bold uppercase tracking-widest text-xs mb-10">Trusted by Leading Brands in Miami</h3>
+          <h3 className="text-center text-gray-400 font-bold uppercase tracking-widest text-xs mb-10">AUTHORIZED BY:</h3>
           <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16 opacity-50 grayscale hover:grayscale-0 transition duration-500">
             <img src="https://securityonthespot.com/wp-content/uploads/2025/09/sonos-company-logo.webp" alt="Sonos" className="h-6 md:h-8" referrerPolicy="no-referrer" />
             <img src="https://securityonthespot.com/wp-content/uploads/2025/09/ubiquiti-logo-corrupted-file-graphic.webp" alt="Ubiquiti" className="h-6 md:h-8" referrerPolicy="no-referrer" />
