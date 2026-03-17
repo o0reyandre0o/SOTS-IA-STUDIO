@@ -333,7 +333,7 @@ get_header();
     <!-- Final CTA -->
     <section class="py-16 md:py-24 bg-brand-navy text-center text-white">
         <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-6xl font-bold mb-6">Ready to Install Your Security Cameras in Miami?</h2>
+            <h2 class="text-3xl md:text-6xl font-bold mb-6">Ready to Install Your <br>Security Cameras in Miami?</h2>
             <p class="text-gray-300 text-lg md:text-xl mb-10 max-w-2xl mx-auto">Get your free consultation today and discover how Security on the Spot can protect what matters most.</p>
             <a href="<?php echo esc_url( home_url( '/contact-us' ) ); ?>" class="bg-brand-security hover:bg-brand-accent text-white px-10 py-5 rounded-full font-bold text-xl md:text-2xl transition shadow-xl active-scale inline-block">
                 Get My Free Security Quote Now – (786) 822-7868
