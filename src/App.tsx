@@ -377,7 +377,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               transition={{ duration: 0.6, delay: 0.1 }}
               className="text-blue-400 font-bold tracking-wider text-sm md:text-base mb-4"
             >
-              24/7 PROTECTION FOR YOUR HOME OR BUSINESS WITH MIAMI’S MOST TRUSTED SECURITY EXPERTS.
+              24/7 PROTECTION FOR YOUR HOME OR BUSINESS <br className="hidden md:block" /> WITH MIAMI’S MOST TRUSTED SECURITY EXPERTS.
             </motion.p>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}

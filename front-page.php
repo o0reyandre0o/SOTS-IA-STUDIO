@@ -30,7 +30,7 @@ get_header();
                     <span>RATED 4.9 HAPPY CUSTOMERS</span>
                 </div>
                 <p class="text-blue-400 font-bold tracking-wider text-sm md:text-base mb-4">
-                    24/7 PROTECTION FOR YOUR HOME OR BUSINESS WITH MIAMI’S MOST TRUSTED SECURITY EXPERTS.
+                    24/7 PROTECTION FOR YOUR HOME OR BUSINESS <br class="hidden md:block"> WITH MIAMI’S MOST TRUSTED SECURITY EXPERTS.
                 </p>
                 <h1 class="text-4xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-2xl">
                     Security Camera Installation & CCTV Systems in Miami
