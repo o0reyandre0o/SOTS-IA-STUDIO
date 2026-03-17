@@ -19,11 +19,11 @@
     
     if ( is_front_page() ) {
         $page_title = "Security Camera Installation Miami & Home Automation | " . $site_name;
-        $meta_desc = "Miami's #1 experts in security camera installation, CCTV systems, and smart home automation. Professional UNV surveillance for homes & businesses in Miami-Dade.";
+        $meta_desc = "Miami's #1 experts in security camera installation, CCTV systems, and smart home automation. 24/7 protection for your home or business with Miami’s most trusted security experts.";
         $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/home-unv-security-camera-high-definition-outdoor-model.webp";
     } elseif ( is_page('security-cameras-security-on-the-spot') ) {
-        $page_title = "Best Security Camera Installation Miami | CCTV & Surveillance";
-        $meta_desc = "Expert security camera installation in Miami. High-definition UNV CCTV systems for restaurants, small businesses, and homes. Get a free quote today!";
+        $page_title = "Best Security Camera Installation Miami | CCTV & Surveillance Experts";
+        $meta_desc = "Expert security camera installation in Miami. High-definition UNV CCTV systems for restaurants, small businesses, and homes. Get your free quote today!";
         $og_image = "https://securityonthespot.com/wp-content/uploads/2025/09/restaurants-restaurant-outdoor-security-camera-scaled.jpg";
     } elseif ( is_page('home-automation-smart-homes-in-miami') ) {
         $page_title = "Smart Home Automation Miami | Lighting & Integration Experts";
