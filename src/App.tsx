@@ -581,7 +581,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
 const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
   return (
     <div className="animate-in fade-in duration-500">
-    <section className="relative min-h-[350px] md:h-[500px] flex items-center py-12 md:py-0 overflow-hidden">
+    <section className="relative min-h-[400px] md:h-[600px] flex items-center py-12 md:py-0 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <img 
           src="https://securityonthespot.com/wp-content/uploads/2025/09/restaurants-restaurant-outdoor-security-camera-scaled.jpg" 
@@ -589,52 +589,50 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
-        <div className="absolute inset-0 bg-[#0B2447]/80"></div>
+        <div className="absolute inset-0 bg-[#0B2447]/85"></div>
       </div>
       <div className="container mx-auto px-4 md:px-8 relative z-10 text-white">
-        <h1 className="text-3xl md:text-6xl font-bold mb-4 md:mb-6 leading-tight">Best Security Camera Installation in Miami</h1>
-        <p className="text-base md:text-xl text-gray-300 max-w-2xl mb-8">
-          High-definition surveillance systems for homes, restaurants, and small businesses. Monitor your property 24/7 from anywhere.
+        <h1 className="text-4xl md:text-7xl font-bold mb-4 md:mb-6 leading-tight max-w-4xl">Security Cameras Miami: Professional CCTV Installation</h1>
+        <p className="text-lg md:text-2xl text-gray-300 max-w-2xl mb-10">
+          Protect your property with high-definition surveillance and 24/7 remote access.
         </p>
-        <button 
-          onClick={() => setActivePage('contact-us')}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold transition shadow-lg inline-block"
-        >
-          Get a Free Quote
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4">
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-5 rounded-full font-bold transition shadow-lg inline-block text-lg"
+          >
+            Get Your Free Consultation Today
+          </button>
+          <a href="tel:7868227868" className="bg-white/10 hover:bg-white/20 backdrop-blur-md text-white px-8 py-5 rounded-full font-bold transition border border-white/20 inline-flex items-center justify-center text-lg">
+            <Phone className="mr-2 h-5 w-5" /> (786) 822-7868
+          </a>
+        </div>
       </div>
     </section>
 
-    <section className="py-12 md:py-20 bg-slate-50">
+    <section className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
           <div>
-            <h2 className="text-2xl md:text-3xl font-bold text-[#0B2447] mb-6">Professional CCTV & Surveillance Solutions</h2>
-            <p className="text-sm md:text-lg text-gray-600 mb-6 leading-relaxed">
-              Looking for <strong>security camera installation near me</strong>? Security on the Spot provides top-tier <strong>CCTV security camera installation in Miami</strong>. We specialize in UNV (Uniview) technology, offering crystal-clear 4K resolution and advanced AI analytics.
+            <h2 className="text-3xl md:text-4xl font-bold text-[#0B2447] mb-8">Advanced CCTV Installation in Miami for Homes & Businesses</h2>
+            <p className="text-lg text-gray-600 mb-6 leading-relaxed">
+              At <strong>Security on the Spot</strong>, we specialize in <strong>miami cctv cameras</strong> designed to deter crime and provide crystal-clear evidence.
             </p>
-            <p className="text-sm md:text-lg text-gray-600 mb-8 leading-relaxed">
-              Whether you need <strong>best security cameras for small business</strong> or a robust system for a large warehouse, our team ensures every corner is covered.
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              From high-traffic restaurants in <strong>Wynwood</strong> to warehouses in <strong>Doral</strong>, our <strong>security cameras miami</strong> systems give you total control from your phone.
             </p>
-            <ul className="space-y-4">
-              {[
-                '4K Ultra HD Surveillance Cameras',
-                'Remote Mobile App Monitoring',
-                'Smart Motion & AI Human Detection',
-                'Weatherproof & Vandal-Resistant Designs'
-              ].map((item) => (
-                <li key={item} className="flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-50 transition-colors group cursor-default">
-                  <Shield className="h-5 w-5 text-blue-600 group-hover:scale-110 transition-transform" />
-                  <span className="text-gray-700 font-medium text-sm md:text-base group-hover:text-blue-600 transition-colors">{item}</span>
-                </li>
-              ))}
-            </ul>
+            <div className="bg-blue-50 p-6 rounded-2xl border border-blue-100 mb-8">
+              <p className="text-[#0B2447] font-bold text-xl flex items-center">
+                <Phone className="mr-3 text-blue-600" /> Get Your Free Consultation Today – (786) 822-7868
+              </p>
+            </div>
           </div>
-          <div className="bg-white p-6 md:p-12 rounded-3xl border border-gray-100 shadow-sm">
+          <div className="relative">
+            <div className="absolute -inset-4 bg-blue-600/5 rounded-[40px] blur-2xl"></div>
             <img 
               src="https://securityonthespot.com/wp-content/uploads/2025/08/surveillance-camera-isolated-on-white-background-2021-08-26-18-17-38-utc.png" 
               alt="CCTV Camera Miami" 
-              className="mx-auto max-h-[300px] md:max-h-none object-contain"
+              className="relative z-10 mx-auto max-h-[400px] object-contain drop-shadow-2xl"
               referrerPolicy="no-referrer"
             />
           </div>
@@ -644,94 +642,99 @@ const SecurityCamerasPage = ({ setActivePage }: { setActivePage: (page: string) 
 
     <section className="py-20 bg-slate-50">
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="text-3xl font-bold text-[#0B2447] text-center mb-16">Tailored Surveillance for Every Need</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0B2447] mb-6">Custom Surveillance Solutions for Every Need</h2>
+          <p className="text-gray-600 text-lg">Tailored security systems designed for the specific challenges of your property.</p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {[
-            { title: 'Restaurant CCTV', desc: 'Protect your staff and assets with specialized restaurant security systems. Monitor dining areas and kitchens in real-time.' },
-            { title: 'Small Business Security', desc: 'We offer the best security cameras for retail stores and offices, helping you prevent loss and improve safety.' },
-            { title: 'Residential Surveillance', desc: 'Peace of mind for your family with outdoor security camera miami setups and smart doorbell integration.' }
+            { title: 'Small Businesses', desc: 'Affordable CCTV installation in Miami with remote monitoring to protect your livelihood.' },
+            { title: 'Restaurants', desc: 'Monitor kitchens, staff, and customer areas to ensure safety and operational efficiency.' },
+            { title: 'Workshops & Automotive Shops', desc: 'Protect valuable tools, equipment, and customer property with 24/7 surveillance.' },
+            { title: 'Retail Stores', desc: 'Reduce theft, prevent shoplifting, and keep track of foot traffic patterns.' },
+            { title: 'Warehouses', desc: 'Full coverage for large industrial spaces without disrupting your daily operations.' },
+            { title: 'Families & Homes', desc: 'Protect your loved ones with high-end cameras integrated into smart home systems.' }
           ].map((item) => (
-            <div key={item.title} className="bg-white p-8 rounded-2xl shadow-sm border border-transparent hover:border-blue-500/30 hover:shadow-xl hover:shadow-blue-500/5 transition-all duration-300 group hover:-translate-y-1">
-              <h3 className="text-xl font-bold text-[#0B2447] mb-4 group-hover:text-blue-600 transition-colors">{item.title}</h3>
-              <p className="text-gray-600 text-sm">{item.desc}</p>
+            <div key={item.title} className="bg-white p-8 rounded-3xl shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 group">
+              <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                <Shield size={24} />
+              </div>
+              <h3 className="text-xl font-bold text-[#0B2447] mb-4">{item.title}</h3>
+              <p className="text-gray-600 leading-relaxed">{item.desc}</p>
             </div>
           ))}
+        </div>
+      </div>
+    </section>
+
+    <section className="py-24 bg-[#0B2447] text-white relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div>
+            <h2 className="text-3xl md:text-5xl font-bold mb-8">Why Security on the Spot is Miami’s Top Choice</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                'Remote Viewing',
+                'HD Resolution',
+                'Motion Alerts',
+                'Health monitoring',
+                'Expert installation',
+                'Ongoing maintenance'
+              ].map((feature) => (
+                <div key={feature} className="flex items-center space-x-3 bg-white/5 p-4 rounded-2xl border border-white/10">
+                  <Check className="text-blue-400 h-6 w-6 flex-shrink-0" />
+                  <span className="font-medium">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="bg-white/5 backdrop-blur-lg p-8 md:p-12 rounded-[40px] border border-white/10">
+            <h3 className="text-2xl md:text-3xl font-bold mb-6 text-blue-400">Miami Security Experts You Can Trust</h3>
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              We understand the unique challenges of securing properties in Miami and South Florida. From high-traffic businesses in <strong>Downtown Miami</strong> to luxury homes in <strong>Coral Gables</strong> or warehouses in <strong>Doral</strong>, our systems are designed to deter theft, provide evidence when needed, and give you complete peace of mind.
+            </p>
+            <button 
+              onClick={() => setActivePage('contact-us')}
+              className="w-full bg-blue-600 hover:bg-blue-700 text-white py-5 rounded-2xl font-bold text-xl transition shadow-xl flex items-center justify-center"
+            >
+              Get Your Free Consultation
+            </button>
+          </div>
         </div>
       </div>
     </section>
 
     <section className="py-20 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="order-2 lg:order-1">
-            <img 
-              src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000" 
-              alt="Security Monitoring" 
-              className="rounded-3xl shadow-2xl border-4 border-white"
-              referrerPolicy="no-referrer"
-            />
-          </div>
-          <div className="order-1 lg:order-2">
-            <h2 className="text-3xl font-bold text-[#0B2447] mb-8">Advanced Monitoring Features</h2>
-            <div className="space-y-6">
-              {[
-                { title: 'Remote Access', desc: 'View your cameras from anywhere in the world using our secure mobile app.' },
-                { title: 'Night Vision', desc: 'Crystal clear imagery even in total darkness with advanced IR technology.' },
-                { title: 'Cloud Storage', desc: 'Securely back up your footage to the cloud for extra protection.' },
-                { title: 'AI Analytics', desc: 'Smart detection for people, vehicles, and specific events to reduce false alarms.' }
-              ].map((feature) => (
-                <div key={feature.title} className="flex space-x-4 p-4 rounded-2xl bg-white border border-transparent hover:border-blue-500/20 hover:bg-blue-50/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-300 group">
-                  <div className="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-600 group-hover:text-white transition-colors shadow-sm">
-                    <Shield size={24} />
-                  </div>
-                  <div>
-                    <h4 className="font-bold text-[#0B2447] group-hover:text-blue-600 transition-colors">{feature.title}</h4>
-                    <p className="text-sm text-gray-600">{feature.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20 bg-slate-900 text-white overflow-hidden relative">
-      <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
-      <div className="container mx-auto px-4 md:px-8 relative z-10">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Why Choose Security on the Spot?</h2>
-          <p className="text-gray-400">We are Miami's premier security camera installation experts, dedicated to your safety.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {[
-            { title: 'Local Expertise', desc: 'Serving Miami-Dade for over 20 years.' },
-            { title: 'Certified Techs', desc: 'Expert installation by trained professionals.' },
-            { title: 'Top Brands', desc: 'We only use reliable, high-end equipment.' },
-            { title: '24/7 Support', desc: 'Always here when you need help.' }
-          ].map((item) => (
-            <div key={item.title} className="p-8 rounded-3xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-blue-500/50 transition-all duration-300 group">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg shadow-blue-600/20 group-hover:scale-110 transition-transform">
-                <Check size={24} />
-              </div>
-              <h4 className="font-bold mb-2 text-blue-400">{item.title}</h4>
-              <p className="text-sm text-gray-400">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-
-    <section className="py-20 bg-[#0B2447] text-white">
       <div className="container mx-auto px-4 md:px-8 text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-8">Ready to Secure Your Property?</h2>
-        <p className="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">Join hundreds of satisfied Miami business owners and residents who trust Security on the Spot.</p>
-        <button 
-          onClick={() => setActivePage('contact-us')}
-          className="bg-blue-600 hover:bg-blue-700 text-white px-10 py-4 rounded-full font-bold text-lg transition shadow-xl"
-        >
-          Schedule a Free Site Survey
-        </button>
+        <div className="max-w-4xl mx-auto">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0B2447] mb-8">Ready to Install Your Security Cameras in Miami?</h2>
+          <p className="text-xl text-gray-600 mb-12">
+            Contact <strong>Security on the Spot</strong> today for a free consultation and discover how our CCTV systems can protect your business or home.
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <Phone size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-[#0B2447] mb-2">Call Us</h4>
+              <a href="tel:7868227868" className="text-2xl font-bold text-blue-600 hover:underline">(786) 822-7868</a>
+            </div>
+            <div className="bg-slate-50 p-8 rounded-3xl border border-slate-100 flex flex-col items-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                <MapPin size={32} />
+              </div>
+              <h4 className="text-xl font-bold text-[#0B2447] mb-2">Service Area</h4>
+              <p className="text-gray-600 text-lg">Miami, Doral, Kendall, Coral Gables & all South Florida</p>
+            </div>
+          </div>
+          <button 
+            onClick={() => setActivePage('contact-us')}
+            className="bg-[#0B2447] hover:bg-slate-800 text-white px-12 py-5 rounded-full font-bold text-xl transition shadow-2xl inline-block"
+          >
+            Get Your Free Consultation Today
+          </button>
+        </div>
       </div>
     </section>
     </div>
