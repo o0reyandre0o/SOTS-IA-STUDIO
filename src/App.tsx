@@ -303,6 +303,44 @@ const Footer = ({ setActivePage }: { setActivePage: (page: string) => void }) =>
 
 // --- Page Components ---
 
+const ReviewWidget = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = 'https://reputationhub.site/reputation/assets/review-widget.js';
+    script.type = 'text/javascript';
+    script.async = true;
+    document.body.appendChild(script);
+
+    return () => {
+      const existingScript = document.querySelector('script[src="https://reputationhub.site/reputation/assets/review-widget.js"]');
+      if (existingScript) {
+        document.body.removeChild(existingScript);
+      }
+    };
+  }, []);
+
+  return (
+    <section className="py-16 md:py-24 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 md:px-8">
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-3xl md:text-5xl font-bold text-[#0B2447] mb-6">What Our Customers Say</h2>
+          <p className="text-gray-600 text-lg">Real reviews from families and businesses across Miami who trust Security on the Spot.</p>
+        </div>
+        <div className="rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+          <iframe 
+            className='lc_reviews_widget' 
+            src='https://reputationhub.site/reputation/widgets/review_widget/nDZCF5gAPtvUgT4Nhki1' 
+            frameBorder='0' 
+            scrolling='no' 
+            style={{ minWidth: '100%', width: '100%', minHeight: '600px' }}
+            title="Customer Reviews"
+          />
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) => {
   const heroVideo = 'https://anti2.workingtoctoc.com/wp/wp-content/uploads/2026/03/Flow_delpmaspu_.mp4';
 
@@ -518,6 +556,9 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
           </div>
         </div>
       </section>
+
+      {/* Review Widget */}
+      <ReviewWidget />
 
       {/* Solutions Section */}
       <section className="py-16 md:py-24 bg-slate-50">

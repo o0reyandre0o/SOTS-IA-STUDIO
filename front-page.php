@@ -246,6 +246,20 @@ get_header();
         </div>
     </section>
 
+    <!-- Review Widget -->
+    <section class="py-16 md:py-24 bg-white overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">What Our Customers Say</h2>
+                <p class="text-gray-600 text-lg">Real reviews from families and businesses across Miami who trust Security on the Spot.</p>
+            </div>
+            <div class="rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-white">
+                <script type='text/javascript' src='https://reputationhub.site/reputation/assets/review-widget.js'></script>
+                <iframe class='lc_reviews_widget' src='https://reputationhub.site/reputation/widgets/review_widget/nDZCF5gAPtvUgT4Nhki1' frameborder='0' scrolling='no' style='min-width: 100%; width: 100%; min-height: 600px;'></iframe>
+            </div>
+        </div>
+    </section>
+
     <!-- Solutions Section -->
     <section class="py-16 md:py-24 bg-brand-light">
         <div class="container mx-auto px-4 md:px-8">
