@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare, Linkedin, CheckCircle2 } from 'lucide-react';
+import { Shield, Camera, Home, Lock, Flame, Network, Phone, Mail, MapPin, Menu, X, ChevronRight, Star, Clock, Zap, Monitor, Music, Smartphone, Check, ChevronUp, ChevronDown, Facebook, Instagram, MessageSquare, Linkedin, CheckCircle2, Globe, HardDrive, Wifi, Activity, Settings, Users, Speaker, Video } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import { generateHeroVideo } from './services/videoService';
 import { pages } from './services/pages';
@@ -43,6 +43,7 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
       ]
     },
     { name: 'Networking & Fiber Optics', slug: 'networking-fiber-optics' },
+    { name: 'Audio/Video', slug: 'audio-video-services' },
     { name: 'Fire Systems', slug: 'fire-systems' },
     {
       name: 'Who we are?',
@@ -1580,7 +1581,7 @@ const SubPage: React.FC<SubPageProps> = ({ title, description, image, features, 
               {features.map((feature, idx) => (
                 <div key={idx} className="flex items-start space-x-4">
                   <div className="mt-1 bg-blue-50 p-2 rounded-xl">
-                    <CheckCircle2 className="text-blue-600" size={20} />
+                    <Check className="text-blue-600" size={20} />
                   </div>
                   <p className="text-gray-600 text-lg leading-relaxed">{feature}</p>
                 </div>
