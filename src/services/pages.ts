@@ -215,5 +215,85 @@ export const pages: Record<string, PageContent> = {
       { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly." }
     ],
     badge: { text: "Secure", sub: "Access" }
+  },
+  'security-cameras-security-on-the-spot': {
+    title: "Security Cameras Miami: Professional CCTV Installation",
+    description: "Protect your property with high-definition surveillance and 24/7 remote access. Miami's #1 Rated Security Camera Installation Team.",
+    image: "https://securityonthespot.com/wp-content/uploads/2025/09/restaurants-restaurant-outdoor-security-camera-scaled.jpg",
+    features: [
+      "HD Resolution: Crystal-clear footage for clear identification.",
+      "Remote Viewing: Access your cameras from anywhere via mobile app.",
+      "Motion Alerts: Get instant notifications of suspicious activity.",
+      "Professional Installation: Clean and efficient setup by experts."
+    ],
+    faqs: [
+      { q: "Where is Security on the Spot located?", a: "Our headquarters are at 4861 NW 72nd Ave, Miami, FL 33166." },
+      { q: "Do you offer free consultations?", a: "Yes, we provide a free consultation to assess your security needs." }
+    ],
+    badge: { text: "4.9", sub: "Google Rating" }
+  },
+  'home-automation-smart-homes-in-miami': {
+    title: "Smart Home Automation Miami",
+    description: "Experience the future of living with smart home integration in Miami. Control your entire home from a single interface.",
+    image: "https://securityonthespot.com/wp-content/uploads/2025/09/home-automation-smart-homes-in-miami-miami-smart-home-control-scaled.jpg",
+    features: [
+      "Smart Lighting Control: Automate your lights for energy efficiency and ambiance.",
+      "Climate Integration: Control your AC and heating remotely.",
+      "Automated Shades: Manage natural light with motorized solutions.",
+      "Whole Home Audio: Immersive sound in every room of your house."
+    ],
+    faqs: [
+      { q: "Can I control my home from my phone?", a: "Yes, all our systems include a mobile app for remote control." },
+      { q: "Is the system easy to use?", a: "Our interfaces are designed to be intuitive and user-friendly." }
+    ],
+    badge: { text: "100%", sub: "Integrated" }
+  },
+  'access-control': {
+    title: "Access Control Systems Miami",
+    description: "Secure your property with advanced keyless entry, intercoms, and managed access solutions.",
+    image: "https://securityonthespot.com/wp-content/uploads/2025/09/access-control-systems-miami-keyless-entry-installation-scaled.jpg",
+    features: [
+      "Keyless Entry: Fob and mobile-based access for employees and residents.",
+      "Intercom Systems: Video intercom installation for multi-family buildings.",
+      "Cloud Management: Manage permissions and view access logs from anywhere.",
+      "Biometric Readers: High-security fingerprint and facial recognition options."
+    ],
+    faqs: [
+      { q: "Can I manage access from my phone?", a: "Yes, our systems include a cloud-based dashboard for remote management." },
+      { q: "Do you offer intercom systems?", a: "Yes, we specialize in video intercom installation for Miami properties." }
+    ],
+    badge: { text: "Secure", sub: "Access" }
+  },
+  'networking-fiber-optics': {
+    title: "Networking & Structured Cabling Miami",
+    description: "Reliable networking services in Miami. High-speed Wi-Fi, structured cabling, and secure network infrastructure.",
+    image: "https://securityonthespot.com/wp-content/uploads/2025/09/networking-services-miami-structured-cabling-scaled.jpg",
+    features: [
+      "Enterprise Wi-Fi: Robust and high-speed wireless coverage for your entire property.",
+      "Cat6 Cabling: Professional structured cabling for reliable data transmission.",
+      "Fiber Optics: High-bandwidth solutions for large properties and businesses.",
+      "Network Security: Enterprise-grade protocols to protect your data."
+    ],
+    faqs: [
+      { q: "Do you offer Wi-Fi optimization?", a: "Yes, we specialize in designing and optimizing high-performance Wi-Fi networks." },
+      { q: "What is structured cabling?", a: "It's a standardized way of cabling your building for data and voice communications." }
+    ],
+    badge: { text: "High", sub: "Speed" }
+  },
+  'fire-systems': {
+    title: "Commercial Fire Alarm Installation Miami",
+    description: "Life safety systems that meet all Miami-Dade fire codes. Professional design, installation, and monitoring.",
+    image: "https://securityonthespot.com/wp-content/uploads/2025/09/fire-alarm-systems-miami-commercial-installation-scaled.jpg",
+    features: [
+      "NFPA 72 Compliant: Systems designed to meet all national fire safety standards.",
+      "UL Listed Monitoring: 24/7 professional monitoring for immediate dispatch.",
+      "Miami-Dade Certified: We ensure your system meets all local fire codes.",
+      "Annual Inspections: Comprehensive testing and certification services."
+    ],
+    faqs: [
+      { q: "Do you offer fire alarm monitoring?", a: "Yes, we provide 24/7 UL-listed monitoring for all our fire systems." },
+      { q: "Can you help with fire code compliance?", a: "Yes, we specialize in ensuring systems meet Miami-Dade fire codes." }
+    ],
+    badge: { text: "Safety", sub: "First" }
   }
 };

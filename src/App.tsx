@@ -318,7 +318,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             className="w-full h-full object-cover"
             src={heroVideo}
           />
-          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/90 via-[#0B2447]/60 to-transparent"></div>
         </div>
         
         <div className="container mx-auto px-4 md:px-8 relative z-10">
@@ -344,7 +344,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight"
+              className="text-4xl md:text-7xl font-extrabold mb-6 leading-tight drop-shadow-2xl"
             >
               Security Camera Installation & CCTV Systems in Miami
             </motion.h1>
@@ -953,7 +953,7 @@ const ContactPage = () => {
                 </div>
                 <div>
                   <h3 className="font-bold text-base md:text-lg text-[#0B2447] group-hover:text-blue-600 transition-colors">Service Area</h3>
-                  <p className="text-gray-600 text-sm md:text-base">Miami, FL and surrounding South Florida areas.</p>
+                  <p className="text-gray-600 text-sm md:text-base">4861 NW 72nd Ave, Miami, FL 33166</p>
                 </div>
               </div>
             </div>
@@ -1001,12 +1001,12 @@ const WhoWeArePage = () => {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-16 items-center">
           <div>
-            <h2 className="text-2xl md:text-4xl font-bold text-[#0B2447] mb-6">Our Mission</h2>
+            <h2 className="text-2xl md:text-4xl font-bold text-[#0B2447] mb-6">Our Mission in Miami</h2>
             <p className="text-base md:text-lg text-gray-600 mb-6 leading-relaxed">
               At Security on the Spot, we believe that safety is a fundamental right. Our mission is to provide high-quality, reliable, and innovative security solutions to the Miami community and beyond.
             </p>
             <p className="text-base md:text-lg text-gray-600 leading-relaxed mb-8">
-              With years of experience in the industry, we have built a reputation for excellence, professionalism, and unparalleled customer service.
+              With over 20 years of experience in the industry, we have built a reputation for excellence, professionalism, and unparalleled customer service in South Florida.
             </p>
             <div className="grid grid-cols-2 gap-6">
               <div className="p-6 bg-slate-50 rounded-2xl border border-transparent hover:border-blue-500/30 hover:shadow-xl transition-all group">
