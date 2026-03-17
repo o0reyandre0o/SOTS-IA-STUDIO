@@ -21,7 +21,7 @@ get_header();
             >
                 <source src="https://anti2.workingtoctoc.com/wp/wp-content/uploads/2026/03/Flow_202603171648.mp4" type="video/mp4">
             </video>
-            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/60 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/40"></div>
         </div>
         
         <div class="container mx-auto px-4 md:px-8 relative z-10">

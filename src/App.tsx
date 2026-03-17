@@ -357,7 +357,7 @@ const HomePage = ({ setActivePage }: { setActivePage: (page: string) => void }) 
             className="w-full h-full object-cover"
             src={heroVideo}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/90 via-[#0B2447]/60 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0B2447]/95 via-[#0B2447]/85 to-[#0B2447]/40"></div>
         </div>
         
         <div className="container mx-auto px-4 md:px-8 relative z-10">
