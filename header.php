@@ -148,13 +148,58 @@
 
         <!-- Desktop Nav -->
         <div class="hidden lg:flex items-center space-x-6 text-sm font-semibold text-brand-navy">
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                    <span>Security Cameras</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="<?php echo esc_url( home_url( '/commercial-warehouse/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Commercial & Warehouse Properties</a>
+                    <a href="<?php echo esc_url( home_url( '/restaurants/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Restaurants</a>
+                    <a href="<?php echo esc_url( home_url( '/small-businesses/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Small Businesses</a>
+                    <a href="<?php echo esc_url( home_url( '/retail/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Retail</a>
+                    <a href="<?php echo esc_url( home_url( '/families/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Families</a>
+                    <a href="<?php echo esc_url( home_url( '/car-workshops/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Car Workshops</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                    <span>Home Automation</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="<?php echo esc_url( home_url( '/control-integration/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Control Integration</a>
+                    <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Lighting Control</a>
+                    <a href="<?php echo esc_url( home_url( '/multi-zone-audio/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Multi-Zone Audio</a>
+                    <a href="<?php echo esc_url( home_url( '/home-theater/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Home Theater</a>
+                    <a href="<?php echo esc_url( home_url( '/video-wall-installation/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Video-Wall Installation</a>
+                </div>
+            </div>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                    <span>Access Control</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="<?php echo esc_url( home_url( '/intercom-systems/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Intercom Systems</a>
+                    <a href="<?php echo esc_url( home_url( '/entry-exit-systems/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Entry/Exit Systems</a>
+                </div>
+            </div>
+
+            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking & Fiber Optics</a>
             <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-integration-miami' ) ); ?>">Audio & Video</a>
-            <a class="hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/video-wall-installation-miami' ) ); ?>">Video Walls</a>
+
+            <div class="relative group">
+                <button class="flex items-center space-x-1 hover:text-brand-security transition py-4">
+                    <span>Who we are?</span>
+                    <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                </button>
+                <div class="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                    <a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="block px-4 py-2 text-sm text-gray-700 hover:bg-brand-light hover:text-brand-security transition">Contact Us</a>
+                </div>
+            </div>
         </div>
 
         <div class="flex items-center space-x-2 md:space-x-4">
@@ -177,16 +222,61 @@
     <div id="mobile-menu" class="fixed inset-0 z-40 lg:hidden invisible opacity-0 transition-all duration-300">
         <div id="menu-backdrop" class="absolute inset-0 bg-brand-navy/40 backdrop-blur-sm"></div>
         <div id="menu-content" class="absolute right-0 top-0 bottom-0 w-4/5 max-w-sm bg-white shadow-2xl p-8 translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex flex-col space-y-6 mt-12">
+            <div class="flex flex-col space-y-4 mt-12">
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/security-cameras-security-on-the-spot' ) ); ?>">Security Cameras</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/home-automation-smart-homes-in-miami' ) ); ?>">Home Automation</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/access-control' ) ); ?>">Access Control</a>
+                
+                <div class="flex flex-col">
+                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
+                        <span>Security Cameras</span>
+                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
+                        <a href="<?php echo esc_url( home_url( '/commercial-warehouse/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Commercial & Warehouse Properties</a>
+                        <a href="<?php echo esc_url( home_url( '/restaurants/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Restaurants</a>
+                        <a href="<?php echo esc_url( home_url( '/small-businesses/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Small Businesses</a>
+                        <a href="<?php echo esc_url( home_url( '/retail/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Retail</a>
+                        <a href="<?php echo esc_url( home_url( '/families/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Families</a>
+                        <a href="<?php echo esc_url( home_url( '/car-workshops/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Car Workshops</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
+                        <span>Home Automation</span>
+                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
+                        <a href="<?php echo esc_url( home_url( '/control-integration/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Control Integration</a>
+                        <a href="<?php echo esc_url( home_url( '/lighting-control/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Lighting Control</a>
+                        <a href="<?php echo esc_url( home_url( '/multi-zone-audio/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Multi-Zone Audio</a>
+                        <a href="<?php echo esc_url( home_url( '/home-theater/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Home Theater</a>
+                        <a href="<?php echo esc_url( home_url( '/video-wall-installation/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Video-Wall Installation</a>
+                    </div>
+                </div>
+
+                <div class="flex flex-col">
+                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
+                        <span>Access Control</span>
+                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
+                        <a href="<?php echo esc_url( home_url( '/intercom-systems/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Intercom Systems</a>
+                        <a href="<?php echo esc_url( home_url( '/entry-exit-systems/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Entry/Exit Systems</a>
+                    </div>
+                </div>
+
+                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking & Fiber Optics</a>
                 <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/fire-systems' ) ); ?>">Fire Systems</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/networking-fiber-optics' ) ); ?>">Networking</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/audio-video-integration-miami' ) ); ?>">Audio & Video</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/video-wall-installation-miami' ) ); ?>">Video Walls</a>
-                <a class="text-xl font-bold text-brand-navy hover:text-brand-security transition" href="<?php echo esc_url( home_url( '/who-we-are' ) ); ?>">Who We Are</a>
+
+                <div class="flex flex-col">
+                    <button class="mobile-submenu-toggle flex items-center justify-between text-xl font-bold text-brand-navy hover:text-brand-security transition py-2">
+                        <span>Who we are?</span>
+                        <svg class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="mobile-submenu hidden flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100">
+                        <a href="<?php echo esc_url( home_url( '/contact-us/' ) ); ?>" class="py-2 text-gray-600 hover:text-brand-security transition text-sm font-medium">Contact Us</a>
+                    </div>
+                </div>
                 <div class="pt-8 border-t border-gray-100">
                     <a href="tel:7868227868" class="flex items-center space-x-3 text-brand-navy font-bold mb-6">
                         <svg class="w-6 h-6 text-brand-security" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path></svg>
@@ -242,5 +332,25 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     menuBackdrop.addEventListener('click', closeMenu);
+
+    // Mobile Submenu Logic
+    const submenuToggles = document.querySelectorAll('.mobile-submenu-toggle');
+    submenuToggles.forEach(toggle => {
+        toggle.addEventListener('click', function() {
+            const submenu = this.nextElementSibling;
+            const icon = this.querySelector('svg');
+            
+            // Close other submenus
+            document.querySelectorAll('.mobile-submenu').forEach(other => {
+                if (other !== submenu) {
+                    other.classList.add('hidden');
+                    other.previousElementSibling.querySelector('svg').classList.remove('rotate-180');
+                }
+            });
+
+            submenu.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        });
+    });
 });
 </script>

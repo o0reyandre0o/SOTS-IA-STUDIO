@@ -63,6 +63,58 @@ function security_on_the_spot_create_pages() {
             'content' => 'Professional audio and video integration.',
             'template' => 'page-audio-video-services.php'
         ),
+        'commercial-warehouse' => array(
+            'title' => 'Commercial & Warehouse Properties',
+            'content' => 'Security solutions for commercial and warehouse properties.',
+        ),
+        'restaurants' => array(
+            'title' => 'Restaurants',
+            'content' => 'Security solutions for restaurants.',
+        ),
+        'small-businesses' => array(
+            'title' => 'Small Businesses',
+            'content' => 'Security solutions for small businesses.',
+        ),
+        'retail' => array(
+            'title' => 'Retail',
+            'content' => 'Security solutions for retail stores.',
+        ),
+        'families' => array(
+            'title' => 'Families',
+            'content' => 'Security solutions for families and homes.',
+        ),
+        'car-workshops' => array(
+            'title' => 'Car Workshops',
+            'content' => 'Security solutions for car workshops.',
+        ),
+        'control-integration' => array(
+            'title' => 'Control Integration',
+            'content' => 'Smart home control integration services.',
+        ),
+        'lighting-control' => array(
+            'title' => 'Lighting Control',
+            'content' => 'Smart lighting control solutions.',
+        ),
+        'multi-zone-audio' => array(
+            'title' => 'Multi-Zone Audio',
+            'content' => 'Multi-zone audio system installation.',
+        ),
+        'home-theater' => array(
+            'title' => 'Home Theater',
+            'content' => 'Professional home theater installation.',
+        ),
+        'video-wall-installation' => array(
+            'title' => 'Video-Wall Installation',
+            'content' => 'Professional video wall installation services.',
+        ),
+        'intercom-systems' => array(
+            'title' => 'Intercom Systems',
+            'content' => 'Advanced intercom system installation.',
+        ),
+        'entry-exit-systems' => array(
+            'title' => 'Entry/Exit Systems',
+            'content' => 'Secure entry and exit system solutions.',
+        ),
     );
 
     foreach ( $pages as $slug => $page_data ) {

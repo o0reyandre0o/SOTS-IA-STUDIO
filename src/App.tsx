@@ -7,22 +7,55 @@ import { generateHeroVideo } from './services/videoService';
 
 const Header = ({ activePage, setActivePage }: { activePage: string, setActivePage: (page: string) => void }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const navItems = [
-    { name: 'Home', slug: 'home' },
-    { name: 'Security Cameras', slug: 'security-cameras-security-on-the-spot' },
-    { name: 'Home Automation', slug: 'home-automation-smart-homes-in-miami' },
-    { name: 'Access Control', slug: 'access-control' },
+    {
+      name: 'Security Cameras',
+      slug: 'security-cameras',
+      submenu: [
+        { name: 'Commercial & Warehouse Properties', slug: 'commercial-warehouse' },
+        { name: 'Restaurants', slug: 'restaurants' },
+        { name: 'Small Businesses', slug: 'small-businesses' },
+        { name: 'Retail', slug: 'retail' },
+        { name: 'Families', slug: 'families' },
+        { name: 'Car Workshops', slug: 'car-workshops' },
+      ]
+    },
+    {
+      name: 'Home Automation',
+      slug: 'home-automation',
+      submenu: [
+        { name: 'Control Integration', slug: 'control-integration' },
+        { name: 'Lighting Control', slug: 'lighting-control' },
+        { name: 'Multi-Zone Audio', slug: 'multi-zone-audio' },
+        { name: 'Home Theater', slug: 'home-theater' },
+        { name: 'Video-Wall Installation', slug: 'video-wall-installation' },
+      ]
+    },
+    {
+      name: 'Access Control',
+      slug: 'access-control',
+      submenu: [
+        { name: 'Intercom Systems', slug: 'intercom-systems' },
+        { name: 'Entry/Exit Systems', slug: 'entry-exit-systems' },
+      ]
+    },
+    { name: 'Networking & Fiber Optics', slug: 'networking-fiber-optics' },
     { name: 'Fire Systems', slug: 'fire-systems' },
-    { name: 'Networking', slug: 'networking-fiber-optics' },
-    { name: 'Audio & Video', slug: 'audio-video-services' },
-    { name: 'Video Walls', slug: 'video-wall-installation' },
+    {
+      name: 'Who we are?',
+      slug: 'who-we-are',
+      submenu: [
+        { name: 'Contact Us', slug: 'contact-us' },
+      ]
+    }
   ];
 
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="bg-[#0B2447] py-2 px-4 text-center text-[10px] md:text-xs text-white font-bold border-b border-blue-900">
-        PREVIEW UPDATED (v1.0.13): Mobile Optimization & Sticky CTA.
+        PREVIEW UPDATED (v1.0.14): New Menu Structure & Submenus.
       </div>
       <nav className="container mx-auto px-4 md:px-8 py-3 md:py-4 flex items-center justify-between">
         <div className="flex items-center space-x-2">
@@ -39,13 +72,46 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
         {/* Desktop Nav */}
         <div className="hidden lg:flex items-center space-x-6 text-sm font-semibold text-[#0B2447]">
           {navItems.map((item) => (
-            <button
-              key={item.slug}
-              onClick={() => setActivePage(item.slug)}
-              className={`hover:text-blue-600 transition ${activePage === item.slug ? 'text-blue-600' : ''}`}
+            <div 
+              key={item.slug} 
+              className="relative group"
+              onMouseEnter={() => setActiveDropdown(item.slug)}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              {item.name}
-            </button>
+              <button
+                onClick={() => !item.submenu && setActivePage(item.slug)}
+                className={`flex items-center space-x-1 hover:text-blue-600 transition py-4 ${activePage === item.slug ? 'text-blue-600' : ''}`}
+              >
+                <span>{item.name}</span>
+                {item.submenu && <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === item.slug ? 'rotate-180' : ''}`} />}
+              </button>
+
+              {item.submenu && (
+                <AnimatePresence>
+                  {activeDropdown === item.slug && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: 10 }}
+                      className="absolute top-full left-0 w-64 bg-white shadow-xl border border-gray-100 rounded-xl py-2 z-50"
+                    >
+                      {item.submenu.map((sub) => (
+                        <button
+                          key={sub.slug}
+                          onClick={() => {
+                            setActivePage(sub.slug);
+                            setActiveDropdown(null);
+                          }}
+                          className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition"
+                        >
+                          {sub.name}
+                        </button>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              )}
+            </div>
           ))}
         </div>
 
@@ -101,28 +167,46 @@ const Header = ({ activePage, setActivePage }: { activePage: string, setActivePa
                 </button>
               </div>
               
-              <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-4">
                 {navItems.map((item) => (
-                  <button
-                    key={item.slug}
-                    onClick={() => {
-                      setActivePage(item.slug);
-                      setIsMenuOpen(false);
-                    }}
-                    className={`text-xl font-bold text-left transition ${activePage === item.slug ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
-                  >
-                    {item.name}
-                  </button>
+                  <div key={item.slug} className="flex flex-col">
+                    <button
+                      onClick={() => {
+                        if (item.submenu) {
+                          setActiveDropdown(activeDropdown === item.slug ? null : item.slug);
+                        } else {
+                          setActivePage(item.slug);
+                          setIsMenuOpen(false);
+                        }
+                      }}
+                      className={`flex items-center justify-between text-lg font-bold transition py-2 ${activePage === item.slug ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
+                    >
+                      <span>{item.name}</span>
+                      {item.submenu && <ChevronDown size={20} className={`transition-transform duration-200 ${activeDropdown === item.slug ? 'rotate-180' : ''}`} />}
+                    </button>
+                    
+                    {item.submenu && activeDropdown === item.slug && (
+                      <motion.div 
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: 'auto', opacity: 1 }}
+                        className="flex flex-col pl-4 space-y-2 mt-2 border-l-2 border-blue-100"
+                      >
+                        {item.submenu.map((sub) => (
+                          <button
+                            key={sub.slug}
+                            onClick={() => {
+                              setActivePage(sub.slug);
+                              setIsMenuOpen(false);
+                            }}
+                            className="text-left py-2 text-gray-600 hover:text-blue-600 transition text-sm font-medium"
+                          >
+                            {sub.name}
+                          </button>
+                        ))}
+                      </motion.div>
+                    )}
+                  </div>
                 ))}
-                <button 
-                  onClick={() => {
-                    setActivePage('who-we-are');
-                    setIsMenuOpen(false);
-                  }}
-                  className={`text-xl font-bold text-left transition ${activePage === 'who-we-are' ? 'text-blue-600' : 'text-[#0B2447] hover:text-blue-600'}`}
-                >
-                  Who We Are
-                </button>
                 
                 <div className="pt-8 border-t border-gray-100">
                   <a href="tel:7868227868" className="flex items-center space-x-3 text-[#0B2447] font-bold mb-6">
