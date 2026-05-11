@@ -45,7 +45,26 @@ final class SOTS_Elementor_Widgets_Extension {
         }
 
         require_once( __DIR__ . '/widgets/hero-widget.php' );
+        require_once( __DIR__ . '/widgets/offer-widget.php' );
+        require_once( __DIR__ . '/widgets/services-grid-widget.php' );
+        require_once( __DIR__ . '/widgets/about-widget.php' );
+        require_once( __DIR__ . '/widgets/brands-widget.php' );
+        require_once( __DIR__ . '/widgets/why-choose-us-widget.php' );
+        require_once( __DIR__ . '/widgets/review-widget.php' );
+        require_once( __DIR__ . '/widgets/solutions-widget.php' );
+        require_once( __DIR__ . '/widgets/faq-widget.php' );
+        require_once( __DIR__ . '/widgets/final-cta-widget.php' );
+        
         $widgets_manager->register( new \SOTS_Hero_Widget() );
+        $widgets_manager->register( new \SOTS_Offer_Widget() );
+        $widgets_manager->register( new \SOTS_Services_Grid_Widget() );
+        $widgets_manager->register( new \SOTS_About_Widget() );
+        $widgets_manager->register( new \SOTS_Brands_Widget() );
+        $widgets_manager->register( new \SOTS_Why_Choose_Us_Widget() );
+        $widgets_manager->register( new \SOTS_Review_Widget() );
+        $widgets_manager->register( new \SOTS_Solutions_Widget() );
+        $widgets_manager->register( new \SOTS_FAQ_Widget() );
+        $widgets_manager->register( new \SOTS_Final_CTA_Widget() );
     }
 }
 
