@@ -23,26 +23,7 @@ final class SOTS_Elementor_Widgets_Extension {
     }
 
     public function __construct() {
-        add_action( 'plugins_loaded', [ $this, 'init' ] );
-    }
-
-    public function init() {
-        // Check if Elementor installed and activated
-        if ( ! did_action( 'elementor/loaded' ) ) {
-            return;
-        }
-
-        // Check for required Elementor version
-        if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
-            return;
-        }
-
-        // Check for required PHP version
-        if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
-            return;
-        }
-
-        // Add Plugin actions
+        // En los Themes, plugins_loaded ya pasó. Enganchamos directo a init o Elementor.
         add_action( 'elementor/widgets/register', [ $this, 'init_widgets' ] );
         add_action( 'elementor/elements/categories_registered', [ $this, 'add_widget_categories' ] );
     }
@@ -58,6 +39,11 @@ final class SOTS_Elementor_Widgets_Extension {
     }
 
     public function init_widgets( $widgets_manager ) {
+        // Check for required PHP version
+        if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
+            return;
+        }
+
         require_once( __DIR__ . '/widgets/hero-widget.php' );
         $widgets_manager->register( new \SOTS_Hero_Widget() );
     }
