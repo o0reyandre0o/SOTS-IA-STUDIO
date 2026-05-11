@@ -34,8 +34,9 @@ class SLS_DB {
         // Detectar formato
         $has_tbl_num = ( strpos( $text, 'Tbl Number' ) !== false );
         
-        // Patrón de fecha: 29-Jan-26
-        $date_pattern = '/\d{2}-[A-Z][a-z]{2}-\d{2}/';
+        // Limpieza global de encabezados repetitivos en todo el PDF
+        $headers_regex = '/(?:Name\s*Description\s*Licence\s*Type\s*(?:Tbl\s*Number\s*)?File\s*Number\s*Start\s*Date\s*End\s*Date\s*Location|Tbl Number|File Number|Start Date|End Date)/i';
+        $text = preg_replace($headers_regex, ' ', $text);
         
         // Patrón para capturar File Number y Fechas de forma mucho más permisiva
         // Prefijos (TBR, EXG, etc.): de 2 a 5 letras mayúsculas
