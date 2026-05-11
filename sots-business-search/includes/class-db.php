@@ -89,9 +89,14 @@ class SLS_DB {
 
             if ( count( $pre_lines ) > 0 ) {
                 $name = trim( $pre_lines[0] );
-                // Si el nombre es muy corto, intentar unir con la siguiente línea (casos de nombres largos)
-                if ( strlen($name) < 10 && isset($pre_lines[1]) ) {
-                    $name .= ' ' . trim($pre_lines[1]);
+                $next_line = isset($pre_lines[1]) ? trim($pre_lines[1]) : '';
+                
+                // Unir con la siguiente línea si el nombre termina en "&" o si la siguiente línea está en MAYÚSCULAS
+                $is_next_line_caps = ($next_line !== '' && strtoupper($next_line) === $next_line && strlen($next_line) > 2);
+                $ends_with_ampersand = (substr($name, -1) === '&');
+
+                if ( (strlen($name) < 15 || $is_next_line_caps || $ends_with_ampersand) && $next_line !== '' ) {
+                    $name .= ' ' . $next_line;
                     $description = implode( " ", array_slice( $pre_lines, 2 ) );
                 } else {
                     $description = implode( " ", array_slice( $pre_lines, 1 ) );
@@ -139,17 +144,25 @@ class SLS_DB {
         global $wpdb;
         $table_name = $wpdb->prefix . 'sots_licenses';
         
-        $term = '%' . $wpdb->esc_like( $term ) . '%';
+        $words = explode(' ', trim($term));
+        $conditions = array();
+        $values = array();
+
+        foreach ( $words as $word ) {
+            $word = trim($word);
+            if ( empty($word) ) continue;
+            
+            $like = '%' . $wpdb->esc_like( $word ) . '%';
+            $conditions[] = "(name LIKE %s OR description LIKE %s OR location LIKE %s OR file_number LIKE %s OR tbl_number LIKE %s)";
+            // Insertar 5 veces para los 5 %s
+            array_push($values, $like, $like, $like, $like, $like);
+        }
+
+        if ( empty($conditions) ) return array();
+
+        $where_clause = implode(' AND ', $conditions);
+        $query = "SELECT * FROM $table_name WHERE $where_clause LIMIT 20";
         
-        return $wpdb->get_results( $wpdb->prepare(
-            "SELECT * FROM $table_name 
-            WHERE name LIKE %s 
-            OR description LIKE %s 
-            OR location LIKE %s 
-            OR file_number LIKE %s
-            OR tbl_number LIKE %s
-            LIMIT 10",
-            $term, $term, $term, $term, $term
-        ));
+        return $wpdb->get_results( $wpdb->prepare( $query, $values ) );
     }
 }
