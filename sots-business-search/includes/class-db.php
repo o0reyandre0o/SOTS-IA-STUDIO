@@ -74,13 +74,29 @@ class SLS_DB {
             $start_date = $has_tbl_num ? $matches[4][$i][0] : $matches[3][$i][0];
             $end_date = $has_tbl_num ? $matches[5][$i][0] : $matches[4][$i][0];
 
-            // Intentar separar Nombre de Descripción/Tipo
-            // Esto es heurístico porque el texto es muy irregular
-            $pre_lines = explode( "\n", trim( $pre_text ) );
-            $name = isset( $pre_lines[0] ) ? trim( $pre_lines[0] ) : 'Sin nombre';
+            // Limpieza profunda del nombre y descripción
+            $pre_text = trim( $pre_text );
             
-            // Si hay más líneas, intentar usarlas como descripción/tipo
-            $desc_type = count( $pre_lines ) > 1 ? implode( " ", array_slice( $pre_lines, 1 ) ) : '';
+            // BORRADO DEFINITIVO DE ENCABEZADOS:
+            $pre_text = preg_replace('/^(?:(?:NAME|DESCRIPTION|LICENCE|TYPE|FILE|NUMBER|START|DATE|END|LOCATION|TBL)\s*)+/i', '', $pre_text);
+            $pre_text = trim($pre_text);
+
+            $pre_lines = explode( "\n", $pre_text );
+            
+            // El nombre suele ser la primera parte hasta encontrar un salto de línea o mucha minúscula
+            $name = '';
+            $description = '';
+
+            if ( count( $pre_lines ) > 0 ) {
+                $name = trim( $pre_lines[0] );
+                // Si el nombre es muy corto, intentar unir con la siguiente línea (casos de nombres largos)
+                if ( strlen($name) < 10 && isset($pre_lines[1]) ) {
+                    $name .= ' ' . trim($pre_lines[1]);
+                    $description = implode( " ", array_slice( $pre_lines, 2 ) );
+                } else {
+                    $description = implode( " ", array_slice( $pre_lines, 1 ) );
+                }
+            }
 
             // El final del match es donde terminan las fechas
             $match_end = $current_match_start + strlen( $full_match[0] );
@@ -104,7 +120,7 @@ class SLS_DB {
 
             $wpdb->insert( $table_name, array(
                 'name' => trim( $name ),
-                'description' => trim( $desc_type ),
+                'description' => trim( $description ),
                 'licence_type' => '', // Combinado en descripción por ahora
                 'file_number' => $prefix . ' ' . $file_num,
                 'tbl_number' => $tbl_num,
