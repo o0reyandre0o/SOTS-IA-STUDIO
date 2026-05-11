@@ -51,8 +51,12 @@ if ( ! class_exists( 'SLS_DB' ) ) {
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
-        // Borrado agresivo de encabezados (insensible a mayúsculas y espacios)
-        $text = preg_replace('/Name\s+Description\s+Licence\s+Type\s+File\s+Number\s+(\s*Tbl\s+Number\s*)?Start\s+Date\s+End\s+Date\s+Location/i', '', $text);
+        // Borrado ultra-robusto del encabezado del PDF
+        // Busca desde la palabra "Name" hasta la palabra "Location" en los primeros caracteres del documento y lo borra.
+        $text = preg_replace('/Name[\s\S]{1,150}Location/i', '', $text, 1);
+        
+        // Limpiar espacios en blanco extra al inicio
+        $text = trim($text);
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
