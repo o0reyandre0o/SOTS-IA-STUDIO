@@ -8,7 +8,17 @@ get_header();
 ?>
 
 <main id="primary" class="site-main">
-    <!-- Hero Section -->
+
+    <?php 
+    // Elementor Content Area
+    while ( have_posts() ) :
+        the_post();
+        the_content();
+    endwhile; 
+    ?>
+
+    <!-- Hero Section (Comentado para prueba de Elementor) -->
+    <!--
     <section class="relative min-h-[600px] md:h-[800px] flex items-center overflow-hidden">
         <div class="absolute inset-0 z-0">
             <video 
@@ -47,6 +57,7 @@ get_header();
             </div>
         </div>
     </section>
+    -->
 
     <!-- Offer Section -->
     <section class="py-16 md:py-24 bg-white">
