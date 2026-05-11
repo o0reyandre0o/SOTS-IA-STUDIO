@@ -4,7 +4,7 @@
  */
 
 require_once get_theme_file_path( '/inc/elementor-init.php' );
-require_once get_theme_file_path( '/inc/sots-licenses/init.php' );
+// require_once get_theme_file_path( '/inc/sots-licenses/init.php' );
 
 
 if ( ! function_exists( 'security_on_the_spot_setup' ) ) :
