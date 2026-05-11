@@ -82,6 +82,39 @@ class SOTS_About_Widget extends \Elementor\Widget_Base {
         );
 
         $this->end_controls_section();
+
+        // --------------------------------------------------
+        // TAB: STYLE
+        // --------------------------------------------------
+        $this->start_controls_section(
+            'style_section',
+            [
+                'label' => esc_html__( 'Text Style', 'sots' ),
+                'tab' => \Elementor\Controls_Manager::TAB_STYLE,
+            ]
+        );
+
+        $this->add_control(
+            'content_color',
+            [
+                'label' => esc_html__( 'Text Color', 'sots' ),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'selectors' => [
+                    '{{WRAPPER}} .sots-about-content p' => 'color: {{VALUE}};',
+                ],
+            ]
+        );
+
+        $this->add_group_control(
+            \Elementor\Group_Control_Typography::get_type(),
+            [
+                'name' => 'content_typography',
+                'label' => esc_html__( 'Typography', 'sots' ),
+                'selector' => '{{WRAPPER}} .sots-about-content p',
+            ]
+        );
+
+        $this->end_controls_section();
     }
 
     protected function render() {
@@ -105,7 +138,9 @@ class SOTS_About_Widget extends \Elementor\Widget_Base {
                         <?php endif; ?>
 
                         <?php if ( ! empty( $settings['content'] ) ) : ?>
-                            <?php echo $settings['content']; ?>
+                            <div class="sots-about-content text-gray-600 text-lg space-y-6 mb-8 leading-relaxed">
+                                <?php echo $settings['content']; ?>
+                            </div>
                         <?php endif; ?>
 
                         <?php if ( ! empty( $settings['button_text'] ) && ! empty( $link ) ) : ?>
