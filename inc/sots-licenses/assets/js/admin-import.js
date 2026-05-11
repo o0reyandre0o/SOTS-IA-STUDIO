@@ -32,56 +32,66 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
         dropZone.classList.remove('dragover');
         const files = e.dataTransfer.files;
-        if (files.length) handleFile(files[0]);
+        if (files.length) handleFiles(files);
     });
 
     fileInput.addEventListener('change', (e) => {
-        if (e.target.files.length) handleFile(e.target.files[0]);
+        if (e.target.files.length) handleFiles(e.target.files);
     });
 
-    async function handleFile(file) {
-        if (file.type !== 'application/pdf') {
-            alert('Por favor, selecciona un archivo PDF válido.');
-            return;
-        }
-
+    async function handleFiles(filesArray) {
         progressContainer.style.display = 'block';
         textarea.value = '';
         submitBtn.disabled = true;
 
-        const reader = new FileReader();
-        reader.onload = async function() {
-            const typedarray = new Uint8Array(this.result);
-            
+        let fullText = '';
+
+        for (let j = 0; j < filesArray.length; j++) {
+            const file = filesArray[j];
+            if (file.type !== 'application/pdf') {
+                console.warn('Saltando archivo no PDF:', file.name);
+                continue;
+            }
+
+            progressText.innerText = `Cargando ${file.name}...`;
+
             try {
+                const arrayBuffer = await file.arrayBuffer();
+                const typedarray = new Uint8Array(arrayBuffer);
                 const pdf = await pdfjsLib.getDocument(typedarray).promise;
-                let fullText = '';
                 const totalPages = pdf.numPages;
 
                 for (let i = 1; i <= totalPages; i++) {
                     // Actualizar progreso
                     const percent = Math.round((i / totalPages) * 100);
                     progressBar.style.width = percent + '%';
-                    progressText.innerText = `Leyendo página ${i} de ${totalPages}...`;
+                    progressText.innerText = `Archivo ${j+1}/${filesArray.length} (${file.name}) - Leyendo página ${i} de ${totalPages}...`;
 
                     const page = await pdf.getPage(i);
                     const textContent = await page.getTextContent();
                     
                     // Unir los fragmentos de texto de la página
                     const pageText = textContent.items.map(item => item.str).join(' ');
+                    
+                    // Asegurarnos de que el modo Tbl Number se detecte si es necesario
+                    if (j > 0 && i === 1) {
+                         fullText += '\n\n---NEW_FILE---\n\n'; 
+                    }
                     fullText += pageText + '\n';
                 }
-
-                textarea.value = fullText;
-                submitBtn.disabled = false;
-                progressText.innerText = '¡PDF procesado con éxito! Haz clic en "Confirmar e Importar" abajo.';
-                
             } catch (error) {
-                console.error('Error al procesar PDF:', error);
-                alert('Hubo un error al leer el PDF. Asegúrate de que no esté protegido con contraseña.');
-                progressContainer.style.display = 'none';
+                console.error('Error al procesar PDF:', file.name, error);
             }
-        };
-        reader.readAsArrayBuffer(file);
+        }
+
+        if (fullText.trim() === '') {
+            alert('No se pudo extraer texto de los archivos. Asegúrate de que sean PDFs válidos y no estén protegidos.');
+            progressContainer.style.display = 'none';
+            return;
+        }
+
+        textarea.value = fullText;
+        submitBtn.disabled = false;
+        progressText.innerText = `¡${filesArray.length} PDF(s) procesados con éxito! Haz clic en "Confirmar e Importar" abajo.`;
     }
 });

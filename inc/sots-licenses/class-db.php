@@ -4,8 +4,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'SLS_DB' ) ) {
-    class SLS_DB {
+class SLS_DB {
     public static function create_table() {
         global $wpdb;
         $table_name = $wpdb->prefix . 'sots_licenses';
@@ -35,28 +34,23 @@ if ( ! class_exists( 'SLS_DB' ) ) {
         // Detectar formato
         $has_tbl_num = ( strpos( $text, 'Tbl Number' ) !== false );
         
-        // Patrón de fecha: 29-Jan-26
-        $date_pattern = '/\d{2}-[A-Z][a-z]{2}-\d{2}/';
+        // Limpieza global de encabezados repetitivos en todo el PDF
+        $headers_regex = '/(?:Name\s*Description\s*Licence\s*Type\s*(?:Tbl\s*Number\s*)?File\s*Number\s*Start\s*Date\s*End\s*Date\s*Location|Tbl Number|File Number|Start Date|End Date)/i';
+        $text = preg_replace($headers_regex, ' ', $text);
         
-        // Patrón para capturar File Number y Fechas
+        // Patrón para capturar File Number y Fechas de forma mucho más permisiva
+        // Prefijos (TBR, EXG, etc.): de 2 a 5 letras mayúsculas
+        // File Number: alfanumérico, puede contener guiones o barras
+        // Tbl Number: solo números o guiones
+        // Fechas: 1 o 2 dígitos para día, 3 letras para mes, 2 o 4 dígitos para año
+        
         if ( $has_tbl_num ) {
             // Formato con Tbl Number
-            // Ejemplo: EXG 41194 454553 27-Nov-25 27-Nov-26
-            $pattern = '/(EX[GR]|TB[RG]?)\s+([A-Z0-9]+)\s+([0-9]+)\s+(\d{2}-[A-Z][a-z]{2}-\d{2})\s+(\d{2}-[A-Z][a-z]{2}-\d{2})/';
+            $pattern = '/([A-Z]{2,5})\s+([A-Za-z0-9\-\/]+)\s+([0-9\-]+)\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})/';
         } else {
             // Formato estándar
-            // Ejemplo: TBR TB562BS 29-Jan-26 29-Jan-27
-            $pattern = '/(TB[RG]?)\s+([A-Z0-9]+)\s+(\d{2}-[A-Z][a-z]{2}-\d{2})\s+(\d{2}-[A-Z][a-z]{2}-\d{2})/';
+            $pattern = '/([A-Z]{2,5})\s+([A-Za-z0-9\-\/]+)\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})/';
         }
-
-        preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
-
-        // Borrado ultra-robusto del encabezado del PDF
-        // Busca desde la palabra "Name" hasta la palabra "Location" en los primeros caracteres del documento y lo borra.
-        $text = preg_replace('/Name[\s\S]{1,150}Location/i', '', $text, 1);
-        
-        // Limpiar espacios en blanco extra al inicio
-        $text = trim($text);
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
@@ -64,7 +58,7 @@ if ( ! class_exists( 'SLS_DB' ) ) {
             return 0;
         }
 
-        // Limpiar tabla antes de importar
+        // Limpiar tabla antes de importar (como solicitó el usuario para actualización mensual)
         $wpdb->query( "TRUNCATE TABLE $table_name" );
 
         $count = 0;
@@ -73,7 +67,8 @@ if ( ! class_exists( 'SLS_DB' ) ) {
         foreach ( $matches[0] as $i => $full_match ) {
             $current_match_start = $full_match[1];
             
-            // Texto entre registros
+            // Texto entre el final del registro anterior y el inicio de los números de licencia actuales
+            // Aquí suelen estar: Nombre, Descripción y Tipo de Licencia
             $pre_text = substr( $text, $last_match_end, $current_match_start - $last_match_end );
             
             // Extraer datos del match
@@ -87,8 +82,6 @@ if ( ! class_exists( 'SLS_DB' ) ) {
             $pre_text = trim( $pre_text );
             
             // BORRADO DEFINITIVO DE ENCABEZADOS:
-            // Esto elimina cualquier combinación de las palabras del encabezado (sin importar los espacios o saltos de línea)
-            // que aparezcan juntas al inicio del texto del negocio. Así funciona aunque estén en diferentes páginas.
             $pre_text = preg_replace('/^(?:(?:NAME|DESCRIPTION|LICENCE|TYPE|FILE|NUMBER|START|DATE|END|LOCATION|TBL)\s*)+/i', '', $pre_text);
             $pre_text = trim($pre_text);
 
@@ -100,9 +93,14 @@ if ( ! class_exists( 'SLS_DB' ) ) {
 
             if ( count( $pre_lines ) > 0 ) {
                 $name = trim( $pre_lines[0] );
-                // Si el nombre es muy corto, intentar unir con la siguiente línea (casos de nombres largos)
-                if ( strlen($name) < 10 && isset($pre_lines[1]) ) {
-                    $name .= ' ' . trim($pre_lines[1]);
+                $next_line = isset($pre_lines[1]) ? trim($pre_lines[1]) : '';
+                
+                // Unir con la siguiente línea si el nombre termina en "&" o si la siguiente línea está en MAYÚSCULAS
+                $is_next_line_caps = ($next_line !== '' && strtoupper($next_line) === $next_line && strlen($next_line) > 2);
+                $ends_with_ampersand = (substr($name, -1) === '&');
+
+                if ( (strlen($name) < 15 || $is_next_line_caps || $ends_with_ampersand) && $next_line !== '' ) {
+                    $name .= ' ' . $next_line;
                     $description = implode( " ", array_slice( $pre_lines, 2 ) );
                 } else {
                     $description = implode( " ", array_slice( $pre_lines, 1 ) );
@@ -112,23 +110,26 @@ if ( ! class_exists( 'SLS_DB' ) ) {
             // El final del match es donde terminan las fechas
             $match_end = $current_match_start + strlen( $full_match[0] );
             
-            // La ubicación
+            // La ubicación está DESPUÉS de las fechas, hasta el inicio del siguiente registro
+            // o hasta el final de la sección de ubicación típica (que termina en "Islands")
             $next_match_start = isset( $matches[0][$i+1] ) ? $matches[0][$i+1][1] : strlen( $text );
             $post_text = substr( $text, $match_end, $next_match_start - $match_end );
             
+            // Buscar "Islands" como fin de ubicación
             $location = $post_text;
             if ( preg_match( '/Islands/', $post_text, $loc_matches, PREG_OFFSET_CAPTURE ) ) {
                 $loc_end = $loc_matches[0][1] + strlen( $loc_matches[0][0] );
                 $location = substr( $post_text, 0, $loc_end );
+                
+                // Actualizar last_match_end para que el siguiente registro empiece DESPUÉS de la ubicación
                 $last_match_end = $match_end + $loc_end;
             } else {
-                // Si no hay "Islands", buscar el siguiente inicio de registro por mayúsculas
                 $last_match_end = $next_match_start;
             }
 
             $wpdb->insert( $table_name, array(
                 'name' => trim( $name ),
-                'description' => trim( $desc_type ),
+                'description' => trim( $description ),
                 'licence_type' => '', // Combinado en descripción por ahora
                 'file_number' => $prefix . ' ' . $file_num,
                 'tbl_number' => $tbl_num,
@@ -147,18 +148,25 @@ if ( ! class_exists( 'SLS_DB' ) ) {
         global $wpdb;
         $table_name = $wpdb->prefix . 'sots_licenses';
         
-        $term = '%' . $wpdb->esc_like( $term ) . '%';
+        $words = explode(' ', trim($term));
+        $conditions = array();
+        $values = array();
+
+        foreach ( $words as $word ) {
+            $word = trim($word);
+            if ( empty($word) ) continue;
+            
+            $like = '%' . $wpdb->esc_like( $word ) . '%';
+            $conditions[] = "(name LIKE %s OR description LIKE %s OR location LIKE %s OR file_number LIKE %s OR tbl_number LIKE %s)";
+            // Insertar 5 veces para los 5 %s
+            array_push($values, $like, $like, $like, $like, $like);
+        }
+
+        if ( empty($conditions) ) return array();
+
+        $where_clause = implode(' AND ', $conditions);
+        $query = "SELECT * FROM $table_name WHERE $where_clause LIMIT 20";
         
-        return $wpdb->get_results( $wpdb->prepare(
-            "SELECT * FROM $table_name 
-            WHERE name LIKE %s 
-            OR description LIKE %s 
-            OR location LIKE %s 
-            OR file_number LIKE %s
-            OR tbl_number LIKE %s
-            LIMIT 10",
-            $term, $term, $term, $term, $term
-        ));
+        return $wpdb->get_results( $wpdb->prepare( $query, $values ) );
     }
-}
 }
