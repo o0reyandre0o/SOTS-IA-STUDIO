@@ -10,6 +10,21 @@ class SLS_Admin {
     public function __construct( $db ) {
         $this->db = $db;
         add_action( 'admin_menu', array( $this, 'add_admin_menu' ) );
+        add_action( 'admin_enqueue_scripts', array( $this, 'admin_assets' ) );
+    }
+
+    public function admin_assets( $hook ) {
+        if ( 'toplevel_page_sots-license-import' !== $hook ) {
+            return;
+        }
+
+        // Librería PDF.js
+        wp_enqueue_script( 'pdf-js', 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js', array(), '3.11', true );
+        wp_enqueue_script( 'sots-admin-import-js', SLS_URL . 'assets/js/admin-import.js', array('pdf-js'), '1.0.0', true );
+        
+        wp_localize_script( 'sots-admin-import-js', 'sls_admin_data', array(
+            'worker_url' => 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js'
+        ));
     }
 
     public function add_admin_menu() {
@@ -30,37 +45,40 @@ class SLS_Admin {
             $raw_text = isset( $_POST['sls_raw_data'] ) ? $_POST['sls_raw_data'] : '';
             if ( ! empty( $raw_text ) ) {
                 $count = $this->db->import_raw_data( $raw_text );
-                $message = '<div class="updated"><p>¡Éxito! Se han importado ' . $count . ' registros.</p></div>';
-            } else {
-                $message = '<div class="error"><p>Por favor, pega el texto del PDF.</p></div>';
+                $message = '<div class="updated"><p>¡Éxito! Se han importado ' . $count . ' registros correctamente.</p></div>';
             }
         }
 
         ?>
         <div class="wrap">
-            <h1>Importar Datos de Licencias (TBL)</h1>
+            <h1>Importar Licencias desde PDF</h1>
             <?php echo $message; ?>
-            <p>Pega aquí el texto copiado de los PDFs de licencias comerciales. El sistema detectará automáticamente el formato y actualizará la base de datos.</p>
             
-            <form method="post" action="">
+            <div id="sots-drop-zone" style="border: 2px dashed #ccc; padding: 40px; text-align: center; background: #fff; margin: 20px 0; border-radius: 10px; cursor: pointer; transition: all 0.3s;">
+                <div class="dashicons dashicons-upload" style="font-size: 50px; width: 50px; height: 50px; color: #ff9900;"></div>
+                <h2 style="margin: 10px 0;">Arrastra tu PDF aquí o haz clic para seleccionar</h2>
+                <p>El sistema leerá el contenido del PDF y lo preparará para la importación.</p>
+                <input type="file" id="sots-pdf-input" accept="application/pdf" style="display: none;">
+            </div>
+
+            <div id="sots-import-progress" style="display: none; margin-bottom: 20px;">
+                <div style="background: #eee; border-radius: 10px; overflow: hidden;">
+                    <div id="sots-progress-bar" style="width: 0%; height: 20px; background: #ff9900; transition: width 0.3s;"></div>
+                </div>
+                <p id="sots-progress-text" style="text-align: center; margin-top: 5px;">Procesando PDF...</p>
+            </div>
+            
+            <form id="sls-import-form" method="post" action="">
                 <?php wp_nonce_field( 'sls_import_action', 'sls_import_nonce' ); ?>
-                <textarea name="sls_raw_data" rows="20" style="width: 100%; font-family: monospace;" placeholder="Pega el texto aquí..."></textarea>
+                <textarea id="sls_raw_data" name="sls_raw_data" rows="10" style="width: 100%; font-family: monospace; background: #f9f9f9;" placeholder="El texto del PDF aparecerá aquí automáticamente..."></textarea>
                 <p class="submit">
-                    <input type="submit" name="submit" id="submit" class="button button-primary" value="Limpiar Base de Datos e Importar">
+                    <input type="submit" name="submit" id="submit-import" class="button button-primary button-large" value="Confirmar e Importar a la Web" disabled>
                 </p>
             </form>
-
-            <div style="margin-top: 40px; padding: 20px; background: #fff; border: 1px solid #ccd0d4;">
-                <h2>Instrucciones</h2>
-                <ol>
-                    <li>Abre el PDF de las licencias.</li>
-                    <li>Selecciona todo el texto (Ctrl+A) y cópialo (Ctrl+C).</li>
-                    <li>Pégalo en el cuadro de arriba.</li>
-                    <li>Haz clic en "Limpiar Base de Datos e Importar".</li>
-                    <li><strong>Nota:</strong> Esto borrará los datos actuales y los reemplazará con los nuevos.</li>
-                </ol>
-            </div>
         </div>
+        <style>
+            #sots-drop-zone.dragover { background: #fffbe6; border-color: #ff9900; }
+        </style>
         <?php
     }
 }
