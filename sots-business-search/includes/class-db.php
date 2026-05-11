@@ -34,8 +34,8 @@ class SLS_DB {
         // Detectar formato
         $has_tbl_num = ( strpos( $text, 'Tbl Number' ) !== false );
         
-        // Limpieza global de encabezados repetitivos en todo el PDF
-        $headers_regex = '/(?:Name\s*Description\s*Licence\s*Type\s*(?:Tbl\s*Number\s*)?File\s*Number\s*Start\s*Date\s*End\s*Date\s*Location|Tbl Number|File Number|Start Date|End Date)/i';
+        // Limpieza global de encabezados repetitivos en todo el PDF (con flag /u para espacios raros y \p{Z} para espacios unicode)
+        $headers_regex = '/(?:Name[\p{Z}\s]*Description[\p{Z}\s]*Licence[\p{Z}\s]*Type[\p{Z}\s]*(?:Tbl[\p{Z}\s]*Number[\p{Z}\s]*)?File[\p{Z}\s]*Number[\p{Z}\s]*Start[\p{Z}\s]*Date[\p{Z}\s]*End[\p{Z}\s]*Date[\p{Z}\s]*Location|Tbl Number|File Number|Start Date|End Date)/iu';
         $text = preg_replace($headers_regex, ' ', $text);
         
         // Patrón para capturar File Number y Fechas de forma mucho más permisiva
@@ -82,7 +82,8 @@ class SLS_DB {
             $pre_text = trim( $pre_text );
             
             // BORRADO DEFINITIVO DE ENCABEZADOS:
-            $pre_text = preg_replace('/^(?:(?:NAME|DESCRIPTION|LICENCE|TYPE|FILE|NUMBER|START|DATE|END|LOCATION|TBL)\s*)+/i', '', $pre_text);
+            // Quitamos el ^ para que atrape el bloque de palabras del encabezado aunque haya un caracter invisible (BOM) antes
+            $pre_text = preg_replace('/(?:(?:NAME|DESCRIPTION|LICENCE|TYPE|FILE|NUMBER|START|DATE|END|LOCATION|TBL)\s*){5,}/iu', '', $pre_text);
             $pre_text = trim($pre_text);
 
             $pre_lines = explode( "\n", $pre_text );
