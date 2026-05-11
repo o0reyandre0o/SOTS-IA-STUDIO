@@ -51,12 +51,8 @@ if ( ! class_exists( 'SLS_DB' ) ) {
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
-        // Limpiar encabezados comunes del texto antes de procesar
-        $headers_to_remove = array(
-            'Name Description Licence Type File Number Start Date End Date Location',
-            'Name Description Licence Type File Number Tbl Number Start Date End Date Location'
-        );
-        $text = str_replace( $headers_to_remove, '', $text );
+        // Borrado agresivo de encabezados (insensible a mayúsculas y espacios)
+        $text = preg_replace('/Name\s+Description\s+Licence\s+Type\s+File\s+Number\s+(\s*Tbl\s+Number\s*)?Start\s+Date\s+End\s+Date\s+Location/i', '', $text);
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
