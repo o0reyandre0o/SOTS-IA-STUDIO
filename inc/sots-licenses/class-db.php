@@ -86,8 +86,10 @@ if ( ! class_exists( 'SLS_DB' ) ) {
             // Limpieza profunda del nombre y descripción
             $pre_text = trim( $pre_text );
             
-            // Eliminar cualquier residuo de encabezados que haya quedado
-            $pre_text = preg_replace('/^(Name|Description|Licence|Type|File|Number|Start|Date|End|Location|Tbl)\s+/i', '', $pre_text);
+            // BORRADO DEFINITIVO DE ENCABEZADOS:
+            // Esto elimina cualquier combinación de las palabras del encabezado (sin importar los espacios o saltos de línea)
+            // que aparezcan juntas al inicio del texto del negocio. Así funciona aunque estén en diferentes páginas.
+            $pre_text = preg_replace('/^(?:(?:NAME|DESCRIPTION|LICENCE|TYPE|FILE|NUMBER|START|DATE|END|LOCATION|TBL)\s*)+/i', '', $pre_text);
             $pre_text = trim($pre_text);
 
             $pre_lines = explode( "\n", $pre_text );
