@@ -1,0 +1,162 @@
+/* SOTS Business License Search - Premium Styles */
+
+.sots-search-container {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+.sots-search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 5px 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.sots-search-wrapper:focus-within {
+    border-color: #ff9900;
+    box-shadow: 0 8px 32px 0 rgba(255, 153, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+#sots-license-search-input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.1rem;
+    padding: 15px 10px;
+    outline: none;
+}
+
+#sots-license-search-input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.sots-search-icon {
+    color: #ff9900;
+}
+
+/* Dropdown Results */
+.sots-results-dropdown {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    right: 0;
+    background: rgba(20, 20, 20, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    max-height: 500px;
+    overflow-y: auto;
+    z-index: 1000;
+    display: none;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.sots-results-dropdown.active {
+    display: block;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.sots-result-item {
+    padding: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background 0.2s ease;
+    cursor: pointer;
+}
+
+.sots-result-item:last-child {
+    border-bottom: none;
+}
+
+.sots-result-item:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.sots-result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.sots-result-name {
+    color: #ff9900;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+}
+
+.sots-result-id {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.sots-result-desc {
+    color: #ddd;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.sots-result-meta {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    font-size: 0.85rem;
+}
+
+.sots-meta-label {
+    color: rgba(255, 255, 255, 0.4);
+    margin-right: 5px;
+}
+
+.sots-meta-value {
+    color: #fff;
+}
+
+.sots-result-location {
+    grid-column: span 2;
+    margin-top: 5px;
+    padding-top: 5px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Estilos de scrollbar */
+.sots-results-dropdown::-webkit-scrollbar {
+    width: 8px;
+}
+.sots-results-dropdown::-webkit-scrollbar-track {
+    background: transparent;
+}
+.sots-results-dropdown::-webkit-scrollbar-thumb {
+    background: rgba(255, 153, 0, 0.3);
+    border-radius: 10px;
+}
+.sots-results-dropdown::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 153, 0, 0.5);
+}
+
+.sots-no-results {
+    padding: 40px;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
