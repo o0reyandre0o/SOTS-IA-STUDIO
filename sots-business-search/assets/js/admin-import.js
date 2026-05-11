@@ -90,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
 
+        // Borrar el encabezado visualmente para que el usuario no lo vea en el textarea
+        const headersRegex = /(?:Name\s*Description\s*Licence\s*Type\s*(?:Tbl\s*Number\s*)?File\s*Number\s*Start\s*Date\s*End\s*Date\s*Location|Tbl Number|File Number|Start Date|End Date)/gi;
+        fullText = fullText.replace(headersRegex, ' ');
+
         textarea.value = fullText;
         submitBtn.disabled = false;
         progressText.innerText = `¡${filesArray.length} PDF(s) procesados con éxito! Haz clic en "Confirmar e Importar" abajo.`;
