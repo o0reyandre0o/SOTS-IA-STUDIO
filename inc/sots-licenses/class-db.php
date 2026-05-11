@@ -34,9 +34,20 @@ class SLS_DB {
         // Detectar formato
         $has_tbl_num = ( strpos( $text, 'Tbl Number' ) !== false );
         
-        // Limpieza global de encabezados repetitivos en todo el PDF (con flag /u para espacios raros y \p{Z} para espacios unicode)
-        $headers_regex = '/(?:Name[\p{Z}\s]*Description[\p{Z}\s]*Licence[\p{Z}\s]*Type[\p{Z}\s]*(?:Tbl[\p{Z}\s]*Number[\p{Z}\s]*)?File[\p{Z}\s]*Number[\p{Z}\s]*Start[\p{Z}\s]*Date[\p{Z}\s]*End[\p{Z}\s]*Date[\p{Z}\s]*Location|Tbl Number|File Number|Start Date|End Date)/iu';
-        $text = preg_replace($headers_regex, ' ', $text);
+        // Limpieza robusta de encabezados: filtrar líneas que contienen demasiadas palabras clave
+        $lines = explode("\n", $text);
+        $keywords = ['NAME', 'DESCRIPTION', 'LICENCE', 'TYPE', 'FILE', 'NUMBER', 'START', 'DATE', 'END', 'LOCATION', 'TBL'];
+        $filtered_lines = array_filter($lines, function($line) use ($keywords) {
+            $count = 0;
+            $upper_line = strtoupper($line);
+            foreach ($keywords as $word) {
+                if (strpos($upper_line, $word) !== false) {
+                    $count++;
+                }
+            }
+            return $count < 5; // Si tiene 5 o más, es un encabezado
+        });
+        $text = implode("\n", $filtered_lines);
         
         // Patrón para capturar File Number y Fechas de forma mucho más permisiva
         // Prefijos (TBR, EXG, etc.): de 2 a 5 letras mayúsculas

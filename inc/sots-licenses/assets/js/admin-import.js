@@ -91,8 +91,15 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         // Borrar el encabezado visualmente para que el usuario no lo vea en el textarea
-        const headersRegex = /(?:Name\s*Description\s*Licence\s*Type\s*(?:Tbl\s*Number\s*)?File\s*Number\s*Start\s*Date\s*End\s*Date\s*Location|Tbl Number|File Number|Start Date|End Date)/gi;
-        fullText = fullText.replace(headersRegex, ' ');
+        const keywords = ['NAME', 'DESCRIPTION', 'LICENCE', 'TYPE', 'FILE', 'NUMBER', 'START', 'DATE', 'END', 'LOCATION', 'TBL'];
+        fullText = fullText.split('\n').filter(line => {
+            let count = 0;
+            const upperLine = line.toUpperCase();
+            keywords.forEach(k => {
+                if (upperLine.includes(k)) count++;
+            });
+            return count < 5;
+        }).join('\n');
 
         textarea.value = fullText;
         submitBtn.disabled = false;
