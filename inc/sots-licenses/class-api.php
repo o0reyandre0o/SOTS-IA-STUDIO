@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SLS_API {
+if ( ! class_exists( 'SLS_API' ) ) {
+    class SLS_API {
     private $db;
 
     public function __construct( $db ) {
@@ -31,4 +32,5 @@ class SLS_API {
         
         return new WP_REST_Response( $results, 200 );
     }
+}
 }

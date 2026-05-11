@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SLS_Admin {
+if ( ! class_exists( 'SLS_Admin' ) ) {
+    class SLS_Admin {
     private $db;
 
     public function __construct( $db ) {
@@ -81,4 +82,5 @@ class SLS_Admin {
         </style>
         <?php
     }
+}
 }

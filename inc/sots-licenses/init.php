@@ -16,7 +16,8 @@ require_once SLS_PATH . 'class-db.php';
 require_once SLS_PATH . 'class-admin.php';
 require_once SLS_PATH . 'class-api.php';
 
-class SOTS_License_Theme_Integration {
+if ( ! class_exists( 'SOTS_License_Theme_Integration' ) ) {
+    class SOTS_License_Theme_Integration {
     public function __construct() {
         $this->db = new SLS_DB();
         $this->admin = new SLS_Admin( $this->db );
@@ -57,6 +58,7 @@ class SOTS_License_Theme_Integration {
         <?php
         return ob_get_clean();
     }
+}
 }
 
 new SOTS_License_Theme_Integration();

@@ -4,7 +4,8 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-class SLS_DB {
+if ( ! class_exists( 'SLS_DB' ) ) {
+    class SLS_DB {
     public static function create_table() {
         global $wpdb;
         $table_name = $wpdb->prefix . 'sots_licenses';
@@ -50,11 +51,20 @@ class SLS_DB {
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
 
+        // Limpiar encabezados comunes del texto antes de procesar
+        $headers_to_remove = array(
+            'Name Description Licence Type File Number Start Date End Date Location',
+            'Name Description Licence Type File Number Tbl Number Start Date End Date Location'
+        );
+        $text = str_replace( $headers_to_remove, '', $text );
+
+        preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
+
         if ( empty( $matches[0] ) ) {
             return 0;
         }
 
-        // Limpiar tabla antes de importar (como solicitó el usuario para actualización mensual)
+        // Limpiar tabla antes de importar
         $wpdb->query( "TRUNCATE TABLE $table_name" );
 
         $count = 0;
@@ -63,8 +73,7 @@ class SLS_DB {
         foreach ( $matches[0] as $i => $full_match ) {
             $current_match_start = $full_match[1];
             
-            // Texto entre el final del registro anterior y el inicio de los números de licencia actuales
-            // Aquí suelen estar: Nombre, Descripción y Tipo de Licencia
+            // Texto entre registros
             $pre_text = substr( $text, $last_match_end, $current_match_start - $last_match_end );
             
             // Extraer datos del match
@@ -74,31 +83,44 @@ class SLS_DB {
             $start_date = $has_tbl_num ? $matches[4][$i][0] : $matches[3][$i][0];
             $end_date = $has_tbl_num ? $matches[5][$i][0] : $matches[4][$i][0];
 
-            // Intentar separar Nombre de Descripción/Tipo
-            // Esto es heurístico porque el texto es muy irregular
-            $pre_lines = explode( "\n", trim( $pre_text ) );
-            $name = isset( $pre_lines[0] ) ? trim( $pre_lines[0] ) : 'Sin nombre';
+            // Limpieza profunda del nombre y descripción
+            $pre_text = trim( $pre_text );
             
-            // Si hay más líneas, intentar usarlas como descripción/tipo
-            $desc_type = count( $pre_lines ) > 1 ? implode( " ", array_slice( $pre_lines, 1 ) ) : '';
+            // Eliminar cualquier residuo de encabezados que haya quedado
+            $pre_text = preg_replace('/^(Name|Description|Licence|Type|File|Number|Start|Date|End|Location|Tbl)\s+/i', '', $pre_text);
+            $pre_text = trim($pre_text);
+
+            $pre_lines = explode( "\n", $pre_text );
+            
+            // El nombre suele ser la primera parte hasta encontrar un salto de línea o mucha minúscula
+            $name = '';
+            $description = '';
+
+            if ( count( $pre_lines ) > 0 ) {
+                $name = trim( $pre_lines[0] );
+                // Si el nombre es muy corto, intentar unir con la siguiente línea (casos de nombres largos)
+                if ( strlen($name) < 10 && isset($pre_lines[1]) ) {
+                    $name .= ' ' . trim($pre_lines[1]);
+                    $description = implode( " ", array_slice( $pre_lines, 2 ) );
+                } else {
+                    $description = implode( " ", array_slice( $pre_lines, 1 ) );
+                }
+            }
 
             // El final del match es donde terminan las fechas
             $match_end = $current_match_start + strlen( $full_match[0] );
             
-            // La ubicación está DESPUÉS de las fechas, hasta el inicio del siguiente registro
-            // o hasta el final de la sección de ubicación típica (que termina en "Islands")
+            // La ubicación
             $next_match_start = isset( $matches[0][$i+1] ) ? $matches[0][$i+1][1] : strlen( $text );
             $post_text = substr( $text, $match_end, $next_match_start - $match_end );
             
-            // Buscar "Islands" como fin de ubicación
             $location = $post_text;
             if ( preg_match( '/Islands/', $post_text, $loc_matches, PREG_OFFSET_CAPTURE ) ) {
                 $loc_end = $loc_matches[0][1] + strlen( $loc_matches[0][0] );
                 $location = substr( $post_text, 0, $loc_end );
-                
-                // Actualizar last_match_end para que el siguiente registro empiece DESPUÉS de la ubicación
                 $last_match_end = $match_end + $loc_end;
             } else {
+                // Si no hay "Islands", buscar el siguiente inicio de registro por mayúsculas
                 $last_match_end = $next_match_start;
             }
 
@@ -136,4 +158,5 @@ class SLS_DB {
             $term, $term, $term, $term, $term
         ));
     }
+}
 }
