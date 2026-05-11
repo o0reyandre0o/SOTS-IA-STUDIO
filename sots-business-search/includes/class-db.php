@@ -37,15 +37,18 @@ class SLS_DB {
         // Patrón de fecha: 29-Jan-26
         $date_pattern = '/\d{2}-[A-Z][a-z]{2}-\d{2}/';
         
-        // Patrón para capturar File Number y Fechas
+        // Patrón para capturar File Number y Fechas de forma mucho más permisiva
+        // Prefijos (TBR, EXG, etc.): de 2 a 5 letras mayúsculas
+        // File Number: alfanumérico, puede contener guiones o barras
+        // Tbl Number: solo números o guiones
+        // Fechas: 1 o 2 dígitos para día, 3 letras para mes, 2 o 4 dígitos para año
+        
         if ( $has_tbl_num ) {
             // Formato con Tbl Number
-            // Ejemplo: EXG 41194 454553 27-Nov-25 27-Nov-26
-            $pattern = '/(EX[GR]|TB[RG]?)\s+([A-Z0-9]+)\s+([0-9]+)\s+(\d{2}-[A-Z][a-z]{2}-\d{2})\s+(\d{2}-[A-Z][a-z]{2}-\d{2})/';
+            $pattern = '/([A-Z]{2,5})\s+([A-Za-z0-9\-\/]+)\s+([0-9\-]+)\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})/';
         } else {
             // Formato estándar
-            // Ejemplo: TBR TB562BS 29-Jan-26 29-Jan-27
-            $pattern = '/(TB[RG]?)\s+([A-Z0-9]+)\s+(\d{2}-[A-Z][a-z]{2}-\d{2})\s+(\d{2}-[A-Z][a-z]{2}-\d{2})/';
+            $pattern = '/([A-Z]{2,5})\s+([A-Za-z0-9\-\/]+)\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})\s+(\d{1,2}-[A-Za-z]{3}-\d{2,4})/';
         }
 
         preg_match_all( $pattern, $text, $matches, PREG_OFFSET_CAPTURE );
